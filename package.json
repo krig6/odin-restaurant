@@ -1,7 +1,7 @@
 {
   "name": "odin-restaurant",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Odin Project: Restaurant Page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
