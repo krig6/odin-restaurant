@@ -1,0 +1,15 @@
+export const createCustomElement = (tag, { classes = '', text = '', html = '', dataset = {} } = {}) => {
+    const element = document.createElement(tag);
+    if (classes) element.className = classes;
+    if (html) {
+        element.innerHTML = html;
+    } else if (text) {
+        element.textContent = text;
+    }
+
+    for (const key in dataset) {
+        element.dataset[key] = dataset[key];
+    }
+
+    return element;
+}
