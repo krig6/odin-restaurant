@@ -6,13 +6,13 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         bundle: path.resolve(__dirname, 'src/index.js'),
-        home: path.resolve(__dirname, 'src/javascript/pages/home.js'),
-        menu: path.resolve(__dirname, 'src/javascript/pages/menu.js'),
-        email: path.resolve(__dirname, 'src/javascript/pages/email.js'),
-        about: path.resolve(__dirname, 'src/javascript/pages/about.js'),
+        homePage: path.resolve(__dirname, 'src/javascript/pages/homePage.js'),
+        menuPage: path.resolve(__dirname, 'src/javascript/pages/menuPage.js'),
+        emailPage: path.resolve(__dirname, 'src/javascript/pages/emailPage.js'),
+        aboutPage: path.resolve(__dirname, 'src/javascript/pages/aboutPage.js'),
     },
     output: {
-        name: '[name].[contenthash].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -36,15 +36,10 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'assets/images'
-                        }
-                    },
-                ],
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name][ext]',
+                },
             },
         ],
     },
@@ -53,6 +48,7 @@ module.exports = {
             filename: 'index.html',
             template: 'src/template.html',
             title: 'Cup and Crust',
+            favicon: 'src/assets/images/croissant.png',
         }),
     ],
 }
