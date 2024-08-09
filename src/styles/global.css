@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  --primary-color: #f4decb;
+  --secondary-color: #ebc49b;
+  --background-color: #f3e6d7;
+  --accent-color: #ecdfd0;
+  --text-color: #494444;
+
+  --transition-fast: 0.1s;
+  --transition-normal: 0.4s;
+  --transition-slow: 1s;
+}
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
