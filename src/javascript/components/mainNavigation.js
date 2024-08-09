@@ -1,3 +1,4 @@
+import '../../styles/mainNavigation.css'
 import { createCustomElement } from "../utils/elementUtils";
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
