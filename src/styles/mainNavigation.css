@@ -1,0 +1,48 @@
+.header {
+  background-color: transparent;
+  padding: 1.5rem;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.nav-list .nav-link {
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Noto Serif", sans-serif;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  padding: 0.5rem;
+}
+
+.nav-list .nav-link:hover {
+  transform: scale(1.1);
+}
+
+.nav-list .nav-link:hover::after {
+  width: 94%;
+  left: 0;
+}
+
+.nav-list .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 4px;
+  border-radius: 1rem;
+  width: 0;
+  background-color: var(--text-color);
+  transition: var(--transition-normal);
+}
