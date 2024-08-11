@@ -29,7 +29,7 @@ const createFooterSection = () => {
 
 const createAboutSection = () => {
     const aboutSection = createCustomElement('div', {
-        classes: 'footer-about-section',
+        classes: 'footer-about-section footer-content',
     });
 
     const brandNameElement = createCustomElement('h3', {
@@ -48,7 +48,7 @@ const createQuickLinksSection = () => {
     const QUICK_LINKS = ['Home', 'Menu', 'Email', 'About'];
 
     const quickLinksSection = createCustomElement('div', {
-        classes: 'footer-quick-links-section',
+        classes: 'footer-quick-links-section footer-content',
     });
     const quickLinksHeading = createCustomElement('h3', {
         text: 'Quick Links',
@@ -88,7 +88,7 @@ const createQuickLinkItem = (linkText) => {
 
 const createSocialMediaSection = () => {
     const socialMediaSection = createCustomElement('div', {
-        classes: 'footer-social-media-section',
+        classes: 'footer-social-media-section footer-content',
     });
 
     const socialMediaHeading = createCustomElement('h3', {
