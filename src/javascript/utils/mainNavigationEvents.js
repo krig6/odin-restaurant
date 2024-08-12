@@ -1,3 +1,5 @@
+import { handlePageNavigation } from "./pageNavigation";
+
 export const initializeMainNavEventHandlers = () => {
     const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
     headerNavLinks.forEach(link => {
@@ -8,7 +10,7 @@ export const initializeMainNavEventHandlers = () => {
 const handleNavLinkClick = (event) => {
     event.preventDefault();
     const targetPage = event.currentTarget.getAttribute('data-action');
-    navigateToPage(targetPage);
+    handlePageNavigation(targetPage);
     history.pushState(null, null, `#${targetPage}`);
 };
 
