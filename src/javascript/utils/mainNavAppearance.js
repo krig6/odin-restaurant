@@ -12,7 +12,12 @@ export const resetToDefaultNavColors = () => {
     });
 }
 
-export const setHeaderSticky = (shouldBeSticky) => {
+export const updateHeaderStickyState = (page) => {
+    const shouldStick = page !== 'home';
+    setHeaderSticky(shouldStick);
+}
+
+const setHeaderSticky = (shouldBeSticky) => {
     const headerElement = document.getElementById('site-header');
     headerElement.classList.toggle('sticky', shouldBeSticky);
 }
