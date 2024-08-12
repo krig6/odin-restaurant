@@ -1,6 +1,14 @@
 export const toggleMainNavColors = () => {
-    const navigationLinks = document.querySelectorAll('#site-header .nav-link');
-    navigationLinks.forEach(link => {
+    const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
+    headerNavLinks.forEach(link => {
         link.classList.toggle('change-color');
     });
 }
+
+export const resetToDefaultNavColors = () => {
+    const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
+    headerNavLinks.forEach(link => {
+        link.classList.remove('change-color');
+    });
+}
+
