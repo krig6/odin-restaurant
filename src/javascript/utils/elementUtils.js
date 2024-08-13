@@ -13,3 +13,11 @@ export const createCustomElement = (tag, { classes = '', text = '', html = '', d
 
     return element;
 }
+
+export const createImageElement = (src, { className = '', alt = '' } = {}) => {
+    const image = createCustomElement('img', { classes: className });
+    image.src = src;
+    image.alt = alt;
+
+    return image;
+}
