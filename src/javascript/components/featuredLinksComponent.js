@@ -1,4 +1,4 @@
-
+import '../../styles/featuredLinksComponent.css';
 import { createCustomElement, createImageElement } from '../utils/elementUtils';
 import { fetchAllImages, loadImagesIntoCache } from '../utils/imageUtils'
 

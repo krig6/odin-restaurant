@@ -1,0 +1,92 @@
+.featured-links-container {
+  display: grid;
+  grid-template-columns: 34% 32% 34%;
+  height: 450px;
+}
+
+.featured-links-container .featured-link-card:nth-child(1) {
+  background-color: var(--background-color);
+}
+
+.featured-links-container .featured-link-card:nth-child(2) {
+  background-color: var(--accent-color);
+}
+
+.featured-links-container .featured-link-card:nth-child(3) {
+  background-color: var(--primary-color);
+}
+
+.featured-links-container .featured-link-card:nth-child(1) {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  transition: var(--transition-normal);
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem 5rem 3rem 15rem;
+}
+
+.featured-links-container .featured-link-card:nth-child(2) {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  transition: var(--transition-normal);
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem 7rem;
+}
+
+.featured-links-container .featured-link-card:nth-child(3) {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+  transition: var(--transition-normal);
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem 15rem 3rem 5rem;
+}
+
+.featured-links-container figcaption {
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  align-self: center;
+  font-size: 1.125rem;
+  letter-spacing: 0.5rem;
+  font-family: "Noto Serif", sans-serif;
+  font-weight: 700;
+}
+
+.featured-links-container figcaption::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  height: 3px;
+  width: 0;
+  background-color: var(--text-color);
+  transition: var(--transition-normal);
+}
+
+.featured-links-container .featured-link-card:hover figcaption::after {
+  width: 95%;
+  left: 0;
+}
+
+.featured-links-container .featured-link-card:hover {
+  background-color: var(--secondary-color);
+}
+
+.featured-link-description {
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.3rem;
+  width: 45ch;
+}
+
+img {
+  height: 200px;
+}
