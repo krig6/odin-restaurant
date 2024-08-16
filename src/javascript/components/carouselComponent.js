@@ -1,9 +1,11 @@
 import '../../styles/carouselComponent.css'
+import { initializeCarouselEventHandlers } from '../utils/carouselControls';
 import { createCarousel } from "../utils/carouselManager"
 import { createCustomElement } from "../utils/elementUtils";
 
 export const initializeCarouselComponent = () => {
     setupCarouselStructure();
+    initializeCarouselEventHandlers();
 }
 
 
