@@ -1,5 +1,6 @@
-export const createCustomElement = (tag, { classes = '', text = '', html = '', dataset = {} } = {}) => {
+export const createCustomElement = (tag, { id = '', classes = '', text = '', html = '', dataset = {} } = {}) => {
     const element = document.createElement(tag);
+    if (id) element.id = id;
     if (classes) element.className = classes;
     if (html) {
         element.innerHTML = html;
