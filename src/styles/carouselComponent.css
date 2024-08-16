@@ -60,6 +60,14 @@
   transform: translateX(-10px) scale(1.1);
 }
 
+.carousel-btn.change-color:hover {
+  color: var(--secondary-color);
+}
+
+.carousel-btn.change-color {
+  color: var(--primary-color);
+}
+
 .cta-section {
   position: absolute;
   top: 60%;
@@ -89,7 +97,7 @@
   width: 210px;
 }
 
-.cta-secondary button {
+.cta-secondary-class button {
   color: var(--primary-color);
   background-color: var(--text-color);
   border: 3px solid var(--primary-color);
