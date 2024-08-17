@@ -1,5 +1,5 @@
 import '../../styles/footerComponent.css';
-import { createCustomElement } from "../utils/elementUtils";
+import { createCustomElement } from "../utils/domUtils/elementUtils";
 
 export const initializeFooterComponent = () => {
 

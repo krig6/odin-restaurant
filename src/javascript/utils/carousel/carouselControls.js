@@ -1,4 +1,4 @@
-import { toggleMainNavColors } from "./mainNavAppearance";
+import { toggleMainNavColors } from '../navigation/mainNavAppearance'
 
 export const initializeCarouselEventHandlers = () => {
     const carouselButtons = document.querySelectorAll('[data-carousel-btn]');

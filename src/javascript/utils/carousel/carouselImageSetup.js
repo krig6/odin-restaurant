@@ -1,5 +1,5 @@
-import { createImageElement } from "./elementUtils";
-import { prepareCarouselImages } from "./imageUtils";
+import { createImageElement } from "../domUtils/elementUtils";
+import { prepareCarouselImages } from "../imageUtils/imageUtils";
 import { startImageRotation } from "./carouselImageTransition";
 
 export const setupCarouselImages = () => {

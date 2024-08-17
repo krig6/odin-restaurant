@@ -29,7 +29,7 @@ export function loadImagesIntoCache(imageURLs) {
 }
 
 export const prepareCarouselImages = () => {
-    const imagesContext = require.context('../../assets/images/carousel-slideshow-images', false, /\.(png|jpe?g|gif|svg)$/);
+    const imagesContext = require.context('../../../assets/images/carousel-slideshow-images', false, /\.(png|jpe?g|gif|svg)$/);
 
     const carouselImages = fetchAllImages(imagesContext);
 

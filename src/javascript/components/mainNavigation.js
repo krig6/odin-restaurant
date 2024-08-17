@@ -1,6 +1,6 @@
 import '../../styles/mainNavigation.css'
-import { createCustomElement } from "../utils/elementUtils";
-import { initializeMainNavEventHandlers } from '../utils/mainNavigationEvents';
+import { createCustomElement } from "../utils/domUtils/elementUtils";
+import { initializeMainNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
 

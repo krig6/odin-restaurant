@@ -1,8 +1,8 @@
 import '../../styles/carouselComponent.css'
-import { initializeCarouselEventHandlers } from '../utils/carouselControls';
-import { createCarousel } from "../utils/carouselManager"
-import { createCustomElement } from "../utils/elementUtils";
-import { setupCarouselImages } from '../utils/carouselImageSetup';
+import { initializeCarouselEventHandlers } from '../utils/carousel/carouselControls';
+import { createCarousel } from '../utils/carousel/carouselManager';
+import { createCustomElement } from '../utils/domUtils/elementUtils';
+import { setupCarouselImages } from '../utils/carousel/carouselImageSetup';
 
 export const initializeCarouselComponent = () => {
     setupCarouselStructure();

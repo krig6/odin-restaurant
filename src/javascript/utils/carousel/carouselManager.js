@@ -1,4 +1,4 @@
-import { createCustomElement } from './elementUtils';
+import { createCustomElement } from "../domUtils/elementUtils";
 
 export const deleteCarousel = () => {
     const carouselElement = document.getElementById('hero-carousel');
