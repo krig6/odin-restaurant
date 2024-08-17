@@ -1,15 +1,13 @@
 import { createImageElement } from "./elementUtils";
 import { prepareCarouselImages } from "./imageUtils";
-
+import { startImageRotation } from "./carouselImageTransition";
 
 export const setupCarouselImages = () => {
     const carouselImagesUrls = prepareCarouselImages();
-
     if (carouselImagesUrls.length > 0) {
         populateImageGallery(carouselImagesUrls);
         populateSingleImage(carouselImagesUrls);
     }
-
 }
 
 const populateImageGallery = (images) => {
@@ -30,6 +28,7 @@ const populateImageGallery = (images) => {
     });
 
     imageGalleryElement.appendChild(fragment);
+    startImageRotation(images, 2000)
 }
 
 
@@ -49,5 +48,3 @@ const populateSingleImage = (images) => {
         singleImageElement.appendChild(img)
     });
 }
-
-
