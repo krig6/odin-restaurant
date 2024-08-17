@@ -4,7 +4,8 @@ export const initializeCarouselEventHandlers = () => {
 
     carouselButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // toggleCarouselButtonColors();
+            toggleCarouselButtonColors();
+            removeCarouselButtonFocus()
             const offset = button.dataset.carouselBtn === "next" ? 1 : -1;
             const slides = button.closest('[data-carousel]').querySelector('[data-slides]')
 
@@ -24,5 +25,12 @@ const toggleCarouselButtonColors = () => {
     const carouselButtons = document.querySelectorAll('#hero-carousel .carousel-btn');
     carouselButtons.forEach(button => {
         button.classList.toggle('change-color');
+    });
+}
+
+const removeCarouselButtonFocus = () => {
+    const carouselButtons = document.querySelectorAll('#hero-carousel .carousel-btn');
+    carouselButtons.forEach(button => {
+        button.blur();
     });
 }
