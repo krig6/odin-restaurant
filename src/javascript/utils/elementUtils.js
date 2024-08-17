@@ -15,8 +15,8 @@ export const createCustomElement = (tag, { id = '', classes = '', text = '', htm
     return element;
 }
 
-export const createImageElement = (src, { className = '', alt = '' } = {}) => {
-    const image = createCustomElement('img', { classes: className });
+export const createImageElement = (src, { classes = '', alt = '' } = {}) => {
+    const image = createCustomElement('img', { classes });
     image.src = src;
     image.alt = alt;
 
