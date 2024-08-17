@@ -1,4 +1,5 @@
 import '../../styles/carouselComponent.css'
+import '../../styles/ctaSection.css'
 import { initializeCarouselEventHandlers } from '../utils/carousel/carouselControls';
 import { createCarousel } from '../utils/carousel/carouselManager';
 import { createCustomElement } from '../utils/domUtils/elementUtils';

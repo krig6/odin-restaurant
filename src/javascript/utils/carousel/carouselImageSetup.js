@@ -1,3 +1,4 @@
+import '../../../styles/carouselImageTransition.css'
 import { createImageElement } from "../domUtils/elementUtils";
 import { prepareCarouselImages } from "../imageUtils/imageUtils";
 import { startImageRotation } from "./carouselImageTransition";
