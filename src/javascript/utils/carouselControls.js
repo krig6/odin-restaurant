@@ -1,3 +1,4 @@
+import { toggleMainNavColors } from "./mainNavAppearance";
 
 export const initializeCarouselEventHandlers = () => {
     const carouselButtons = document.querySelectorAll('[data-carousel-btn]');
@@ -5,7 +6,8 @@ export const initializeCarouselEventHandlers = () => {
     carouselButtons.forEach(button => {
         button.addEventListener('click', () => {
             toggleCarouselButtonColors();
-            removeCarouselButtonFocus()
+            removeCarouselButtonFocus();
+            toggleMainNavColors();
             const offset = button.dataset.carouselBtn === "next" ? 1 : -1;
             const slides = button.closest('[data-carousel]').querySelector('[data-slides]')
 

@@ -46,3 +46,40 @@
   background-color: var(--text-color);
   transition: var(--transition-normal);
 }
+
+.nav-list .nav-link.change-color {
+  color: var(--primary-color);
+}
+
+.nav-list .nav-link.change-color::after {
+  background-color: var(--primary-color);
+  transition: var(--transition-normal);
+}
+
+.nav-list .nav-link.active::after {
+  width: 94%;
+  left: 0;
+  background-color: var(--text-color);
+}
+
+.nav-list .nav-link.change-color.active::after {
+  width: 94%;
+  left: 0;
+  background-color: var(--primary-color);
+}
+
+.nav-list.default-color .nav-link {
+  color: var(--text-color);
+}
+
+.nav-list.default-color .nav-link.active::after {
+  background-color: var(--text-color);
+}
+
+.nav-list.default-color .nav-link:hover::after {
+  background: var(--text-color);
+}
+
+.header.sticky {
+  position: sticky;
+}
