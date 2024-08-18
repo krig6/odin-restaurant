@@ -1,7 +1,7 @@
 import '../../../styles/carouselImageTransition.css'
 import { createImageElement } from "../domUtils/elementUtils";
-import { prepareCarouselImages } from "../imageUtils/imageUtils";
 import { startImageRotation } from "./carouselImageTransition";
+import { fetchAllImages, loadImagesIntoCache } from '../imageUtils/imageUtils';
 
 export const setupCarouselImages = () => {
     const carouselImagesUrls = prepareCarouselImages();
@@ -48,4 +48,23 @@ const populateSingleImage = (images) => {
         });
         singleImageElement.appendChild(img)
     });
+}
+
+
+const prepareCarouselImages = () => {
+    const imagesContext = require.context('../../../assets/images/carousel-slideshow-images', false, /\.(png|jpe?g|gif|svg)$/);
+
+    const carouselImages = fetchAllImages(imagesContext);
+
+    const carouselImagesUrls = Array.isArray(carouselImages)
+        ? carouselImages
+        : Object.values(carouselImages).flat();
+
+    if (!carouselImagesUrls || carouselImagesUrls.length === 0) {
+        console.error("No images found for the carousel.");
+    }
+
+    loadImagesIntoCache(carouselImagesUrls);
+
+    return carouselImagesUrls;
 }

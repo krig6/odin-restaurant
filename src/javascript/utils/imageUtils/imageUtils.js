@@ -28,21 +28,3 @@ export function loadImagesIntoCache(imageURLs) {
     });
 }
 
-export const prepareCarouselImages = () => {
-    const imagesContext = require.context('../../../assets/images/carousel-slideshow-images', false, /\.(png|jpe?g|gif|svg)$/);
-
-    const carouselImages = fetchAllImages(imagesContext);
-
-    const carouselImagesUrls = Array.isArray(carouselImages)
-        ? carouselImages
-        : Object.values(carouselImages).flat();
-
-    if (!carouselImagesUrls || carouselImagesUrls.length === 0) {
-        console.error("No images found for the carousel.");
-    }
-
-    loadImagesIntoCache(carouselImagesUrls);
-
-    return carouselImagesUrls;
-}
-
