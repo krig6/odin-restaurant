@@ -27,3 +27,10 @@ export const createCarousel = () => {
     document.body.insertBefore(newCarouselElement, contentElement);
     console.log('Carousel created successfully.');
 };
+
+export const isCarouselPresent = () => {
+    const carouselElement = document.getElementById('hero-carousel');
+
+    return !!carouselElement;
+};
+

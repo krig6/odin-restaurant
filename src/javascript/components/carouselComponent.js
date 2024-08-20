@@ -4,8 +4,14 @@ import { initializeCarouselEventHandlers } from '../utils/carousel/carouselContr
 import { createCarousel } from '../utils/carousel/carouselManager';
 import { createCustomElement } from '../utils/domUtils/elementUtils';
 import { setupCarouselImages } from '../utils/carousel/carouselImageSetup';
+import { isCarouselPresent } from '../utils/carousel/carouselManager';
 
 export const initializeCarouselComponent = () => {
+    if (isCarouselPresent()) {
+        console.log('Carousel already present');
+
+        return;
+    }
     setupCarouselStructure();
     initializeCarouselEventHandlers();
     setupCarouselImages();
