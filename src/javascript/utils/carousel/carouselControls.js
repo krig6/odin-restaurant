@@ -1,4 +1,5 @@
 import { toggleMainNavColors } from '../navigation/mainNavAppearance'
+import { handlePageNavigation } from "../navigation/pageNavigation";
 
 export const initializeCarouselEventHandlers = () => {
     const carouselButtons = document.querySelectorAll('[data-carousel-btn]');
@@ -35,4 +36,18 @@ const removeCarouselButtonFocus = () => {
     carouselButtons.forEach(button => {
         button.blur();
     });
+}
+
+export const initializeLearnMoreButtonHandlers = () => {
+    const learnButtons = document.querySelectorAll('[data-learn-btn]');
+
+    learnButtons.forEach(button => {
+        button.addEventListener('click', handleLearnMoreClick)
+    })
+}
+
+const handleLearnMoreClick = (event) => {
+    const targetPage = event.currentTarget.getAttribute('data-action');
+    handlePageNavigation(targetPage);
+    history.pushState(null, null, `#${targetPage}`);
 }

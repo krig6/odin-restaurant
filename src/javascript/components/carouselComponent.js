@@ -5,6 +5,7 @@ import { createCarousel } from '../utils/carousel/carouselManager';
 import { createCustomElement } from '../utils/domUtils/elementUtils';
 import { setupCarouselImages } from '../utils/carousel/carouselImageSetup';
 import { isCarouselPresent } from '../utils/carousel/carouselManager';
+import { initializeLearnMoreButtonHandlers } from '../utils/carousel/carouselControls';
 
 export const initializeCarouselComponent = () => {
     if (isCarouselPresent()) {
@@ -14,6 +15,7 @@ export const initializeCarouselComponent = () => {
     }
     setupCarouselStructure();
     initializeCarouselEventHandlers();
+    initializeLearnMoreButtonHandlers();
     setupCarouselImages();
 }
 
@@ -40,7 +42,6 @@ const setupCarouselStructure = () => {
 
     const firstSlide = createSlide('image-gallery', 'slide', 'active');
     const secondSlide = createSlide('single-image', 'slide', 'inactive');
-
     slidesContainer.append(firstSlide, secondSlide);
     carouselElement.appendChild(slidesContainer);
 }
@@ -56,7 +57,7 @@ const createCarouselButton = (type, label) => {
     return button;
 }
 
-const createCtaSection = ({ id, description, buttonText, action, buttonClass }) => {
+const createCtaSection = ({ id, description, buttonText, action, btnClass }) => {
 
     const ctaSection = createCustomElement('div', {
         id: id,
@@ -66,13 +67,15 @@ const createCtaSection = ({ id, description, buttonText, action, buttonClass }) 
         text: description
     })
     const ctaButton = createCustomElement('button', {
-        classes: buttonClass,
+        classes: btnClass,
         text: buttonText,
-        dataset: { action: action }
+        dataset: {
+            action: action,
+            learnBtn: ''
+        }
     })
 
     ctaSection.append(ctaText, ctaButton)
-
     return ctaSection;
 }
 
