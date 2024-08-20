@@ -1,3 +1,4 @@
+import { renderHomePageContent } from "../../pages/homePage";
 import { smoothScrollToTop } from "./smoothScrollToTop";
 import { resetToDefaultNavColors, updateHeaderStickyState } from "./mainNavAppearance";
 
@@ -16,7 +17,7 @@ export const handlePageNavigation = (page) => {
             break;
         case 'home':
         default:
-            initializeHomePage();
+            renderHomePageContent();
             break;
     }
 
