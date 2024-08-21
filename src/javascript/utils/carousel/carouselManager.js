@@ -1,13 +1,18 @@
 import { createCustomElement } from "../domUtils/elementUtils";
 
 export const deleteCarousel = () => {
-    const carouselElement = document.getElementById('hero-carousel');
-    if (!carouselElement) {
-        console.error('Element with id "hero-carousel" not found.');
-        return;
+    if (isCarouselPresent()) {
+        const carouselElement = document.getElementById('hero-carousel');
+
+        if (carouselElement) {
+            carouselElement.remove();
+            console.log('Carousel deleted successfully.');
+        } else {
+            console.error('Carousel element not found in the document.');
+        }
+    } else {
+        console.log('No carousel to delete.');
     }
-    carouselElement.remove();
-    console.log('Carousel deleted successfully.');
 };
 
 export const createCarousel = () => {
