@@ -34,8 +34,6 @@ export const createCarousel = () => {
 };
 
 export const isCarouselPresent = () => {
-    const carouselElement = document.getElementById('hero-carousel');
-
-    return !!carouselElement;
+    return !!document.getElementById('hero-carousel');
 };
 
