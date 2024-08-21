@@ -1,13 +1,19 @@
 import { renderHomePageContent } from "../../pages/homePage";
+import { renderMenuPageContent } from "../../pages/menuPage";
 import { smoothScrollToTop } from "./smoothScrollToTop";
 import { resetToDefaultNavColors, updateHeaderStickyState } from "./mainNavAppearance";
 
 export const handlePageNavigation = (page) => {
+    if (isCurrentPage(page)) {
+        console.log(`Already on the ${page} page, no need to reload.`);
+        return;
+    };
+
     smoothScrollToTop();
 
     switch (page) {
         case 'menu':
-            initializeMenuPage();
+            renderMenuPageContent();
             break;
         case 'email':
             initializeContactPage();
@@ -41,3 +47,7 @@ const setPageHash = (page) => {
         location.hash = page;
     }
 };
+
+const isCurrentPage = (page) => {
+    return location.hash === `#${page}`
+}
