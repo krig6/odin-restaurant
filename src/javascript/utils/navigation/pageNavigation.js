@@ -10,27 +10,10 @@ export const handlePageNavigation = (page) => {
     };
 
     smoothScrollToTop();
-
-    switch (page) {
-        case 'menu':
-            renderMenuPageContent();
-            break;
-        case 'email':
-            initializeContactPage();
-            break;
-        case 'about':
-            initializeAboutPage();
-            break;
-        case 'home':
-        default:
-            renderHomePageContent();
-            break;
-    }
-
+    navigateToPage(page);
     resetToDefaultNavColors();
     updateHeaderStickyState(page);
     setPageHash(page);
-
     setActiveLink(page, '#site-header .nav-link');
     setActiveLink(page, '#site-footer .quick-link');
 };
@@ -51,3 +34,29 @@ const setPageHash = (page) => {
 const isCurrentPage = (page) => {
     return location.hash === `#${page}`
 }
+
+const navigateToPage = (page) => {
+    switch (page) {
+        case 'menu':
+            renderMenuPageContent();
+            break;
+        case 'email':
+            initializeContactPage();
+            break;
+        case 'about':
+            initializeAboutPage();
+            break;
+        case 'home':
+        default:
+            renderHomePageContent();
+            break;
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const initialPage = location.hash.substring(1) || 'home';
+    navigateToPage(initialPage);
+    setActiveLink(initialPage, '#site-header .nav-link');
+    setActiveLink(initialPage, '#site-footer .quick-link');
+    updateHeaderStickyState(initialPage);
+});
