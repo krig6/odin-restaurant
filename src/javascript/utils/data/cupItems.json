@@ -1,0 +1,86 @@
+[
+  {
+    "category": "cup",
+    "src": "americano-cup.png",
+    "alt": "Americano Coffee",
+    "description": "Bold and rich espresso with a smooth finish.",
+    "price": "₱180.00"
+  },
+  {
+    "category": "cup",
+    "src": "barako-cup.png",
+    "alt": "Barako Coffee",
+    "description": "Strong and robust, a true taste of local flavor.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "cup",
+    "src": "cappuccino-cup.png",
+    "alt": "Cappuccino Coffee",
+    "description": "Creamy cappuccino with a perfect balance of foam and espresso.",
+    "price": "₱210.00"
+  },
+  {
+    "category": "cup",
+    "src": "macchiato-cup.png",
+    "alt": "Macchiato Coffee",
+    "description": "A rich espresso marked with a hint of steamed milk.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "cup",
+    "src": "mintmocha-cup.png",
+    "alt": "Mint Mocha Coffee",
+    "description": "A refreshing combination of mint and rich chocolate coffee",
+    "price": "₱210.00"
+  },
+  {
+    "category": "cup",
+    "src": "choco-cup.png",
+    "alt": "Chocolate Coffee",
+    "description": "Rich coffee with a delightful chocolate twist.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "cup",
+    "src": "coffeelatte-cup.png",
+    "alt": "Coffee Latte",
+    "description": "Smooth latte with a velvety texture and strong coffee flavor.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "cup",
+    "src": "espresso-cup.png",
+    "alt": "Espresso",
+    "description": "Intense and concentrated, a pure shot of espresso. ",
+    "price": "₱170.00"
+  },
+  {
+    "category": "cup",
+    "src": "icedcafe-cup.png",
+    "alt": "Iced Cafe",
+    "description": "Refreshing iced coffee with a bold flavor, perfect for warm days.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "cup",
+    "src": "icedcappuccino-cup.png",
+    "alt": "Iced Cappuccino",
+    "description": "Chilled cappuccino with a frothy top, ideal for cooling off.",
+    "price": "₱210.00"
+  },
+  {
+    "category": "cup",
+    "src": "icedmacchiato-cup.png",
+    "alt": "Iced Macchiato",
+    "description": "A chilled espresso with a touch of milk and sweetness.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "cup",
+    "src": "icedmocha-cup.png",
+    "alt": "Iced Mocha",
+    "description": "Cold mocha with a perfect blend of chocolate and coffee.",
+    "price": "₱220.00"
+  }
+]

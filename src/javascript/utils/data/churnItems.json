@@ -1,0 +1,58 @@
+[
+  {
+    "category": "churn",
+    "src": "avocado-churn.png",
+    "alt": "Avocado Ice Cream",
+    "description": "Creamy avocado blended into a smooth, refreshing treat.",
+    "price": "₱220.00"
+  },
+  {
+    "category": "churn",
+    "src": "chocolate-churn.png",
+    "alt": "Chocolate Ice Cream",
+    "description": "Rich and decadent chocolate ice cream for the true chocoholic.",
+    "price": "₱180.00"
+  },
+  {
+    "category": "churn",
+    "src": "keso-churn.png",
+    "alt": "Keso Ice Cream",
+    "description": "A unique blend of cheese and cream, a Filipino favorite.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "churn",
+    "src": "mango-churn.png",
+    "alt": "Mango Ice Cream",
+    "description": "Sweet, ripe mangoes churned into a tropical delight.",
+    "price": "₱210.00"
+  },
+  {
+    "category": "churn",
+    "src": "mintchoco-churn.png",
+    "alt": "Mint Chocolate Ice Cream",
+    "description": "Cool mint ice cream with rich chocolate chunks.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "churn",
+    "src": "pistachio-churn.png",
+    "alt": "Pistachio Ice Cream",
+    "description": "Nutty and creamy pistachio flavor in every bite.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "churn",
+    "src": "strawberry-churn.png",
+    "alt": "Strawberry Ice Cream",
+    "description": "Fresh strawberries mixed into a smooth, fruity ice cream.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "churn",
+    "src": "vanilla-churn.png",
+    "alt": "Vanilla Ice Cream",
+    "description": "Classic and timeless vanilla ice cream, perfect on its own or with toppings.",
+    "price": "₱170.00"
+  }
+]

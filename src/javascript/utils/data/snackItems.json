@@ -1,0 +1,72 @@
+[
+  {
+    "category": "snack",
+    "src": "cheeseburger-snack.png",
+    "alt": "Cheeseburger",
+    "description": "Juicy cheeseburger with melted cheese and a savory beef patty, topped with fresh lettuce and tomato.",
+    "price": "₱250.00"
+  },
+  {
+    "category": "snack",
+    "src": "chicken-snack.png",
+    "alt": "Chicken Wrap",
+    "description": "Tender chicken wrapped in a soft tortilla with crisp veggies and a flavorful sauce.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "snack",
+    "src": "empanada-snack.png",
+    "alt": "Empanada",
+    "description": "Flaky pastry filled with a spiced meat mixture or savory vegetables.",
+    "price": "₱200.00"
+  },
+  {
+    "category": "snack",
+    "src": "falafel-snack.png",
+    "alt": "Falafel",
+    "description": "Crispy and flavorful chickpea patties, perfect for dipping in your favorite sauce.",
+    "price": "₱180.00"
+  },
+  {
+    "category": "snack",
+    "src": "fries-snack.png",
+    "alt": "Fries",
+    "description": "Golden, crispy fries served hot and seasoned to perfection.",
+    "price": "₱150.00"
+  },
+  {
+    "category": "snack",
+    "src": "hamsandwich-snack.png",
+    "alt": "Ham Sandwich",
+    "description": "Hearty sandwich with layers of ham, cheese, and fresh vegetables on your choice of bread.",
+    "price": "₱120.00"
+  },
+  {
+    "category": "snack",
+    "src": "hotdog-snack.png",
+    "alt": "Hotdog Sandwich",
+    "description": "Grilled hotdog served in a soft bun with classic toppings like mustard and ketchup.",
+    "price": "₱180.00"
+  },
+  {
+    "category": "snack",
+    "src": "nachos-snack.png",
+    "alt": "Nachos",
+    "description": "Crunchy tortilla chips topped with melted cheese, jalapeños, and a dollop of sour cream.",
+    "price": "₱230.00"
+  },
+  {
+    "category": "snack",
+    "src": "onionrings-snack.png",
+    "alt": "Onion Rings",
+    "description": "Crispy onion rings with a golden batter, perfect as a side or a snack.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "snack",
+    "src": "shawarma-snack.png",
+    "alt": "Shawarma",
+    "description": "Flavorful shawarma wrap filled with spiced meat, fresh veggies, and a creamy sauce.",
+    "price": "₱180.00"
+  }
+]
