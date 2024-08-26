@@ -34,3 +34,7 @@ body {
   margin: 0;
   position: relative;
 }
+
+main {
+  margin-bottom: 10rem;
+}
