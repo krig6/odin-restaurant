@@ -15,7 +15,9 @@ export const renderMenuItems = (items) => {
     })
 
     items.forEach(item => {
-        const article = createCustomElement('article');
+        const article = createCustomElement('article', {
+            classes: 'product-card'
+        });
         const img = createImageElement(item.src, {
             alt: item.alt
         });
@@ -30,13 +32,15 @@ export const renderMenuItems = (items) => {
         article.appendChild(productName);
 
         const desc = createCustomElement('p', {
-            text: item.description
+            text: item.description,
+            classes: 'product-desc'
         });
 
         article.appendChild(desc);
 
         const price = createCustomElement('span', {
-            text: item.price
+            text: item.price,
+            classes: 'product-price'
         });
         article.appendChild(price);
 
