@@ -53,10 +53,10 @@ const navigateToPage = (page) => {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+export const initializePage = () => {
     const initialPage = location.hash.substring(1) || 'home';
     navigateToPage(initialPage);
     setActiveLink(initialPage, '#site-header .nav-link');
     setActiveLink(initialPage, '#site-footer .quick-link');
     updateHeaderStickyState(initialPage);
-});
+};
