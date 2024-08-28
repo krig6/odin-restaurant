@@ -66,3 +66,31 @@ article img {
   height: 300px;
   text-align: center;
 }
+
+.product-name {
+  font-weight: 900;
+  font-family: "Noto Serif";
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.product-desc {
+  font-family: "Noto Serif";
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.product-price {
+  font-weight: 700;
+  font-family: "Noto Serif";
+  font-size: 1.3rem;
+  color: var(--accent-color);
+}
+
+.product-card {
+  margin-top: 5rem;
+  gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
