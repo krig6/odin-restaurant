@@ -5,7 +5,11 @@ const CATEGORY_LINKS = ['cup', 'crust', 'churn', 'snack']
 
 export const setupMenuHeader = () => {
     const contentElement = document.getElementById('main-content')
-    const header = createCustomElement('header', { classes: 'category-name' });
+    const header = createCustomElement('header', {
+        id: 'header',
+        classes: 'category-name',
+        dataset: { action: 'cup' }
+    });
     const nav = createCustomElement('nav', { classes: 'category-links' })
     const ul = createCustomElement('ul', { classes: 'category' });
 
