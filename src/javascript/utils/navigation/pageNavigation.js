@@ -18,7 +18,7 @@ export const handlePageNavigation = (page) => {
     setActiveLink(page, '#site-footer .quick-link');
 };
 
-const setActiveLink = (page, linkSelector) => {
+export const setActiveLink = (page, linkSelector) => {
     const links = document.querySelectorAll(linkSelector);
     links.forEach(link => {
         link.classList.toggle('active', link.getAttribute('data-action') === page);

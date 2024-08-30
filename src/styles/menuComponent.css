@@ -1,6 +1,10 @@
-article {
-  display: flex;
-  flex-direction: column;
+.category-name {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-block: 1.2rem;
+  box-shadow: inset 2px 2px 4px rgba(73, 68, 68, 0.1),
+    inset -2px -2px 4px rgba(244, 222, 203, 0.7);
+  background-color: var(--primary-color);
 }
 
 article img {
@@ -11,20 +15,6 @@ article img {
   display: flex;
   gap: 5rem;
   justify-content: center;
-}
-
-.menu-btn {
-  font-size: 2.5rem;
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--text-color);
-  transition: var(--transition-normal);
-  border-radius: 1rem;
-  padding: 0.5rem;
-}
-
-.menu-btn:hover {
-  background-color: var(--secondary-color);
 }
 
 .product-grid {
@@ -91,6 +81,27 @@ article img {
   margin-top: 5rem;
   gap: 0.8rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.menu-btn {
+  font-size: 1.7rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+  transition: var(--transition-normal);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.menu-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.menu-btn.active {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  transition: var(--transition-normal);
 }

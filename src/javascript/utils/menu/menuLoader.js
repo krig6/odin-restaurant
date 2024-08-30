@@ -1,6 +1,6 @@
 import { menuImages, menuData } from '../menu/menuData'
 import { renderMenuItems } from '../menu/menuRenderer';
-
+import { setActiveLink } from "../navigation/pageNavigation";
 
 export const initializeItems = (category) => {
     if (!menuData[category]) {
@@ -16,5 +16,6 @@ export const initializeItems = (category) => {
         };
     });
 
+    setActiveLink(category, '#header .menu-btn')
     renderMenuItems(categoryData);
 };
