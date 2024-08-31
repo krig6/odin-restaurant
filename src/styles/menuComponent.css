@@ -89,7 +89,9 @@ article img {
 }
 
 .menu-btn {
-  font-size: 1.7rem;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
   cursor: pointer;
   background-color: transparent;
   color: var(--text-color);
@@ -99,11 +101,11 @@ article img {
 }
 
 .menu-btn:hover {
-  background-color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
 .menu-btn.active {
   background-color: var(--text-color);
   color: var(--primary-color);
-  transition: var(--transition-normal);
+  transition: var(--transition-slow);
 }
