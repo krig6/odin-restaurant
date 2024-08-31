@@ -9,7 +9,7 @@
 }
 
 .featured-links-container .featured-link-card:nth-child(2) {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-light);
 }
 
 .featured-links-container .featured-link-card:nth-child(3) {

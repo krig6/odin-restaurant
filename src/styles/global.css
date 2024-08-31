@@ -14,7 +14,8 @@
   --primary-color: #f4decb;
   --secondary-color: #ebc49b;
   --background-color: #f3e6d7;
-  --accent-color: #925004;
+  --accent-color-light: #ecdfd0;
+  --accent-color-dark: #925004;
   --text-color: #494444;
 
   --transition-fast: 0.1s;
