@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
   outline: none;
@@ -21,20 +21,15 @@
   --transition-normal: 0.4s;
   --transition-slow: 1s;
 }
+
 html {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-size: 16px;
   height: 100%;
+  box-sizing: border-box;
 }
 
-html,
 body {
-  height: 100%;
   margin: 0;
   position: relative;
-}
-
-main {
-  margin-bottom: 10rem;
 }
