@@ -24,6 +24,7 @@ article img {
   gap: 5rem;
   animation: fade-in 0.75s ease 0.2s, hide 0.2s;
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -48,6 +49,7 @@ article img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10rem;
 }
 
 .product-grid article {
@@ -74,7 +76,7 @@ article img {
   font-weight: 700;
   font-family: "Noto Serif";
   font-size: 1.3rem;
-  color: var(--accent-color);
+  color: var(--accent-color-dark);
 }
 
 .product-card {
