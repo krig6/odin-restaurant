@@ -1,5 +1,6 @@
 import { renderHomePageContent } from "../../pages/homePage";
 import { renderMenuPageContent } from "../../pages/menuPage";
+import { renderAboutPageContent } from "../../components/aboutComponent";
 import { smoothScrollToTop } from "./smoothScrollToTop";
 import { resetToDefaultNavColors, updateHeaderStickyState } from "./mainNavAppearance";
 
@@ -44,7 +45,7 @@ const navigateToPage = (page) => {
             initializeContactPage();
             break;
         case 'about':
-            initializeAboutPage();
+            renderAboutPageContent();
             break;
         case 'home':
         default:

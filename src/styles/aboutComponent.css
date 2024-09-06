@@ -50,7 +50,7 @@
   border-top-left-radius: 3rem;
 }
 
-.about-section-description {
+.about-section-content {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
