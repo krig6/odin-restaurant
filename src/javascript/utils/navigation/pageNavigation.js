@@ -1,6 +1,6 @@
 import { renderHomePageContent } from "../../pages/homePage";
 import { renderMenuPageContent } from "../../pages/menuPage";
-import { renderAboutPageContent } from "../../components/aboutComponent";
+import { renderAboutPageContent } from "../../pages/aboutPage";
 import { smoothScrollToTop } from "./smoothScrollToTop";
 import { resetToDefaultNavColors, updateHeaderStickyState } from "./mainNavAppearance";
 
