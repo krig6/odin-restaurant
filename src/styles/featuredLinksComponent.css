@@ -1,7 +1,7 @@
 .featured-links-container {
   display: grid;
   grid-template-columns: 34% 32% 34%;
-  height: 450px;
+  height: 550px;
 }
 
 .featured-links-container .featured-link-card:nth-child(1) {
