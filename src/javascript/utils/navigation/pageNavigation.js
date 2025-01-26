@@ -1,6 +1,7 @@
 import { renderHomePageContent } from "../../pages/homePage";
 import { renderMenuPageContent } from "../../pages/menuPage";
 import { renderAboutPageContent } from "../../pages/aboutPage";
+import { renderEmailPageContent } from "../../pages/emailPage"
 import { smoothScrollToTop } from "./smoothScrollToTop";
 import { resetToDefaultNavColors, updateHeaderStickyState } from "./mainNavAppearance";
 
@@ -42,7 +43,7 @@ const navigateToPage = (page) => {
             renderMenuPageContent();
             break;
         case 'email':
-            initializeContactPage();
+            renderEmailPageContent();
             break;
         case 'about':
             renderAboutPageContent();
