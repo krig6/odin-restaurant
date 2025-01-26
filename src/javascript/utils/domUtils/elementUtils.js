@@ -1,4 +1,4 @@
-export const createCustomElement = (tag, { id = '', classes = '', text = '', html = '', dataset = {} } = {}) => {
+export const createCustomElement = (tag, { id = '', classes = '', text = '', html = '', htmlFor = '', dataset = {} } = {}) => {
     const element = document.createElement(tag);
     if (id) element.id = id;
     if (classes) element.className = classes;
@@ -8,6 +8,9 @@ export const createCustomElement = (tag, { id = '', classes = '', text = '', htm
         element.textContent = text;
     }
 
+    if (tag === 'label') {
+        element.setAttribute('for', htmlFor);
+    }
     for (const key in dataset) {
         element.dataset[key] = dataset[key];
     }
