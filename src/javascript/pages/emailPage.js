@@ -1,7 +1,7 @@
-
+import "../../styles/contactComponent.css"
 import { deleteCarousel } from "../utils/carousel/carouselManager";
 import { clearMainContent } from "../utils/domUtils/mainContentUtils";
-import { initializeContactFormSection } from "../utils/contact/contactForm";
+import { initializeContactFormSection } from "../components/contactComponent";
 
 export const renderEmailPageContent = () => {
     deleteCarousel();
