@@ -1,4 +1,4 @@
-import { createCustomElement } from "../domUtils/elementUtils"
+import { createCustomElement } from "../utils/domUtils/elementUtils";
 
 export const initializeContactFormSection = () => {
     const contentElement = document.getElementById('main-content');
@@ -51,13 +51,16 @@ const createContactFormSection = () => {
     })
 
     const formFields = [
-        { label: 'First Name', id: 'first-name', type: 'input', class: 'input-first-name' },
-        { label: 'Last Name', id: 'last-name', type: 'input', class: 'input-last-name' },
-        { label: 'Email', id: 'email-address', type: 'input', class: 'input-email' },
+        { label: 'First name *', id: 'first-name', type: 'input', class: 'input-first-name' },
+        { label: 'Last name', id: 'last-name', type: 'input', class: 'input-last-name' },
+        { label: 'Email *', id: 'email-address', type: 'input', class: 'input-email' },
         { label: 'What can we help you with?', id: 'inquiry-input', type: 'textarea', class: 'inquiry-input' }
     ]
 
     formFields.forEach(field => {
+        const fieldContainer = createCustomElement('div', {
+            classes: 'field-container'
+        })
         const labelElement = createCustomElement('label', {
             htmlFor: field.id,
             text: field.label,
@@ -68,7 +71,9 @@ const createContactFormSection = () => {
             id: field.id
         })
 
-        formContainer.append(labelElement, inputElement)
+
+        fieldContainer.append(labelElement, inputElement)
+        formContainer.appendChild(fieldContainer)
     })
 
     return formContainer
