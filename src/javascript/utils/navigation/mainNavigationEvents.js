@@ -1,11 +1,22 @@
 import { handlePageNavigation } from "./pageNavigation";
 
-export const initializeMainNavEventHandlers = () => {
+export const initializeNavEventHandlers = () => {
     const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
-    headerNavLinks.forEach(link => {
-        link.addEventListener('click', handleNavLinkClick);
-    });
-};
+    const featuredNavlinks = document.querySelectorAll('.featured-link-card');
+
+    if (headerNavLinks) {
+        headerNavLinks.forEach(link => {
+            link.addEventListener('click', handleNavLinkClick);
+        });
+    }
+
+    if (featuredNavlinks) {
+        featuredNavlinks.forEach(link => {
+            link.addEventListener('click', handleNavLinkClick)
+        })
+    }
+
+}
 
 const handleNavLinkClick = (event) => {
     event.preventDefault();

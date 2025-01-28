@@ -1,6 +1,6 @@
 import '../../styles/mainNavigation.css'
 import { createCustomElement } from "../utils/domUtils/elementUtils";
-import { initializeMainNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
 
@@ -15,7 +15,7 @@ export const initializeMainNavigation = () => {
     const navigationMenu = createNavigationMenu();
     headerElement.appendChild(navigationMenu);
 
-    initializeMainNavEventHandlers();
+    initializeNavEventHandlers();
 };
 
 const createNavigationMenu = () => {

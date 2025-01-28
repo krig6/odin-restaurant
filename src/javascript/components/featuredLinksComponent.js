@@ -1,6 +1,7 @@
 import '../../styles/featuredLinksComponent.css';
 import { createCustomElement, createImageElement } from '../utils/domUtils/elementUtils';
 import { fetchAllImages, loadImagesIntoCache } from '../utils/imageUtils/imageUtils'
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
 
 const featuredImages = fetchAllImages(require.context('../../assets/images/featured-links-images', false, /\.(png|jpe?g|gif|svg)$/));
 
@@ -47,7 +48,7 @@ export const initializeFeaturedLinks = () => {
     featuredLinksSection.appendChild(fragment);
 
     contentElement.appendChild(featuredLinksSection);
-
+    initializeNavEventHandlers()
 }
 
 const createFeaturedLinkCard = ({ imageSrc, heading, description, altText, targetPage }) => {
