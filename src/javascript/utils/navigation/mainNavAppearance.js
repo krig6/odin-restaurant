@@ -6,14 +6,14 @@ export const toggleMainNavColors = () => {
 }
 
 export const resetToDefaultNavColors = () => {
-    const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
+    const headerNavLinks = document.querySelectorAll('#site-header .nav-link'); ``
     headerNavLinks.forEach(link => {
         link.classList.remove('change-color');
     });
 }
 
 export const updateHeaderStickyState = (page) => {
-    const shouldStick = page === 'menu' || page === 'email';
+    const shouldStick = page === 'menu' || page === 'email' || page === 'about';
     setHeaderSticky(shouldStick);
 }
 
