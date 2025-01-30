@@ -12,6 +12,15 @@ export const setupAboutMainImage = () => {
         return;
     }
 
+    const introBanner = createCustomElement('div', {
+        classes: 'intro-banner'
+    })
+
+    const introText = createCustomElement('p', {
+        classes: 'intro-text',
+        text: 'Brewing More Than Coffee, Creating Connections'
+    })
+
     const aboutMainContainer = createCustomElement('section', {
         classes: 'about-main-container'
     })
@@ -26,7 +35,8 @@ export const setupAboutMainImage = () => {
 
     imageWrapper.appendChild(image)
     aboutMainContainer.appendChild(imageWrapper)
-    contentElement.appendChild(aboutMainContainer)
+    introBanner.appendChild(introText)
+    contentElement.append(introBanner, aboutMainContainer)
 }
 
 export const populateAboutPageSections = () => {
