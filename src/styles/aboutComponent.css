@@ -81,3 +81,24 @@
   box-shadow: inset 2px 2px 4px rgba(73, 68, 68, 0.1),
     inset -2px -2px 4px rgba(244, 222, 203, 0.7);
 }
+.intro-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text {
+  background-color: rgb(250, 243, 243);
+  width: 99%;
+  color: var(--accent-color-dark);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 1rem;
+  letter-spacing: 0.5rem;
+}
