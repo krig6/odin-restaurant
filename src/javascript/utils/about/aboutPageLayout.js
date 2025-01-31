@@ -1,6 +1,6 @@
 import { createCustomElement, createImageElement } from "../domUtils/elementUtils";
 import aboutSections from '../../data/aboutPageContent.json'
-import aboutMainImage from '../../../assets/images/about-page-images/about-image.jpg'
+import aboutMainImage from '../../../assets/images/carousel-slideshow-images/secondary-image.jpg'
 import { fetchAllImages } from "../imageUtils/imageUtils";
 const fetchSegmentImages = fetchAllImages(require.context('../../../assets/images/about-page-images/', false, /\.(png|jpe?g|gif|svg)$/))
 
