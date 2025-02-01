@@ -67,27 +67,31 @@ export const populateAboutPageSections = () => {
             text: heading
         })
 
-        const aboutSectionContent = createCustomElement('div', {
-            classes: `${id}-content about-section-content`
+        const aboutImageContainer = createCustomElement('div', {
+            classes: `image-container`
         })
 
         const aboutSectionImage = createImageElement(fetchSegmentImages[image], {
             classes: `${id}-image about-section-image`
         })
 
+
+        aboutSectionText.appendChild(aboutSectionTitle)
+
         if (content && content.length > 0) {
             content.forEach(para => {
                 Object.keys(para).forEach(paragraphKey => {
                     const paragraphElement = createCustomElement('p', {
-                        text: para[paragraphKey]
+                        text: para[paragraphKey],
                     })
-                    aboutSectionContent.appendChild(paragraphElement)
+                    aboutSectionText.appendChild(paragraphElement)
                 })
             })
         }
 
-        aboutSectionText.append(aboutSectionTitle, aboutSectionContent);
-        aboutSection.append(aboutSectionText, aboutSectionImage);
+
+        aboutImageContainer.appendChild(aboutSectionImage)
+        aboutSection.append(aboutSectionText, aboutImageContainer);
         aboutSectionWrapper.appendChild(aboutSection)
         contentElement.appendChild(aboutSectionWrapper)
     })
