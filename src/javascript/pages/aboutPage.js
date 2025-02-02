@@ -1,11 +1,12 @@
 import '../../styles/aboutComponent.css'
 import { deleteCarousel } from "../utils/carousel/carouselManager"
 import { clearMainContent } from "../utils/domUtils/mainContentUtils";
-import { setupAboutMainImage, populateAboutPageSections } from "../utils/about/aboutPageLayout";
+import { renderMainAboutImage, populateAboutSections, renderMessageSection } from "../components/aboutComponent";
 
 export const renderAboutPageContent = () => {
     deleteCarousel();
     clearMainContent();
-    setupAboutMainImage()
-    populateAboutPageSections()
+    renderMainAboutImage()
+    populateAboutSections()
+    renderMessageSection();
 }
