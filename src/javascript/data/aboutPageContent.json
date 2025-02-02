@@ -1,8 +1,8 @@
 [
   {
-    "id": "welcome",
-    "heading": "Welcome to Cup and Crust",
-    "image": "welcome-image.jpg",
+    "id": "story",
+    "heading": "Where Flavor Meets Comfort",
+    "image": "coffee-and-light.jpg",
     "content": [
       {
         "intro": "At Cup and Crust, we believe every cup of coffee, bite of pastry, and scoop of ice cream tells a unique story. Our mission is to offer a warm, inviting space where friends and family can enjoy life’s simple pleasures. From the first sip of freshly brewed coffee to the comfort of a warm pastry or the joy of a creamy scoop of ice cream, we aim to make every visit memorable.",
@@ -11,35 +11,13 @@
     ]
   },
   {
-    "id": "passion",
-    "heading": "Our Passion",
-    "image": "passion-image.jpg",
+    "id": "craftmanship",
+    "heading": "Crafted Fresh, Served Perfect",
+    "image": "coffee-and-bread.jpg",
     "content": [
       {
         "intro": "What began as a simple affection for coffee has grown into a profound passion for crafting and serving a diverse array of handcrafted delicacies. At Cup and Crust, we take great pride in curating a menu that reflects our commitment to quality and artistry.",
         "details": "Our offerings encompass a wide range of meticulously prepared brews, delectable bakes, and exquisite churns, each made fresh daily with the finest ingredients. We carefully source premium ingredients to ensure that each bite and sip you experience is a true celebration of flavor and craftsmanship."
-      }
-    ]
-  },
-  {
-    "id": "commitment",
-    "heading": "Our Commitment",
-    "image": "commitment-image.jpg",
-    "content": [
-      {
-        "intro": "Our commitment extends beyond serving food and drinks; we strive to create a welcoming environment where every guest feels like part of our family. From our friendly staff to the meticulous attention to detail in every dish, we aim to ensure that each visit is more than just a meal—it’s a genuine experience.",
-        "details": "We look forward to sharing our passion with you and making every moment at Cup and Crust delightful. Your satisfaction is our priority, and we are excited to provide an experience that reflects our dedication to both quality and warmth."
-      }
-    ]
-  },
-  {
-    "id": "community",
-    "heading": "Community and Events",
-    "image": "community-image.jpg",
-    "content": [
-      {
-        "intro": "We believe in giving back to the community that supports us. We regularly host local events, such as coffee tastings and bake-offs, and partner with local artisans to showcase their crafts.",
-        "details": "Our commitment extends beyond our walls as we support various community initiatives and charities. We invite you to join us in making a positive impact and to be part of our journey in creating a vibrant, connected community."
       }
     ]
   }
