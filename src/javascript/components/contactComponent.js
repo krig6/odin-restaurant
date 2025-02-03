@@ -31,12 +31,12 @@ const createContactInfoSection = () => {
 
     const titleElement = createCustomElement('h2', {
         classes: 'contact-title',
-        text: 'Contact Us'
+        text: 'Questions? Lets get it brewing!'
     })
 
     const descriptionElement = createCustomElement('p', {
         classes: 'contact-description',
-        text: 'Need to get in touch with us? Fill out the form with your inquiry.'
+        text: 'Need to get in touch with us? Reach out to us and let’s stir things up—whether it’s coffee, cakes, or something else brewing in your mind!'
     })
 
     infoSectionContainer.append(titleElement, descriptionElement);
