@@ -22,20 +22,6 @@
   },
   {
     "category": "cup",
-    "src": "macchiato-cup.png",
-    "alt": "Macchiato Coffee",
-    "description": "A rich espresso marked with a hint of steamed milk.",
-    "price": "₱190.00"
-  },
-  {
-    "category": "cup",
-    "src": "mintmocha-cup.png",
-    "alt": "Mint Mocha Coffee",
-    "description": "A refreshing combination of mint and rich chocolate coffee",
-    "price": "₱210.00"
-  },
-  {
-    "category": "cup",
     "src": "choco-cup.png",
     "alt": "Chocolate Coffee",
     "description": "Rich coffee with a delightful chocolate twist.",
@@ -52,8 +38,22 @@
     "category": "cup",
     "src": "espresso-cup.png",
     "alt": "Espresso",
-    "description": "Intense and concentrated, a pure shot of espresso. ",
+    "description": "Intense and concentrated, a pure shot of espresso.",
     "price": "₱170.00"
+  },
+  {
+    "category": "cup",
+    "src": "macchiato-cup.png",
+    "alt": "Macchiato Coffee",
+    "description": "A rich espresso marked with a hint of steamed milk.",
+    "price": "₱190.00"
+  },
+  {
+    "category": "cup",
+    "src": "mintmocha-cup.png",
+    "alt": "Mint Mocha Coffee",
+    "description": "A refreshing combination of mint and rich chocolate coffee.",
+    "price": "₱210.00"
   },
   {
     "category": "cup",

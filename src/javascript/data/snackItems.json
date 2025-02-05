@@ -3,7 +3,7 @@
     "category": "snack",
     "src": "cheeseburger-snack.png",
     "alt": "Cheeseburger",
-    "description": "Juicy cheeseburger with melted cheese and a savory beef patty, topped with fresh lettuce and tomato.",
+    "description": "Juicy cheeseburger with melted cheese, a savory beef patty, fresh lettuce, and tomato.",
     "price": "₱250.00"
   },
   {
@@ -38,7 +38,7 @@
     "category": "snack",
     "src": "hamsandwich-snack.png",
     "alt": "Ham Sandwich",
-    "description": "Hearty sandwich with layers of ham, cheese, and fresh vegetables on your choice of bread.",
+    "description": "A tasty sandwich with ham, cheese, and fresh veggies on your choice of bread.",
     "price": "₱120.00"
   },
   {
@@ -52,7 +52,7 @@
     "category": "snack",
     "src": "nachos-snack.png",
     "alt": "Nachos",
-    "description": "Crunchy tortilla chips topped with melted cheese, jalapeños, and a dollop of sour cream.",
+    "description": "Crispy tortilla chips with melted cheese, jalapeños, and sour cream.",
     "price": "₱230.00"
   },
   {
@@ -63,10 +63,17 @@
     "price": "₱190.00"
   },
   {
+    "category": "crust",
+    "src": "pizza-snack.png",
+    "alt": "Pizza",
+    "description": "Crispy pizza with a variety of toppings and melted cheese.",
+    "price": "₱250.00"
+  },
+  {
     "category": "snack",
     "src": "shawarma-snack.png",
     "alt": "Shawarma",
-    "description": "Flavorful shawarma wrap filled with spiced meat, fresh veggies, and a creamy sauce.",
+    "description": "Spiced meat, fresh veggies, and creamy sauce wrapped in a savory shawarma.",
     "price": "₱180.00"
   }
 ]

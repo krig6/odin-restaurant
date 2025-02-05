@@ -3,7 +3,7 @@
     "category": "crust",
     "src": "brownies-crust.png",
     "alt": "Brownies",
-    "description": "Rich, fudgy brownies with a moist center and a hint of chocolate. ",
+    "description": "Rich, fudgy brownies with a moist center and a hint of chocolate.",
     "price": "₱180.00"
   },
   {
@@ -54,13 +54,6 @@
     "alt": "Pancake",
     "description": "Fluffy pancakes stacked high, served with syrup and butter.",
     "price": "₱200.00"
-  },
-  {
-    "category": "crust",
-    "src": "pizza-crust.png",
-    "alt": "Pizza",
-    "description": "Crispy pizza with a variety of toppings and melted cheese.",
-    "price": "₱250.00"
   },
   {
     "category": "crust",
