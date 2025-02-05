@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 34% 32% 34%;
   height: 550px;
+  font-family: "Noto Serif", sans-serif;
 }
 
 .featured-links-container .featured-link-card:nth-child(1) {
@@ -54,10 +55,8 @@
   cursor: pointer;
   position: relative;
   align-self: center;
-  font-size: 1.125rem;
   letter-spacing: 0.5rem;
-  font-family: "Noto Serif", sans-serif;
-  font-weight: 700;
+  font: var(--font-title);
 }
 
 .featured-links-container figcaption::after {
@@ -81,10 +80,10 @@
 }
 
 .featured-link-description {
-  font-size: 0.85rem;
   letter-spacing: 0.1rem;
   line-height: 1.3rem;
   width: 45ch;
+  font: var(--font-body);
 }
 
 img {

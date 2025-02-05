@@ -18,6 +18,15 @@
   --accent-color-dark: #925004;
   --text-color: #494444;
 
+  --font-nav: 800 2rem "Noto Serif", sans-serif; /* navigation text */
+  --font-cta: 900 4rem "Noto Serif", sans-serif; /* call-to-action text */
+  --font-button: 800 1rem "Noto Serif", sans-serif; /* button text */
+  --font-title: 500 1rem "Noto Serif", sans-serif; /* section titles and form labels */
+  --font-body: 400 0.75rem "Noto Serif", sans-serif; /* body text and paragraphs */
+  --font-heading: 700 1.5rem "Noto Serif", sans-serif; /* larger section headings */
+  --font-subheading: 600 1.125rem "Noto Serif", sans-serif; /* subheadings and item names */
+  --font-small: 400 0.9rem "Noto Serif", sans-serif; /* small text like descriptions and pricing */
+
   --transition-fast: 0.1s;
   --transition-normal: 0.4s;
   --transition-slow: 1s;
@@ -33,4 +42,11 @@ html {
 body {
   margin: 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main-content {
+  flex: 1;
 }

@@ -13,16 +13,16 @@
 }
 
 .intro-text {
-  background-color: rgb(250, 243, 243);
+  background-color: var(--accent-color-light);
   width: 99%;
   color: var(--accent-color-dark);
-  font-size: 2rem;
+  font: var(--font-heading);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
   padding: 1rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
 }
 
 .about-main-image,
@@ -59,9 +59,10 @@
 }
 
 .about-section-title {
-  font-size: 2rem;
+  font: var(--font-heading);
+
   text-decoration: underline;
-  text-underline-offset: 1.2rem;
+  text-underline-offset: 2rem;
   margin-bottom: 3rem;
   margin-top: 2rem;
 }
@@ -69,7 +70,7 @@
 .about-section:nth-child(1) .about-section-text {
   background-color: var(--text-color);
   color: var(--primary-color);
-  font-size: 1.1rem;
+  font: var(--font-small);
   line-height: 2.5rem;
   padding: 2rem;
   width: 50%;
@@ -79,7 +80,8 @@
 .about-section:nth-child(2) .about-section-text {
   background-color: var(--accent-color-dark);
   color: var(--accent-color-light);
-  font-size: 1.1rem;
+  font: var(--font-small);
+
   line-height: 2.5rem;
   padding: 2rem;
   width: 50%;
@@ -109,15 +111,17 @@
 }
 
 .message-title {
-  font-size: 2rem;
+  font: var(--font-heading);
+
   text-decoration: underline;
-  text-underline-offset: 1.2rem;
-  margin-bottom: 2rem;
+  text-underline-offset: 2rem;
+  margin-bottom: 3rem;
 }
 
 .message-text {
-  font-size: 1.1rem;
-  letter-spacing: 0.2rem;
-  line-height: 2rem;
+  letter-spacing: 0.15rem;
   text-align: center;
+  font: var(--font-small);
+
+  line-height: 2.5rem;
 }

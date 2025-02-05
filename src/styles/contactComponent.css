@@ -15,7 +15,7 @@
   max-width: 100%;
   padding: 2rem;
   color: var(--accent-color-dark);
-  font: var(--card-heading-font);
+  font: var(--font-title);
 }
 
 #contact-form > .field-container:nth-child(1) {
@@ -41,7 +41,7 @@ textarea {
   background-color: var(--accent-color-light);
   box-shadow: inset 1px 1px 1px var(--accent-color-dark);
   color: var(--accent-color-dark);
-  font: var(--product-desc-price-font);
+  font: var(--font-small);
 }
 
 textarea {
@@ -70,11 +70,12 @@ label {
 }
 
 .contact-title {
-  font: var(--menu-button-font);
+  font: var(--font-heading);
 }
 
 .contact-description {
-  font: var(--card-heading-font);
+  font: var(--font-title);
+
   width: 60ch;
   text-align: center;
   letter-spacing: 0.15rem;
