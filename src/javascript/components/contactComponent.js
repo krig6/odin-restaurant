@@ -1,4 +1,5 @@
 import { createCustomElement } from "../utils/domUtils/elementUtils";
+import { createSocialMediaSection } from "./footerComponent";
 
 export const initializeContactFormSection = () => {
     const contentElement = document.getElementById('main-content');
@@ -29,6 +30,12 @@ const createContactInfoSection = () => {
         classes: 'contact-info-section'
     })
 
+
+    const socialMediaIcons = createSocialMediaSection();
+    const socialMediaIconContainer = createCustomElement('div', {
+        classes: 'email-social-media-icons'
+    })
+
     const titleElement = createCustomElement('h2', {
         classes: 'contact-title',
         text: 'Questions? Lets get it brewing!'
@@ -39,7 +46,8 @@ const createContactInfoSection = () => {
         text: 'Need to get in touch with us? Reach out to us and let’s stir things up—whether it’s coffee, cakes, or something else brewing in your mind!'
     })
 
-    infoSectionContainer.append(titleElement, descriptionElement);
+    socialMediaIconContainer.appendChild(socialMediaIcons)
+    infoSectionContainer.append(titleElement, descriptionElement, socialMediaIconContainer);
 
     return infoSectionContainer;
 }

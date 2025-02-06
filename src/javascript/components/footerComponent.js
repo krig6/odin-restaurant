@@ -86,9 +86,9 @@ const createQuickLinkItem = (linkText) => {
     return listItemElement;
 };
 
-const createSocialMediaSection = () => {
+export const createSocialMediaSection = () => {
     const socialMediaSection = createCustomElement('div', {
-        classes: 'footer-social-media-section footer-content',
+        classes: 'social-media-section social-media-content',
     });
 
     const socialMediaHeading = createCustomElement('h3', {
@@ -99,7 +99,7 @@ const createSocialMediaSection = () => {
     });
     const socialMediaList = document.createElement('ul');
 
-    const SOCIAL_MEDIA_ICONS = ['bxl-facebook', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
+    const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
 
     const socialMediaFragment = document.createDocumentFragment();
     SOCIAL_MEDIA_ICONS.forEach(iconClass => socialMediaFragment.appendChild(createSocialMediaItem(iconClass)));
