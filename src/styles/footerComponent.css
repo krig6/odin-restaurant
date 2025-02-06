@@ -16,6 +16,7 @@
   margin-block: 10px;
 }
 
+.footer-content-container > .social-media-content,
 .footer-content {
   flex: 1;
   min-width: 200px;

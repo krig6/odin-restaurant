@@ -75,9 +75,20 @@ label {
 
 .contact-description {
   font: var(--font-title);
-
   width: 60ch;
   text-align: center;
   letter-spacing: 0.15rem;
   line-height: 2rem;
+}
+
+.email-social-media-icons ul {
+  margin-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  font-size: 2rem;
+}
+
+.email-social-media-icons h3 {
+  font: var(--font-subheading);
+  justify-self: center;
 }
