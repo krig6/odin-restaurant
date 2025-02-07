@@ -30,7 +30,7 @@ module.exports = {
             filename: 'index.html',
             template: 'src/template.html',
             title: 'Cup and Crust',
-            favicon: 'src/assets/images/croissant.png'
+            favicon: 'src/assets/images/favicon/cup-of-coffee.png'
         }),
     ],
 }
