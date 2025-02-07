@@ -1,5 +1,6 @@
 import '../../styles/footerComponent.css';
 import { createCustomElement } from "../utils/domUtils/elementUtils";
+import { createSocialMediaSection } from './socialMediaSection';
 
 export const initializeFooterComponent = () => {
 
@@ -11,7 +12,7 @@ export const initializeFooterComponent = () => {
     }
 
     const footerSection = createFooterSection();
-    const footerItem = createFooterItem();
+    const footerItem = createCopyrightElement();
     footerElement.append(footerSection, footerItem);
 };
 
@@ -29,14 +30,14 @@ const createFooterSection = () => {
 
 const createAboutSection = () => {
     const aboutSection = createCustomElement('div', {
-        classes: 'footer-about-section footer-content',
+        classes: 'footer-about-section',
     });
 
     const brandNameElement = createCustomElement('h3', {
-        text: 'Cup and Crust',
+        text: 'CUP AND CRUST',
     });
     const brandSloganElement = createCustomElement('p', {
-        text: 'Brews and Bakes in Harmony. Visit us for a delightful experience.',
+        text: 'Brews and Bakes in Harmony',
     });
 
     aboutSection.append(brandNameElement, brandSloganElement);
@@ -47,26 +48,23 @@ const createAboutSection = () => {
 const createQuickLinksSection = () => {
     const QUICK_LINKS = ['Home', 'Menu', 'Email', 'About'];
 
-    const quickLinksSection = createCustomElement('div', {
-        classes: 'footer-quick-links-section footer-content',
+    const quickLinskNav = createCustomElement('nav', {
+        classes: 'quick-link-nav',
     });
     const quickLinksHeading = createCustomElement('h3', {
-        text: 'Quick Links',
+        text: 'EXPLORE',
     });
     const quickLinksList = createCustomElement('ul', {
         classes: 'quick-links-list',
     });
 
-    const quickLinksFragment = document.createDocumentFragment();
-
     QUICK_LINKS.forEach(link => {
-        quickLinksFragment.appendChild(createQuickLinkItem(link));
+        const quickLinkItem = createQuickLinkItem(link);
+        quickLinksList.appendChild(quickLinkItem);
+        quickLinskNav.append(quickLinksHeading, quickLinksList);
     });
-    quickLinksList.appendChild(quickLinksFragment);
 
-    quickLinksSection.append(quickLinksHeading, quickLinksList);
-
-    return quickLinksSection;
+    return quickLinskNav;
 };
 
 const createQuickLinkItem = (linkText) => {
@@ -76,7 +74,7 @@ const createQuickLinkItem = (linkText) => {
 
     const linkElement = createCustomElement('a', {
         classes: 'quick-link',
-        text: linkText.toUpperCase(),
+        text: linkText,
         href: `#${linkText.toLowerCase()}`,
         dataset: { action: linkText.toLowerCase() },
     });
@@ -86,53 +84,33 @@ const createQuickLinkItem = (linkText) => {
     return listItemElement;
 };
 
-export const createSocialMediaSection = () => {
-    const socialMediaSection = createCustomElement('div', {
-        classes: 'social-media-section social-media-content',
+
+const createCopyrightElement = () => {
+    const currentYear = new Date().getFullYear();
+
+
+    const githubLink = createCustomElement('a', {
+        dataset: {
+            href: 'https://github.com/krig6',
+            target: '_blank',
+            rel: 'noopener noreferrer'
+        }
     });
 
-    const socialMediaHeading = createCustomElement('h3', {
-        text: 'Follow Us',
-    });
-    const socialMediaIconsContainer = createCustomElement('div', {
-        classes: 'social-media-icons-container',
-    });
-    const socialMediaList = document.createElement('ul');
+    const githubIcon = createCustomElement('i', {
+        classes: 'bx bxl-github'
+    })
 
-    const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
-
-    const socialMediaFragment = document.createDocumentFragment();
-    SOCIAL_MEDIA_ICONS.forEach(iconClass => socialMediaFragment.appendChild(createSocialMediaItem(iconClass)));
-    socialMediaList.appendChild(socialMediaFragment);
-    socialMediaIconsContainer.appendChild(socialMediaList);
-    socialMediaSection.append(socialMediaHeading, socialMediaIconsContainer);
-
-    return socialMediaSection;
-};
-
-const createSocialMediaItem = (iconClass) => {
-    const listItemElement = createCustomElement('li', {
-        classes: 'social-media-item',
-    });
-    const linkElement = createCustomElement('a');
-    const iconElement = createCustomElement('i', {
-        classes: `bx ${iconClass}`,
-    });
-
-    linkElement.appendChild(iconElement);
-    listItemElement.appendChild(linkElement);
-
-    return listItemElement;
-};
-
-const createFooterItem = () => {
     const footerItemContainer = createCustomElement('div', {
-        classes: 'footer-item',
-    });
-    const copyrightText = createCustomElement('p', {
-        text: '\u00A9 2024 Cup and Crust. All rights reserved.',
+        classes: 'copyright-element',
     });
 
+    const copyrightText = createCustomElement('p', {
+        text: `© ${currentYear} Cup and Crust | Design and built by ej`
+    })
+
+    githubLink.appendChild(githubIcon);
+    copyrightText.appendChild(githubLink)
     footerItemContainer.appendChild(copyrightText);
 
     return footerItemContainer;
