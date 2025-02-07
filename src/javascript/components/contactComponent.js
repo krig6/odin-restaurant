@@ -1,5 +1,5 @@
 import { createCustomElement } from "../utils/domUtils/elementUtils";
-import { createSocialMediaSection } from "./footerComponent";
+import { createSocialMediaSection } from "./socialMediaSection";
 
 export const initializeContactFormSection = () => {
     const contentElement = document.getElementById('main-content');
