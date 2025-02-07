@@ -12,7 +12,11 @@ export const createCustomElement = (tag, { id = '', classes = '', text = '', htm
         element.setAttribute('for', htmlFor);
     }
     for (const key in dataset) {
-        element.dataset[key] = dataset[key];
+        if (key === 'href' || key === 'target' || key === 'rel') {
+            element.setAttribute(key, dataset[key]);
+        } else {
+            element.dataset[key] = dataset[key];
+        }
     }
 
     return element;
