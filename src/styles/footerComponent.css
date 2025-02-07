@@ -1,8 +1,8 @@
 .footer {
   background-color: var(--text-color);
-  color: #ffffff;
+  color: var(--primary-color);
   text-align: center;
-  font-family: Arial, sans-serif;
+  padding: 1rem;
 }
 
 .footer a {
@@ -10,59 +10,77 @@
 }
 
 .footer-content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem;
+}
+
+.footer-content-container::before {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-block: 10px;
+  justify-content: center;
+  justify-self: center;
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 1px;
+  bottom: 65px;
+  background-color: var(--primary-color);
 }
 
-.footer-content-container > .social-media-content,
-.footer-content {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px 20px;
+.footer-content-container h3 {
+  font: var(--font-subheading);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3rem;
 }
 
-.footer-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.footer-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+.footer .bx {
+  font-size: 1.2rem;
 }
 
-.footer-content ul {
-  list-style-type: none;
-  padding: 0;
+.footer-about-section p,
+.footer a {
+  letter-spacing: 0.2rem;
+  font: var(--font-title);
+  font-weight: 300;
 }
 
-.footer-content ul li {
-  margin-bottom: 10px;
+.footer-about-section p {
+  width: 35ch;
+  justify-self: center;
 }
 
-.footer-content ul li a {
-  color: #ffffff;
-  text-decoration: none;
+.copyright-element {
+  flex-direction: row;
+  font: var(--font-small);
+  letter-spacing: 0.1rem;
+  justify-self: center;
 }
 
-.footer-content ul li a:hover {
+.copyright-element p {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.copyright-element .bx {
+  font: var(--font-heading);
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.quick-link-nav ul li a:hover {
   text-decoration: underline;
 }
 
-.social-media-item a:hover,
-.quick-links-list a:hover {
+.social-media-icons-container a:hover,
+.quick-link-nav ul li a:hover {
   color: var(--secondary-color);
-}
-
-.footer-item {
-  background-color: #1a1a1a;
-  padding: 5px;
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
-.footer-item p {
-  margin: 0;
 }
