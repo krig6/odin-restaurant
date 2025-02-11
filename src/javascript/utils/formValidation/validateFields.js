@@ -19,7 +19,7 @@ export const initializeFormValidation = () => {
     if (emailAddressField) {
         emailAddressField.addEventListener('input', () => {
             validateField(emailAddressField, {
-                validationPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                validationPattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
                 errorMessage: 'Please enter a valid email address.'
             })
         })

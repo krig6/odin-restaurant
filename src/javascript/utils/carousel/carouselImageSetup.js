@@ -52,7 +52,14 @@ const populateSingleImage = (images) => {
 
 
 const prepareCarouselImages = () => {
-    const imagesContext = require.context('../../../assets/images/carousel-slideshow-images', false, /\.(png|jpe?g|gif|svg)$/);
+    const imagesContext = import.meta.webpackContext(
+        '../../../assets/images/carousel-slideshow-images',
+        {
+            recursive: false,
+            regExp: /\.(png|jpe?g|gif|svg)$/,
+        }
+    );
+
 
     const carouselImages = fetchAllImages(imagesContext);
 

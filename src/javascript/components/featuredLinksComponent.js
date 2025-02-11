@@ -3,7 +3,12 @@ import { createCustomElement, createImageElement } from '../utils/domUtils/eleme
 import { fetchAllImages, loadImagesIntoCache } from '../utils/imageUtils/imageUtils'
 import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
 
-const featuredImages = fetchAllImages(require.context('../../assets/images/featured-links-images', false, /\.(png|jpe?g|gif|svg)$/));
+const featuredImages = fetchAllImages(
+    import.meta.webpackContext("../../assets/images/featured-links-images", {
+        recursive: false,
+        regExp: /\.(png|jpe?g|gif|svg)$/,
+    })
+);
 
 const featuredImagesURL = Object.values(featuredImages);
 

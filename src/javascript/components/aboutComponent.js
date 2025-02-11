@@ -2,7 +2,13 @@ import { createCustomElement, createImageElement } from "../utils/domUtils/eleme
 import aboutSections from '../data/aboutPageContent.json'
 import aboutMainImage from '../../assets/images/carousel-slideshow-images/secondary-image.jpg'
 import { fetchAllImages } from "../utils/imageUtils/imageUtils";
-const fetchSegmentImages = fetchAllImages(require.context('../../assets/images/about-page-images/', false, /\.(png|jpe?g|gif|svg)$/))
+const fetchSegmentImages = fetchAllImages(
+    import.meta.webpackContext('../../assets/images/about-page-images/', {
+        recursive: false,
+        regExp: /\.(png|jpe?g|gif|svg)$/,
+    })
+);
+
 
 export const renderMainAboutImage = () => {
     const mainContentElement = document.getElementById('main-content');
