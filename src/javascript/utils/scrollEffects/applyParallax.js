@@ -1,10 +1,9 @@
-import gsap from 'gsap';
+export const applyParallax = async () => {
+  const { gsap } = await import('gsap');
+  const { ScrollTrigger } = await import('gsap/ScrollTrigger.js');
 
-import ScrollTrigger from 'gsap/ScrollTrigger.js';
+  gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
-
-export const applyParallax = () => {
   const imageElements = document.querySelectorAll('.about-section-image');
   const mainImage = document.querySelector('.about-main-image');
   const mainImageContainer = mainImage?.parentElement;
@@ -12,11 +11,11 @@ export const applyParallax = () => {
   if (!mainImageContainer) {
     console.log('No parent container found.');
     return;
-  };
+  }
 
   gsap.set(mainImage, {
     scale: 1.2,
-    y: '-50%'
+    y: '-50%',
   });
 
   gsap.to(mainImage, {
@@ -36,14 +35,14 @@ export const applyParallax = () => {
     if (!imageContainer) {
       console.log('No parent container found.');
       return;
-    };
+    }
 
     imageContainer.style.overflow = 'hidden';
     imageContainer.style.position = 'relative';
 
     gsap.set(image, {
       scale: 1.2,
-      y: '-45%'
+      y: '-45%',
     });
 
     gsap.to(image, {
