@@ -2,6 +2,7 @@
   "name": "odin-restaurant",
   "version": "1.0.0",
   "description": "The Odin Project: Restaurant Page",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
     "css-loader": "^7.1.2",
     "eslint-import-resolver-webpack": "^0.13.10",
     "eslint-plugin-import": "^2.31.0",
