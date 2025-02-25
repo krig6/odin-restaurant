@@ -1,36 +1,41 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+import { dirname, resolve } from 'path';
 
-module.exports = {
-    entry: {
-        bundle: path.resolve(__dirname, 'src/index.js')
+import { fileURLToPath } from 'url';
+
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = dirname(__filename);
+
+export const entry = {
+  bundle: resolve(__dirname, 'src/index.js')
+};
+export const output = {
+  filename: '[name].[contenthash].js',
+  path: resolve(__dirname, 'dist'),
+  clean: true
+};
+export const module = {
+  rules: [
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
     },
-    output: {
-        filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true
+    {
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'assets/images/[name][ext]',
+      },
     },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'assets/images/[name][ext]',
-                },
-            },
-        ],
-    },
-    plugins: [
-        new HTMLWebpackPlugin({
-            filename: 'index.html',
-            template: 'src/template.html',
-            title: 'Cup and Crust',
-            favicon: 'src/assets/images/favicon/cup-of-coffee.png'
-        }),
-    ],
-}
+  ],
+};
+export const plugins = [
+  new HTMLWebpackPlugin({
+    filename: 'index.html',
+    template: 'src/template.html',
+    title: 'Cup and Crust',
+    favicon: 'src/assets/images/favicon/cup-of-coffee.png'
+  }),
+];
