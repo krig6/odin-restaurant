@@ -1,58 +1,60 @@
-import '../../styles/mainNavigation.css'
-import { createCustomElement } from "../utils/domUtils/elementUtils";
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents';
+import '../../styles/mainNavigation.css';
+
+import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
 
 export const initializeMainNavigation = () => {
-    const headerElement = document.getElementById('site-header');
+  const headerElement = document.getElementById('site-header');
 
-    if (!headerElement) {
-        console.error(`Element with id 'site-header' not found`);
-        return;
-    }
+  if (!headerElement) {
+    console.error('Element with id \'site-header\' not found');
+    return;
+  }
 
-    const navigationMenu = createNavigationMenu();
-    headerElement.appendChild(navigationMenu);
+  const navigationMenu = createNavigationMenu();
+  headerElement.appendChild(navigationMenu);
 
-    initializeNavEventHandlers();
+  initializeNavEventHandlers();
 };
 
 const createNavigationMenu = () => {
-    const navElement = createCustomElement('nav', {
-        classes: 'main-navigation',
-    });
+  const navElement = createCustomElement('nav', {
+    classes: 'main-navigation',
+  });
 
-    const ulElement = createCustomElement('ul', {
-        classes: 'nav-list',
-    });
+  const ulElement = createCustomElement('ul', {
+    classes: 'nav-list',
+  });
 
-    const fragment = document.createDocumentFragment();
+  const fragment = document.createDocumentFragment();
 
-    NAV_ITEMS.forEach(item => {
-        const navItemElement = createNavigationItem(item);
-        fragment.appendChild(navItemElement);
-    });
+  NAV_ITEMS.forEach(item => {
+    const navItemElement = createNavigationItem(item);
+    fragment.appendChild(navItemElement);
+  });
 
-    ulElement.appendChild(fragment);
-    navElement.appendChild(ulElement);
+  ulElement.appendChild(fragment);
+  navElement.appendChild(ulElement);
 
-    return navElement;
+  return navElement;
 };
 
 const createNavigationItem = (item) => {
-    const listItemElement = createCustomElement('li', {
-        classes: 'nav-item',
-    });
+  const listItemElement = createCustomElement('li', {
+    classes: 'nav-item',
+  });
 
-    const linkElement = createCustomElement('a', {
-        classes: 'nav-link',
-        text: item.toUpperCase(),
-        href: `#${item}`,
-        dataset: { action: item },
-    });
+  const linkElement = createCustomElement('a', {
+    classes: 'nav-link',
+    text: item.toUpperCase(),
+    href: `#${item}`,
+    dataset: { action: item },
+  });
 
-    listItemElement.appendChild(linkElement);
+  listItemElement.appendChild(linkElement);
 
-    return listItemElement;
+  return listItemElement;
 };

@@ -1,23 +1,23 @@
 export const toggleMainNavColors = () => {
-    const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
-    headerNavLinks.forEach(link => {
-        link.classList.toggle('change-color');
-    });
-}
+  const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
+  headerNavLinks.forEach(link => {
+    link.classList.toggle('change-color');
+  });
+};
 
 export const resetToDefaultNavColors = () => {
-    const headerNavLinks = document.querySelectorAll('#site-header .nav-link'); ``
-    headerNavLinks.forEach(link => {
-        link.classList.remove('change-color');
-    });
-}
+  const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
+  headerNavLinks.forEach(link => {
+    link.classList.remove('change-color');
+  });
+};
 
 export const updateHeaderStickyState = (page) => {
-    const shouldStick = page === 'menu' || page === 'email' || page === 'about';
-    setHeaderSticky(shouldStick);
-}
+  const shouldStick = page === 'menu' || page === 'email' || page === 'about';
+  setHeaderSticky(shouldStick);
+};
 
 const setHeaderSticky = (shouldBeSticky) => {
-    const headerElement = document.getElementById('site-header');
-    headerElement.classList.toggle('sticky', shouldBeSticky);
-}
+  const headerElement = document.getElementById('site-header');
+  headerElement.classList.toggle('sticky', shouldBeSticky);
+};

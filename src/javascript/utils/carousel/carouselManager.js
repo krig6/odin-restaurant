@@ -1,39 +1,38 @@
-import { createCustomElement } from "../domUtils/elementUtils";
+import { createCustomElement } from '../domUtils/elementUtils.js';
 
 export const deleteCarousel = () => {
-    if (isCarouselPresent()) {
-        const carouselElement = document.getElementById('hero-carousel');
+  if (isCarouselPresent()) {
+    const carouselElement = document.getElementById('hero-carousel');
 
-        if (carouselElement) {
-            carouselElement.remove();
-            console.log('Carousel deleted successfully.');
-        } else {
-            console.error('Carousel element not found in the document.');
-        }
+    if (carouselElement) {
+      carouselElement.remove();
+      console.log('Carousel deleted successfully.');
     } else {
-        console.log('No carousel to delete.');
+      console.error('Carousel element not found in the document.');
     }
+  } else {
+    console.log('No carousel to delete.');
+  }
 };
 
 export const createCarousel = () => {
-    const carouselElement = document.getElementById('hero-carousel');
-    if (carouselElement) {
-        console.log('Carousel already exists.');
-        return;
-    }
+  const carouselElement = document.getElementById('hero-carousel');
+  if (carouselElement) {
+    console.log('Carousel already exists.');
+    return;
+  }
 
-    const newCarouselElement = createCustomElement('section', {
-        id: 'hero-carousel',
-        classes: 'carousel',
-        dataset: { carousel: '' }
-    });
+  const newCarouselElement = createCustomElement('section', {
+    id: 'hero-carousel',
+    classes: 'carousel',
+    dataset: { carousel: '' }
+  });
 
-    const contentElement = document.getElementById('main-content');
-    document.body.insertBefore(newCarouselElement, contentElement);
-    console.log('Carousel created successfully.');
+  const contentElement = document.getElementById('main-content');
+  document.body.insertBefore(newCarouselElement, contentElement);
+  console.log('Carousel created successfully.');
 };
 
 export const isCarouselPresent = () => {
-    return !!document.getElementById('hero-carousel');
+  return !!document.getElementById('hero-carousel');
 };
-

@@ -5,4 +5,4 @@ export const smoothScrollToTop = () => {
             behavior: 'smooth',
         });
     }, 100);
-}
+};

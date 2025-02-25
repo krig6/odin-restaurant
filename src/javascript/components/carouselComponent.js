@@ -1,118 +1,122 @@
-import '../../styles/carouselComponent.css'
-import '../../styles/ctaSection.css'
-import { initializeCarouselEventHandlers } from '../utils/carousel/carouselControls';
-import { createCarousel } from '../utils/carousel/carouselManager';
-import { createCustomElement } from '../utils/domUtils/elementUtils';
-import { setupCarouselImages } from '../utils/carousel/carouselImageSetup';
-import { isCarouselPresent } from '../utils/carousel/carouselManager';
-import { initializeLearnMoreButtonHandlers } from '../utils/carousel/carouselControls';
+import '../../styles/carouselComponent.css';
+
+import '../../styles/ctaSection.css';
+
+import {
+  initializeCarouselEventHandlers,
+  initializeLearnMoreButtonHandlers
+} from '../utils/carousel/carouselControls.js';
+
+import { createCarousel } from '../utils/carousel/carouselManager.js';
+
+import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+
+import { setupCarouselImages } from '../utils/carousel/carouselImageSetup.js';
+
+import { isCarouselPresent } from '../utils/carousel/carouselManager.js';
 
 export const initializeCarouselComponent = () => {
-    if (isCarouselPresent()) {
-        console.log('Carousel already present');
+  if (isCarouselPresent()) {
+    console.log('Carousel already present');
+    return;
+  }
 
-        return;
-    }
-    setupCarouselStructure();
-    initializeCarouselEventHandlers();
-    initializeLearnMoreButtonHandlers();
-    setupCarouselImages();
-}
-
+  setupCarouselStructure();
+  initializeCarouselEventHandlers();
+  initializeLearnMoreButtonHandlers();
+  setupCarouselImages();
+};
 
 const setupCarouselStructure = () => {
-    createCarousel();
+  createCarousel();
+  const carouselElement = document.getElementById('hero-carousel');
+  if (!carouselElement) {
+    console.error('Element with id "hero-carousel" not found.');
+    return;
+  }
 
-    const carouselElement = document.getElementById('hero-carousel');
+  const previousButton = createCarouselButton('prev', '&#8249');
+  const nextButton = createCarouselButton('next', '&#8250');
 
-    if (!carouselElement) {
-        console.error('Element with id "hero-carousel" not found.');
-        return;
-    }
+  carouselElement.append(previousButton, nextButton);
 
-    const previousButton = createCarouselButton('prev', '&#8249')
-    const nextButton = createCarouselButton('next', '&#8250')
+  const slidesContainer = createCustomElement('div', {
+    classes: 'slides-wrapper',
+    dataset: { slides: '' }
+  });
 
-    carouselElement.append(previousButton, nextButton);
-
-    const slidesContainer = createCustomElement('div', {
-        classes: 'slides-wrapper',
-        dataset: { slides: '' }
-    })
-
-    const firstSlide = createSlide('image-gallery', 'slide', 'active');
-    const secondSlide = createSlide('single-image', 'slide', 'inactive');
-    slidesContainer.append(firstSlide, secondSlide);
-    carouselElement.appendChild(slidesContainer);
-}
+  const firstSlide = createSlide('image-gallery', 'slide', 'active');
+  const secondSlide = createSlide('single-image', 'slide', 'inactive');
+  slidesContainer.append(firstSlide, secondSlide);
+  carouselElement.appendChild(slidesContainer);
+};
 
 
 const createCarouselButton = (type, label) => {
-    const button = createCustomElement('button', {
-        classes: `carousel-btn ${type}`,
-        html: label,
-        dataset: { carouselBtn: type }
-    })
+  const button = createCustomElement('button', {
+    classes: `carousel-btn ${type}`,
+    html: label,
+    dataset: { carouselBtn: type }
+  });
 
-    return button;
-}
+  return button;
+};
 
 const createCtaSection = ({ id, description, buttonText, action, btnClass }) => {
 
-    const ctaSection = createCustomElement('div', {
-        id: id,
-        classes: `cta-section ${id}-class`
-    })
-    const ctaText = createCustomElement('p', {
-        text: description
-    })
-    const ctaButton = createCustomElement('button', {
-        classes: btnClass,
-        text: buttonText,
-        dataset: {
-            action: action,
-            learnBtn: ''
-        }
-    })
+  const ctaSection = createCustomElement('div', {
+    id: id,
+    classes: `cta-section ${id}-class`
+  });
+  const ctaText = createCustomElement('p', {
+    text: description
+  });
+  const ctaButton = createCustomElement('button', {
+    classes: btnClass,
+    text: buttonText,
+    dataset: {
+      action: action,
+      learnBtn: ''
+    }
+  });
 
-    ctaSection.append(ctaText, ctaButton)
-    return ctaSection;
-}
+  ctaSection.append(ctaText, ctaButton);
+  return ctaSection;
+};
 
 const createSlide = (id, className, currentStatus) => {
-    const CTA_ITEMS = [
-        {
-            id: 'cta-primary',
-            description: 'BREWS AND BAKES IN HARMONY',
-            buttonText: 'LEARN MORE',
-            containerId: 'image-gallery',
-            action: 'menu',
-            btnClass: 'learn-btn'
+  const CTA_ITEMS = [
+    {
+      id: 'cta-primary',
+      description: 'BREWS AND BAKES IN HARMONY',
+      buttonText: 'LEARN MORE',
+      containerId: 'image-gallery',
+      action: 'menu',
+      btnClass: 'learn-btn'
+    },
+    {
+      id: 'cta-secondary',
+      description: 'A TASTE OF OUR STORY',
+      buttonText: 'LEARN MORE',
+      containerId: 'single-image',
+      action: 'about',
+      btnClass: 'learn-btn'
+    }
+  ];
 
-        },
-        {
-            id: 'cta-secondary',
-            description: 'A TASTE OF OUR STORY',
-            buttonText: 'LEARN MORE',
-            containerId: 'single-image',
-            action: 'about',
-            btnClass: 'learn-btn'
-        }
-    ]
+  const slideContainer = createCustomElement('div', {
+    id: id,
+    classes: className,
+    dataset: { currentStatus }
 
-    const slideContainer = createCustomElement('div', {
-        id: id,
-        classes: className,
-        dataset: { currentStatus }
-    })
+  });
+  const fragment = document.createDocumentFragment();
 
-    const fragment = document.createDocumentFragment();
+  CTA_ITEMS
+    .filter(item => item.containerId === id)
+    .forEach(item => fragment.appendChild(createCtaSection(item)));
 
-    CTA_ITEMS
-        .filter(item => item.containerId === id)
-        .forEach(item => fragment.appendChild(createCtaSection(item)))
+  slideContainer.appendChild(fragment);
 
-    slideContainer.appendChild(fragment);
-
-    return slideContainer;
-}
+  return slideContainer;
+};

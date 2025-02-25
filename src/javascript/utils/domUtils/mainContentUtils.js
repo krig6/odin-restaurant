@@ -5,7 +5,7 @@ export const clearMainContent = () => {
             while (contentElement.firstChild) {
                 contentElement.removeChild(contentElement.firstChild);
             }
-            console.log('Main content has been cleared.')
+            console.log('Main content has been cleared.');
 
         } else {
             console.error('Content element not found in the document.');
@@ -17,4 +17,4 @@ export const clearMainContent = () => {
 
 const isMainContentPresent = () => {
     return !!document.getElementById('main-content');
-}
+};

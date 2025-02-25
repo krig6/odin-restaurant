@@ -20,7 +20,7 @@ export const createCustomElement = (tag, { id = '', classes = '', text = '', htm
     }
 
     return element;
-}
+};
 
 export const createImageElement = (src, { classes = '', alt = '' } = {}) => {
     const image = createCustomElement('img', { classes });
@@ -28,4 +28,4 @@ export const createImageElement = (src, { classes = '', alt = '' } = {}) => {
     image.alt = alt;
 
     return image;
-}
+};
