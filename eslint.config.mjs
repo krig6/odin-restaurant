@@ -1,36 +1,45 @@
-import globals from 'globals';
+import globals from "globals";
 
-/** @type {import('eslint').Linter.Config[]} */
+/** @type {import("eslint").Linter.Config[]} */
 export default [
+
   {
-    languageOptions: { globals: globals.browser },
-    settings: {
-      'import/resolver': {
-        webpack: {
-          config: 'webpack.dev.js',
-        },
-      },
-    },
+    files: ["eslint.config.mjs"],
     rules: {
-      'object-curly-newline': [
-        'error',
-        {
-          'ImportDeclaration': { 'multiline': true, }
-        }
-      ],
-      'no-restricted-imports': ['error', 'underscore'],
-      'eqeqeq': 'error',
-      'no-console': 'off',
-      'consistent-return': 'error',
-      'no-unused-vars': 'off',
-      'linebreak-style': ['error', 'unix'],
-      'quotes': ['error', 'single'],
-      'semi': ['error', 'always'],
-      'padding-line-between-statements': [
-        'error',
-        { 'blankLine': 'always', 'prev': 'import', 'next': '*' }
-      ],
-      'eol-last': ['error', 'always']
+      quotes: ["error", "double"],
     },
   },
+  {
+    ignores: ["eslint.config.mjs"],
+    languageOptions: { globals: globals.browser },
+    settings: {
+      "import/resolver": {
+        webpack: {
+          config: "webpack.dev.js"
+        }
+      }
+    },
+    rules: {
+      "object-curly-newline": [
+        "error",
+        {
+          "ImportDeclaration": { "multiline": true }
+        }
+      ],
+      "no-restricted-imports": ["error", "underscore"],
+      "eqeqeq": "error",
+      "comma-dangle": ["error", "never"],
+      "no-console": "off",
+      "consistent-return": "error",
+      "no-unused-vars": "off",
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      "padding-line-between-statements": [
+        "error",
+        { "blankLine": "always", "prev": "import", "next": "*" }
+      ],
+      "eol-last": ["error", "always"]
+    }
+  }
 ];
