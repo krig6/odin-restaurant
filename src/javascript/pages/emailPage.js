@@ -1,10 +1,10 @@
-import '../../styles/contactComponent.css';
+import '../../styles/emailComponent.css';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
 
 import { clearMainContent } from '../utils/domUtils/mainContentUtils.js';
 
-import { initializeContactFormSection } from '../components/contactComponent.js';
+import { initializeEmailFormSection } from '../components/emailComponent.js';
 
 import { initializeFormValidation } from '../utils/formValidation/validateFields.js';
 
@@ -13,7 +13,7 @@ import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEv
 export const renderEmailPageContent = () => {
   deleteCarousel();
   clearMainContent();
-  initializeContactFormSection();
+  initializeEmailFormSection();
   initializeFormValidation();
   initializeNavEventHandlers();
 };

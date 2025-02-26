@@ -1,4 +1,4 @@
-.contact-form-container {
+.email-form-container {
   margin-bottom: 9rem;
   margin-top: 5rem;
   margin-inline: 5rem;
@@ -7,7 +7,7 @@
   background-color: var(--primary-color);
 }
 
-#contact-form {
+.email-form {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
@@ -18,22 +18,21 @@
   font: var(--font-title);
 }
 
-#contact-form > .field-container:nth-child(1) {
+.email-form > .field-container:nth-child(1) {
   grid-column-start: 1;
 }
 
-#contact-form > .field-container:nth-child(1),
-#contact-form > .field-container:nth-child(2) {
+.email-form > .field-container:nth-child(1),
+.email-form > .field-container:nth-child(2) {
   grid-column: span 3;
 }
 
-#contact-form > .field-container:nth-child(3),
-#contact-form > .field-container:nth-child(4) {
+.email-form > .field-container:nth-child(3),
+.email-form > .field-container:nth-child(4) {
   grid-column: span 6;
 }
 
-input,
-textarea {
+.input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -44,21 +43,21 @@ textarea {
   font: var(--font-small);
 }
 
-textarea {
+.inquiry-input {
   height: 150px;
 }
 
-form {
+.email-form {
   margin: 5rem 5rem;
 }
 
-label {
+.input-label {
   font-weight: bold;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.contact-info-section {
+.email-info-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,11 +68,11 @@ label {
   background-color: var(--background-color);
 }
 
-.contact-title {
+.email-message-title {
   font: var(--font-heading);
 }
 
-.contact-description {
+.email-description {
   font: var(--font-title);
   width: 60ch;
   text-align: center;
