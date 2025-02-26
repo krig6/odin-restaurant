@@ -60,7 +60,6 @@
 
 .about-section-title {
   font: var(--font-heading);
-
   text-decoration: underline;
   text-underline-offset: 2rem;
   margin-bottom: 3rem;
@@ -81,7 +80,6 @@
   background-color: var(--accent-color-dark);
   color: var(--accent-color-light);
   font: var(--font-small);
-
   line-height: 2.5rem;
   padding: 2rem;
   width: 50%;
@@ -112,7 +110,6 @@
 
 .message-title {
   font: var(--font-heading);
-
   text-decoration: underline;
   text-underline-offset: 2rem;
   margin-bottom: 3rem;
@@ -122,6 +119,5 @@
   letter-spacing: 0.15rem;
   text-align: center;
   font: var(--font-small);
-
   line-height: 2.5rem;
 }
