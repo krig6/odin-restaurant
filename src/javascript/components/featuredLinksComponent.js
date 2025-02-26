@@ -69,7 +69,7 @@ const createFeaturedLinkCard = ({ imageSrc, heading, description, altText, targe
   const card = createCustomElement('figure', { classes: 'featured-link-card' });
   card.dataset.action = targetPage;
 
-  const image = createImageElement(imageSrc, { className: 'featured-link-image', alt: altText });
+  const image = createImageElement(imageSrc, { classes: 'featured-link-image', alt: altText });
 
   const title = createCustomElement('figcaption', { classes: 'featured-link-title', text: heading });
 

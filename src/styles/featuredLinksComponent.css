@@ -86,6 +86,6 @@
   font: var(--font-body);
 }
 
-img {
+.featured-link-image {
   height: 200px;
 }
