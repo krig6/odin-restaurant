@@ -12,7 +12,7 @@ import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
 const fetchSegmentImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/about-page-images/', {
     recursive: false,
-    regExp: /\.(png|jpe?g|gif|svg)$/,
+    regExp: /\.(png|jpe?g|gif|svg)$/
   })
 );
 
@@ -71,7 +71,7 @@ export const populateAboutSections = () => {
     });
 
     const sectionTextContainer = createCustomElement('section', {
-      classes: `${id}-text about-section-text`,
+      classes: `${id}-text about-section-text`
     });
 
     const sectionTitle = createCustomElement('h6', {
@@ -93,7 +93,7 @@ export const populateAboutSections = () => {
       content.forEach(para => {
         Object.keys(para).forEach(paragraphKey => {
           const paragraphElement = createCustomElement('p', {
-            text: para[paragraphKey],
+            text: para[paragraphKey]
           });
           sectionTextContainer.appendChild(paragraphElement);
         });

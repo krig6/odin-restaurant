@@ -22,11 +22,11 @@ export const initializeMainNavigation = () => {
 
 const createNavigationMenu = () => {
   const navElement = createCustomElement('nav', {
-    classes: 'main-navigation',
+    classes: 'main-navigation'
   });
 
   const ulElement = createCustomElement('ul', {
-    classes: 'nav-list',
+    classes: 'nav-list'
   });
 
   const fragment = document.createDocumentFragment();
@@ -44,14 +44,14 @@ const createNavigationMenu = () => {
 
 const createNavigationItem = (item) => {
   const listItemElement = createCustomElement('li', {
-    classes: 'nav-item',
+    classes: 'nav-item'
   });
 
   const linkElement = createCustomElement('a', {
     classes: 'nav-link',
     text: item.toUpperCase(),
     href: `#${item}`,
-    dataset: { action: item },
+    dataset: { action: item }
   });
 
   listItemElement.appendChild(linkElement);

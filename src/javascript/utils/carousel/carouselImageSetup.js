@@ -60,7 +60,7 @@ const prepareCarouselImages = () => {
     '../../../assets/images/carousel-slideshow-images',
     {
       recursive: false,
-      regExp: /\.(png|jpe?g|gif|svg)$/,
+      regExp: /\.(png|jpe?g|gif|svg)$/
     }
   );
 

@@ -15,7 +15,7 @@ export const applyParallax = async () => {
 
   gsap.set(mainImage, {
     scale: 1.2,
-    y: '0%',
+    y: '0%'
   });
 
   gsap.to(mainImage, {
@@ -25,8 +25,8 @@ export const applyParallax = async () => {
       trigger: mainImageContainer,
       start: 'top',
       end: 'bottom',
-      scrub: true,
-    },
+      scrub: true
+    }
   });
 
   imageElements.forEach((image) => {
@@ -42,7 +42,7 @@ export const applyParallax = async () => {
 
     gsap.set(image, {
       scale: 1.2,
-      y: '0%',
+      y: '0%'
     });
 
     gsap.to(image, {
@@ -52,8 +52,8 @@ export const applyParallax = async () => {
         trigger: imageContainer,
         start: 'top',
         end: 'bottom',
-        scrub: true,
-      },
+        scrub: true
+      }
     });
   });
 };

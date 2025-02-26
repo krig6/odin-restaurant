@@ -15,7 +15,7 @@ import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEv
 const featuredImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/featured-links-images', {
     recursive: false,
-    regExp: /\.(png|jpe?g|gif|svg)$/,
+    regExp: /\.(png|jpe?g|gif|svg)$/
   })
 );
 
@@ -44,7 +44,7 @@ const FEATURED_LINKS = [
     description: 'Welcome to our cozy coffee corner. With a passion for quality brews and community, we invite you to discover the heart behind every cup.',
     altText: 'Book',
     targetPage: 'about'
-  },
+  }
 ];
 
 export const initializeFeaturedLinks = () => {

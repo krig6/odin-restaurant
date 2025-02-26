@@ -70,7 +70,7 @@ const createContactFormSection = () => {
     });
     const labelElement = createCustomElement('label', {
       htmlFor: field.id,
-      text: field.label,
+      text: field.label
     });
 
     const inputElement = createCustomElement(field.type, {

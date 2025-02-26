@@ -20,7 +20,7 @@ export const initializeFooterComponent = () => {
 
 const createFooterSection = () => {
   const footerContentContainer = createCustomElement('div', {
-    classes: 'footer-content-container',
+    classes: 'footer-content-container'
   });
 
   const contentFragment = document.createDocumentFragment();
@@ -32,14 +32,14 @@ const createFooterSection = () => {
 
 const createAboutSection = () => {
   const aboutSection = createCustomElement('div', {
-    classes: 'footer-about-section',
+    classes: 'footer-about-section'
   });
 
   const brandNameElement = createCustomElement('h3', {
-    text: 'CUP AND CRUST',
+    text: 'CUP AND CRUST'
   });
   const brandSloganElement = createCustomElement('p', {
-    text: 'Brews and Bakes in Harmony',
+    text: 'Brews and Bakes in Harmony'
   });
 
   aboutSection.append(brandNameElement, brandSloganElement);
@@ -51,13 +51,13 @@ const createQuickLinksSection = () => {
   const QUICK_LINKS = ['Home', 'Menu', 'Email', 'About'];
 
   const quickLinskNav = createCustomElement('nav', {
-    classes: 'quick-link-nav',
+    classes: 'quick-link-nav'
   });
   const quickLinksHeading = createCustomElement('h3', {
-    text: 'EXPLORE',
+    text: 'EXPLORE'
   });
   const quickLinksList = createCustomElement('ul', {
-    classes: 'quick-links-list',
+    classes: 'quick-links-list'
   });
 
   QUICK_LINKS.forEach(link => {
@@ -71,14 +71,14 @@ const createQuickLinksSection = () => {
 
 const createQuickLinkItem = (linkText) => {
   const listItemElement = createCustomElement('li', {
-    classes: 'quick-link-item',
+    classes: 'quick-link-item'
   });
 
   const linkElement = createCustomElement('a', {
     classes: 'quick-link',
     text: linkText,
     href: `#${linkText.toLowerCase()}`,
-    dataset: { action: linkText.toLowerCase() },
+    dataset: { action: linkText.toLowerCase() }
   });
 
   listItemElement.appendChild(linkElement);
@@ -102,7 +102,7 @@ const createCopyrightElement = () => {
   });
 
   const footerItemContainer = createCustomElement('div', {
-    classes: 'copyright-element',
+    classes: 'copyright-element'
   });
 
   const copyrightText = createCustomElement('p', {
