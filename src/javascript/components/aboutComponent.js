@@ -116,16 +116,16 @@ export const renderMessageSection = () => {
   }
 
   const messageContainer = createCustomElement('section', {
-    classes: 'message-container'
+    classes: 'about-message-container'
   });
 
   const messageTitle = createCustomElement('h6', {
-    classes: 'message-title',
+    classes: 'about-message-title',
     text: 'A Brew Steeped in Tradition'
   });
 
   const messageText = createCustomElement('p', {
-    classes: 'message-text',
+    classes: 'about-message-text',
     text: 'Long ago, a humble baker discovered the secret to the perfect balance—where the crisp of a golden crust met the warmth of a rich, comforting brew. They believed that every great conversation, every moment of reflection, and every shared laugh deserved something handcrafted with care. Over time, their passion became a tradition, passed down through generations, until it found its home here at Cup and Crust. Today, we carry on that legacy, serving flavors that tell a story of warmth, craft, and connection—one sip, one bite at a time.'
   });
 
