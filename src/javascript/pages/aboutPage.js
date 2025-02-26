@@ -12,6 +12,8 @@ import { clearMainContent } from '../utils/domUtils/mainContentUtils.js';
 
 import { applyParallax } from '../utils/scrollEffects/applyParallax.js';
 
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+
 export const renderAboutPageContent = () => {
   deleteCarousel();
   clearMainContent();
@@ -19,4 +21,5 @@ export const renderAboutPageContent = () => {
   populateAboutSections();
   renderMessageSection();
   applyParallax();
+  initializeNavEventHandlers();
 };

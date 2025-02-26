@@ -8,9 +8,12 @@ import { initializeContactFormSection } from '../components/contactComponent.js'
 
 import { initializeFormValidation } from '../utils/formValidation/validateFields.js';
 
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+
 export const renderEmailPageContent = () => {
   deleteCarousel();
   clearMainContent();
   initializeContactFormSection();
   initializeFormValidation();
+  initializeNavEventHandlers();
 };
