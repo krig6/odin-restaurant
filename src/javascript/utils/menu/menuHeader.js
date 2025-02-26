@@ -6,8 +6,8 @@ const CATEGORY_LINKS = ['cup', 'crust', 'churn', 'snack'];
 
 export const setupMenuHeader = () => {
   const contentElement = document.getElementById('main-content');
-  const header = createCustomElement('header', {
-    id: 'header',
+  const menuHeader = createCustomElement('div', {
+    id: 'category-name',
     classes: 'category-name',
     dataset: { action: 'cup' }
   });
@@ -16,8 +16,8 @@ export const setupMenuHeader = () => {
 
   CATEGORY_LINKS.forEach(item => ul.appendChild(createCategoryButtons(item)));
   nav.appendChild(ul);
-  header.appendChild(nav);
-  contentElement.appendChild(header);
+  menuHeader.appendChild(nav);
+  contentElement.appendChild(menuHeader);
 
   initializeMenuEventHandlers();
 };

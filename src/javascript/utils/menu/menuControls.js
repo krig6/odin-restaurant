@@ -5,8 +5,8 @@ export const initializeMenuEventHandlers = () => {
 
   categoryButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const whatButton = button.getAttribute('data-action');
-      renderSelectedCategory(whatButton);
+      const category = button.getAttribute('data-action');
+      renderSelectedCategory(category);
     });
   });
 };
@@ -18,23 +18,23 @@ const renderSelectedCategory = (category) => {
   }
 
   if (['cup', 'crust', 'churn', 'snack'].includes(category)) {
-    initializeItems(category);
     handleCurrentTab(category, true);
+    initializeItems(category);
   }
 };
 
 const handleCurrentTab = (category, shouldSet = false) => {
-  const headerElement = document.getElementById('header');
-  if (!headerElement) {
-    console.log('Element with id \'header\' not found.');
+  const menuHeader = document.getElementById('category-name');
+  if (!menuHeader) {
+    console.log('Element with id \'category-name\' not found.');
     return false;
   }
 
-  const currentTab = headerElement.getAttribute('data-action');
+  const previousTab = menuHeader.getAttribute('data-action');
 
   if (shouldSet) {
-    headerElement.setAttribute('data-action', category);
+    menuHeader.setAttribute('data-action', category);
   }
 
-  return currentTab === category;
+  return previousTab === category;
 };

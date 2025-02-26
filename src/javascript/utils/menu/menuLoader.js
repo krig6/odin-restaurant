@@ -21,6 +21,6 @@ export const initializeItems = (category) => {
     };
   });
 
-  setActiveLink(category, '#header .menu-btn');
+  setActiveLink(category, '#category-name .menu-btn');
   renderMenuItems(categoryData);
 };
