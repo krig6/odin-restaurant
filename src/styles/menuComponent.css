@@ -7,10 +7,11 @@
   background-color: var(--primary-color);
 }
 
-article img {
+.product-image {
   height: 100%;
   width: 100%;
 }
+
 .category-links ul {
   display: flex;
   gap: 5rem;
@@ -71,7 +72,6 @@ article img {
 
 .product-price {
   font: var(--font-small);
-
   color: var(--accent-color-dark);
 }
 
@@ -86,7 +86,6 @@ article img {
 
 .menu-btn {
   font: var(--font-heading);
-
   letter-spacing: 0.5rem;
   cursor: pointer;
   background-color: transparent;

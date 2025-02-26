@@ -21,6 +21,7 @@ export const renderMenuItems = (items) => {
       classes: 'product-card'
     });
     const img = createImageElement(item.src, {
+      classes: 'product-image',
       alt: item.alt
     });
 
