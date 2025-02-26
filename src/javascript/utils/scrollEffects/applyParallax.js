@@ -15,7 +15,7 @@ export const applyParallax = async () => {
 
   gsap.set(mainImage, {
     scale: 1.2,
-    y: '-50%',
+    y: '0%',
   });
 
   gsap.to(mainImage, {
@@ -23,8 +23,8 @@ export const applyParallax = async () => {
     ease: 'none',
     scrollTrigger: {
       trigger: mainImageContainer,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: 'top',
+      end: 'bottom',
       scrub: true,
     },
   });
@@ -42,16 +42,16 @@ export const applyParallax = async () => {
 
     gsap.set(image, {
       scale: 1.2,
-      y: '-45%',
+      y: '0%',
     });
 
     gsap.to(image, {
-      y: '45%',
+      y: '50%',
       ease: 'none',
       scrollTrigger: {
         trigger: imageContainer,
-        start: 'top bottom',
-        end: 'bottom top',
+        start: 'top',
+        end: 'bottom',
         scrub: true,
       },
     });
