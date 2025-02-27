@@ -80,10 +80,10 @@
 }
 
 .featured-link-description {
-  letter-spacing: 0.1rem;
-  line-height: 1.3rem;
-  width: 45ch;
   font: var(--font-body);
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+  width: 45ch;
 }
 
 .featured-link-image {
