@@ -64,16 +64,19 @@
 .product-name {
   font: var(--font-subheading);
   letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 
 .product-desc {
   font: var(--font-small);
   line-height: 1.5rem;
+  letter-spacing: 0.05rem;
 }
 
 .product-price {
   font: var(--font-small);
   color: var(--accent-color-dark);
+  letter-spacing: 0.1rem;
 }
 
 .product-card {
@@ -84,6 +87,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: var(--text-color);
 }
 
 .menu-btn {
