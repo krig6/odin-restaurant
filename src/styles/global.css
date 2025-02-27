@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: none;
@@ -34,19 +34,4 @@
 
 html {
   background-color: var(--background-color);
-  color: var(--text-color);
-  height: 100%;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-#main-content {
-  flex: 1;
 }
