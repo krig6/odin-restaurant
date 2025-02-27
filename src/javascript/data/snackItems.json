@@ -3,14 +3,14 @@
     "category": "snack",
     "src": "cheeseburger-snack.png",
     "alt": "Cheeseburger",
-    "description": "Juicy cheeseburger with melted cheese, a savory beef patty, fresh lettuce, and tomato.",
+    "description": "Juicy cheeseburger with melted cheese, beef patty, lettuce, and tomato.",
     "price": "₱250.00"
   },
   {
     "category": "snack",
     "src": "chicken-snack.png",
     "alt": "Chicken Wrap",
-    "description": "Tender chicken wrapped in a soft tortilla with crisp veggies and a flavorful sauce.",
+    "description": "Tender chicken in a soft tortilla with veggies and sauce.",
     "price": "₱200.00"
   },
   {
@@ -24,7 +24,7 @@
     "category": "snack",
     "src": "falafel-snack.png",
     "alt": "Falafel",
-    "description": "Crispy and flavorful chickpea patties, perfect for dipping in your favorite sauce.",
+    "description": "Crispy, flavorful chickpea patties, perfect for dipping",
     "price": "₱180.00"
   },
   {
@@ -38,14 +38,14 @@
     "category": "snack",
     "src": "hamsandwich-snack.png",
     "alt": "Ham Sandwich",
-    "description": "A tasty sandwich with ham, cheese, and fresh veggies on your choice of bread.",
+    "description": "Tasty sandwich with ham, cheese, and fresh veggies.",
     "price": "₱120.00"
   },
   {
     "category": "snack",
     "src": "hotdog-snack.png",
     "alt": "Hotdog Sandwich",
-    "description": "Grilled hotdog served in a soft bun with classic toppings like mustard and ketchup.",
+    "description": "Grilled hotdog in a soft bun with mustard and ketchup.",
     "price": "₱180.00"
   },
   {
