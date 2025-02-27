@@ -3,6 +3,7 @@
   grid-template-columns: 34% 32% 34%;
   height: 550px;
   font-family: "Noto Serif", sans-serif;
+  color: var(--text-color);
 }
 
 .featured-links-container .featured-link-card:nth-child(1) {
@@ -81,7 +82,7 @@
 
 .featured-link-description {
   font: var(--font-body);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
   line-height: 1.5rem;
   width: 45ch;
 }
