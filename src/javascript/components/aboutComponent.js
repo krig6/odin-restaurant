@@ -20,8 +20,7 @@ export const renderMainAboutImage = () => {
   const mainContentElement = document.getElementById('main-content');
 
   if (!mainContentElement) {
-    console.log('Element with id \'main-content\' not found.');
-    return;
+    throw new Error('Element with id \'main-content\' not found.');
   }
 
   const introBanner = createCustomElement('div', {
@@ -55,8 +54,7 @@ export const populateAboutSections = () => {
   const mainContentElement = document.getElementById('main-content');
 
   if (!mainContentElement) {
-    console.log('Element with id \'main-content\' not found.');
-    return;
+    throw new Error('Element with id \'main-content\' not found.');
   }
 
   const aboutSectionWrapper = createCustomElement('section', {
@@ -111,8 +109,7 @@ export const renderMessageSection = () => {
   const mainContentElement = document.getElementById('main-content');
 
   if (!mainContentElement) {
-    console.log('Element with id \'main-content\' not found.');
-    return;
+    throw new Error('Element with id \'main-content\' not found.');
   }
 
   const messageContainer = createCustomElement('section', {

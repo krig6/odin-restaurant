@@ -13,7 +13,9 @@ export const initializeMenuEventHandlers = () => {
 
 const renderSelectedCategory = (category) => {
   if (handleCurrentTab(category)) {
-    console.log('Menu items are already loaded for this category.');
+    /* eslint-disable no-console */
+    console.info('Menu items are already loaded for this category.');
+    /* eslint-enable no-console */
     return;
   }
 
@@ -26,8 +28,7 @@ const renderSelectedCategory = (category) => {
 const handleCurrentTab = (category, shouldSet = false) => {
   const menuHeader = document.getElementById('category-name');
   if (!menuHeader) {
-    console.log('Element with id \'category-name\' not found.');
-    return false;
+    throw new Error('Element with id \'category-name\' not found.');
   }
 
   const previousTab = menuHeader.getAttribute('data-action');

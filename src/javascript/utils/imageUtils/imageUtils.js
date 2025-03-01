@@ -23,7 +23,6 @@ export function loadImagesIntoCache(imageURLs) {
   imageURLs.forEach((url) => {
     const img = new Image();
     img.src = url;
-    img.onload = () => console.log(`Image loaded: ${url}`);
     img.onerror = (e) => console.error(`Failed to load image: ${url}`, e);
   });
 }

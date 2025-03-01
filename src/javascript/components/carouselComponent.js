@@ -16,10 +16,7 @@ import { setupCarouselImages } from '../utils/carousel/carouselImageSetup.js';
 import { isCarouselPresent } from '../utils/carousel/carouselManager.js';
 
 export const initializeCarouselComponent = () => {
-  if (isCarouselPresent()) {
-    console.log('Carousel already present');
-    return;
-  }
+  if (isCarouselPresent()) return;
 
   setupCarouselStructure();
   initializeCarouselEventHandlers();
@@ -31,8 +28,7 @@ const setupCarouselStructure = () => {
   createCarousel();
   const carouselElement = document.getElementById('hero-carousel');
   if (!carouselElement) {
-    console.error('Element with id "hero-carousel" not found.');
-    return;
+    throw new Error('Element with id "hero-carousel" not found.');
   }
 
   const previousButton = createCarouselButton('prev', '&#8249');

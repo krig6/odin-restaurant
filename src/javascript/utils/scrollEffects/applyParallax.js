@@ -9,8 +9,7 @@ export const applyParallax = async () => {
   const mainImageContainer = mainImage?.parentElement;
 
   if (!mainImageContainer) {
-    console.log('No parent container found.');
-    return;
+    throw new Error('No parent container found.');
   }
 
   gsap.set(mainImage, {
@@ -33,8 +32,7 @@ export const applyParallax = async () => {
     const imageContainer = image.parentElement;
 
     if (!imageContainer) {
-      console.log('No parent container found.');
-      return;
+      throw new Error('No parent container found.');
     }
 
     imageContainer.style.overflow = 'hidden';

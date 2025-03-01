@@ -6,19 +6,25 @@ export const deleteCarousel = () => {
 
     if (carouselElement) {
       carouselElement.remove();
-      console.log('Carousel deleted successfully.');
+      /*eslint-disable no-console */
+      console.info('Carousel deleted successfully.');
+      /* eslint-enable no-console */
     } else {
-      console.error('Carousel element not found in the document.');
+      throw new Error('Carousel element not found in the document.');
     }
   } else {
-    console.log('No carousel to delete.');
+    /*eslint-disable no-console */
+    console.info('No carousel to delete.');
+    /* eslint-enable no-console */
   }
 };
 
 export const createCarousel = () => {
   const carouselElement = document.getElementById('hero-carousel');
   if (carouselElement) {
-    console.log('Carousel already exists.');
+    /*eslint-disable no-console */
+    console.info('Carousel already exists.');
+    /* eslint-enable no-console */
     return;
   }
 
@@ -30,7 +36,9 @@ export const createCarousel = () => {
 
   const contentElement = document.getElementById('main-content');
   document.body.insertBefore(newCarouselElement, contentElement);
-  console.log('Carousel created successfully.');
+  /*eslint-disable no-console */
+  console.info('Carousel created successfully.');
+  /* eslint-enable no-console */
 };
 
 export const isCarouselPresent = () => {

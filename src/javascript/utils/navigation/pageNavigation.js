@@ -15,7 +15,9 @@ import {
 
 export const handlePageNavigation = (page) => {
   if (isCurrentPage(page)) {
-    console.log(`Already on the ${page} page, no need to reload.`);
+    /* eslint-disable no-console */
+    console.info(`Already on the ${page} page, no need to reload.`);
+    /* eslint-enable no-console */
     return;
   };
 

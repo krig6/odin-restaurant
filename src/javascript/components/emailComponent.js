@@ -6,8 +6,7 @@ export const initializeEmailFormSection = () => {
   const contentElement = document.getElementById('main-content');
 
   if (!contentElement) {
-    console.log('Element with id \'main-content\' not found.');
-    return;
+    throw new Error('Element with id \'main-content\' not found.');
   }
 
   const emailFormContainer = createEmailFormContainer();
