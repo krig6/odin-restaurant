@@ -27,9 +27,9 @@ export default [
         }
       ],
       "no-restricted-imports": ["error", "underscore"],
+      "no-console": ["warn", { "allow": ["warn", "error"] }],
       "eqeqeq": "error",
       "comma-dangle": ["error", "never"],
-      "no-console": "off",
       "consistent-return": "error",
       "no-unused-vars": "off",
       "linebreak-style": ["error", "unix"],
