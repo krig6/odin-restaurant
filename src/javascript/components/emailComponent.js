@@ -29,7 +29,7 @@ const createEmailInfoSection = () => {
   });
 
 
-  const socialMediaIcons = createSocialMediaSection();
+  const socialMediaIcons = createSocialMediaSection('email');
   const socialMediaIconContainer = createCustomElement('div', {
     classes: 'email-social-media-icons'
   });

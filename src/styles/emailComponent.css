@@ -120,14 +120,14 @@
   line-height: 2rem;
 }
 
-.social-icon-list{
+.email-social-media-list .social-icon-list{
   margin-top: 2rem;
   display: flex;
   gap: 3rem;
   font-size: 2rem;
 }
 
-.social-media-item .bx:hover {
+.email-social-media-list .bx:hover {
   color: var(--accent-color-dark);
   transform: scale(1.3);
 }

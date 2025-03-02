@@ -24,7 +24,7 @@ const createFooterSection = () => {
   });
 
   const contentFragment = document.createDocumentFragment();
-  contentFragment.append(createAboutSection(), createQuickLinksSection(), createSocialMediaSection());
+  contentFragment.append(createAboutSection(), createQuickLinksSection(), createSocialMediaSection('footer'));
   footerContentContainer.appendChild(contentFragment);
 
   return footerContentContainer;

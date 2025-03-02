@@ -1,8 +1,8 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
-export const createSocialMediaSection = () => {
+export const createSocialMediaSection = (page = '') => {
   const socialMediaSection = createCustomElement('div', {
-    classes: 'social-media-list social-media-content'
+    classes: `${page ? `${page}-social-media-list` : ''}`
   });
 
   const socialMediaHeading = createCustomElement('h3', {
@@ -35,7 +35,7 @@ const createSocialMediaItem = (iconClass) => {
   });
   const linkElement = createCustomElement('a');
   const iconElement = createCustomElement('i', {
-    classes: `bx ${iconClass}`
+    classes: `bx ${iconClass} `
   });
 
   linkElement.appendChild(iconElement);
