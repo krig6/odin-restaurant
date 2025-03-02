@@ -6,13 +6,16 @@ export const createSocialMediaSection = () => {
   });
 
   const socialMediaHeading = createCustomElement('h3', {
-    text: 'SOCIALS'
+    text: 'SOCIALS',
+    classes: 'social-heading'
   });
+
   const socialMediaIconsContainer = createCustomElement('nav', {
     classes: 'social-media-icons-container'
   });
-  const socialMediaList = document.createElement('ul', {
-    classes: 'social-media-list'
+
+  const socialMediaList = createCustomElement('ul', {
+    classes: 'social-icon-list'
   });
 
   const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];

@@ -53,36 +53,52 @@ const createEmailInfoSection = () => {
 const createEmailFormSection = () => {
   const formContainer = createCustomElement('form', {
     classes: 'email-form',
-    id: 'email-form'
+    id: 'email-form',
   });
 
+  formContainer.method = 'post';
+  formContainer.action = '#';
+
   const formFields = [
-    { label: 'First name *', id: 'first-name', type: 'input', class: 'input-first-name input' },
-    { label: 'Last name', id: 'last-name', type: 'input', class: 'input-last-name input' },
-    { label: 'Email *', id: 'email-address', type: 'input', class: 'input-email input' },
-    { label: 'What can we help you with?', id: 'inquiry-input', type: 'textarea', class: 'inquiry-input input' }
+    { label: 'First name *', id: 'first-name', type: 'input', class: 'input-first-name input', placeholder: 'Cupford', required: true },
+    { label: 'Last name', id: 'last-name', type: 'input', class: 'input-last-name input', placeholder: 'Crustington' },
+    { label: 'Email *', id: 'email-address', type: 'input', class: 'input-email input', placeholder: 'contact@cupandcrust.com', required: true },
+    { label: 'What can we help you with?', id: 'inquiry-input', class: 'inquiry-input input', placeholder: 'Share your thoughts, from the first sip to the last bite!', required: true },
+    { label: 'Submit', id: 'submit-button', type: 'submit', class: 'inquiry-submit' },
   ];
 
   formFields.forEach(field => {
-    const fieldContainer = createCustomElement('div', {
-      classes: 'field-container'
-    });
+    const { label, id, type, class: classes, placeholder, required } = field;
 
-    const labelElement = createCustomElement('label', {
-      classes: 'input-label',
-      htmlFor: field.id,
-      text: field.label
-    });
+    let inputElement;
 
-    const inputElement = createCustomElement(field.type, {
-      classes: field.class,
-      id: field.id
-    });
-
-
-    fieldContainer.append(labelElement, inputElement);
+    if (type === 'input') {
+      inputElement = createCustomElement('input', { classes, id, type: type, placeholder, required });
+    } else if (type === 'submit') {
+      inputElement = createCustomElement('button', { classes, id, type: type, text: label });
+    } else {
+      inputElement = createCustomElement('textarea', { classes, id, placeholder, required });
+    }
+    const fieldContainer = createFieldContainer(label !== 'Submit' ? label : null, id, inputElement);
     formContainer.appendChild(fieldContainer);
   });
-
   return formContainer;
 };
+
+const createFieldContainer = (labelText, labelFor, inputElement) => {
+  const fieldContainer = createCustomElement('div', {
+    classes: 'field-container'
+  });
+
+  if (labelText) {
+    const labelElement = createCustomElement('label', {
+      classes: 'input-label',
+      htmlFor: labelFor,
+      text: labelText
+    });
+    fieldContainer.appendChild(labelElement);
+  }
+  fieldContainer.appendChild(inputElement);
+  return fieldContainer;
+};
+

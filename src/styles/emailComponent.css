@@ -1,10 +1,9 @@
 .email-form-container {
   margin-bottom: 9rem;
   margin-top: 5rem;
-  margin-inline: 5rem;
   display: grid;
+  margin-inline: 5rem;
   grid-template-columns: repeat(2, 1fr);
-  background-color: var(--primary-color);
 }
 
 .email-form {
@@ -32,6 +31,12 @@
   grid-column: span 6;
 }
 
+.email-form > .field-container:nth-child(5) {
+  grid-column:span 6;
+  display: flex;
+  justify-content:center;
+}
+
 .input {
   width: 100%;
   padding: 0.5rem;
@@ -47,14 +52,47 @@
   height: 150px;
 }
 
-.email-form {
-  margin: 5rem 5rem;
+.inquiry-submit {
+  font: var(--font-button);
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+  color: var(--accent-color-dark);
+  border: 2px solid var(--accent-color-dark);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0.2rem;
+}
+
+.inquiry-submit::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  width: 0;
+  background-color: var(--secondary-color);
+  transition: var(--transition-normal);
+}
+
+.inquiry-submit:hover::after {
+  width: 100%;
+  left: 0;
+  opacity: 0.4;
+}
+
+.inquiry-submit::after {
+  background-color:var(--secondary-color);
 }
 
 .input-label {
   font-weight: bold;
   display: block;
   margin-bottom: 0.5rem;
+}
+
+.email-form {
+  margin: 5rem 5rem;
 }
 
 .email-info-section {
@@ -65,11 +103,13 @@
   gap: 3rem;
   max-width: 100%;
   color: var(--accent-color-dark);
-  background-color: var(--background-color);
+  background-color:var(--secondary-color);
+  border-radius:5rem;
 }
 
 .email-message-title {
   font: var(--font-heading);
+  letter-spacing: 0.2rem;
 }
 
 .email-description {
@@ -80,14 +120,25 @@
   line-height: 2rem;
 }
 
-.email-social-media-icons ul {
+.social-icon-list{
   margin-top: 2rem;
   display: flex;
   gap: 3rem;
   font-size: 2rem;
 }
 
-.email-social-media-icons h3 {
+.social-media-item .bx:hover {
+  color: var(--accent-color-dark);
+  transform: scale(1.3);
+}
+
+.social-icon-list .bx {
+  cursor:pointer;
+  transition: var(--transition-normal) ease-in-out;
+}
+
+.social-heading{
   font: var(--font-subheading);
   justify-self: center;
+  letter-spacing: 0.5rem;
 }
