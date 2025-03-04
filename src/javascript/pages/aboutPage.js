@@ -3,7 +3,8 @@ import '../../styles/aboutComponent.css';
 import {
   renderMainAboutImage,
   populateAboutSections,
-  renderMessageSection
+  renderMessageSection,
+  createBanner
 } from '../components/aboutComponent.js';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
@@ -17,6 +18,7 @@ import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEv
 export const renderAboutPageContent = () => {
   deleteCarousel();
   clearMainContent();
+  createBanner();
   renderMainAboutImage();
   populateAboutSections();
   renderMessageSection();

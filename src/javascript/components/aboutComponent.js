@@ -9,6 +9,8 @@ import aboutMainImage from '../../assets/images/carousel-slideshow-images/second
 
 import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
 
+import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+
 const fetchSegmentImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/about-page-images/', {
     recursive: false,
@@ -16,12 +18,10 @@ const fetchSegmentImages = fetchAllImages(
   })
 );
 
-export const renderMainAboutImage = () => {
-  const mainContentElement = document.getElementById('main-content');
+export const createBanner = () => {
+  const mainContentElement = isElementPresent('main-content');
 
-  if (!mainContentElement) {
-    throw new Error('Element with id \'main-content\' not found.');
-  }
+  if (!mainContentElement) return;
 
   const introBanner = createCustomElement('div', {
     classes: 'intro-banner'
@@ -31,6 +31,15 @@ export const renderMainAboutImage = () => {
     classes: 'intro-text',
     text: 'Brewing More Than Coffee, Creating Connections'
   });
+
+  introBanner.appendChild(introText);
+  mainContentElement.appendChild(introBanner);
+};
+
+export const renderMainAboutImage = () => {
+  const mainContentElement = isElementPresent('main-content');
+
+  if (!mainContentElement) return;
 
   const aboutMainSection = createCustomElement('section', {
     classes: 'about-main-section'
@@ -46,23 +55,23 @@ export const renderMainAboutImage = () => {
 
   imageWrapper.appendChild(mainImage);
   aboutMainSection.appendChild(imageWrapper);
-  introBanner.appendChild(introText);
-  mainContentElement.append(introBanner, aboutMainSection);
+  mainContentElement.appendChild(aboutMainSection);
 };
 
 export const populateAboutSections = () => {
-  const mainContentElement = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content');
 
-  if (!mainContentElement) {
-    throw new Error('Element with id \'main-content\' not found.');
-  }
+  if (!mainContentElement) return;
 
   const aboutSectionWrapper = createCustomElement('section', {
     classes: 'about-section-wrapper'
   });
 
-  aboutSections.forEach(section => {
-    const { id, heading, image, content } = section;
+  const aboutSectionElements = aboutSections.map(({ id, heading, image, content }) => {
+    if (!id || !heading || !image || !content) {
+      console.log('Missing data!');
+      return null;
+    }
 
     const aboutSection = createCustomElement('div', {
       classes: `${id}-container about-section`
@@ -77,40 +86,44 @@ export const populateAboutSections = () => {
       text: heading
     });
 
+    sectionTextContainer.appendChild(sectionTitle);
+
+    content?.forEach(para => {
+      if (Object.values(para).length === 0) {
+        console.log('Empty content for this section!');
+      }
+      Object.values(para).forEach(text => {
+        sectionTextContainer.appendChild(createCustomElement('p', { text }));
+      })
+    });
+
     const imageContainer = createCustomElement('div', {
       classes: 'section-image-container'
     });
 
-    const sectionImage = createImageElement(fetchSegmentImages[image], {
+    const sectionImagePath = fetchSegmentImages[image];
+
+    if (!sectionImagePath) {
+      console.log('Missing image date!');
+    }
+
+    const sectionImage = createImageElement(sectionImagePath, {
       classes: `${id}-image about-section-image`
     });
 
-    sectionTextContainer.appendChild(sectionTitle);
-
-    if (content && content.length > 0) {
-      content.forEach(para => {
-        Object.keys(para).forEach(paragraphKey => {
-          const paragraphElement = createCustomElement('p', {
-            text: para[paragraphKey]
-          });
-          sectionTextContainer.appendChild(paragraphElement);
-        });
-      });
-    }
-
     imageContainer.appendChild(sectionImage);
     aboutSection.append(sectionTextContainer, imageContainer);
-    aboutSectionWrapper.appendChild(aboutSection);
-    mainContentElement.appendChild(aboutSectionWrapper);
+    return aboutSection;
   });
+
+  aboutSectionElements.forEach(section => aboutSectionWrapper.appendChild(section));
+  mainContentElement.appendChild(aboutSectionWrapper);
 };
 
 export const renderMessageSection = () => {
-  const mainContentElement = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content');
 
-  if (!mainContentElement) {
-    throw new Error('Element with id \'main-content\' not found.');
-  }
+  if (!mainContentElement) return;
 
   const messageContainer = createCustomElement('section', {
     classes: 'about-message-container'
