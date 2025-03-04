@@ -2,10 +2,12 @@ import { initializeMenuEventHandlers } from '../menu/menuControls.js';
 
 import { createCustomElement } from '../domUtils/elementUtils.js';
 
+import { isElementPresent } from '../domUtils/mainContentUtils.js';
+
 const CATEGORY_LINKS = ['cup', 'crust', 'churn', 'snack'];
 
 export const setupMenuHeader = () => {
-  const contentElement = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content')
   const menuHeader = createCustomElement('div', {
     id: 'category-name',
     classes: 'category-name',
@@ -17,7 +19,7 @@ export const setupMenuHeader = () => {
   CATEGORY_LINKS.forEach(item => ul.appendChild(createCategoryButtons(item)));
   nav.appendChild(ul);
   menuHeader.appendChild(nav);
-  contentElement.appendChild(menuHeader);
+  mainContentElement.appendChild(menuHeader);
 
   initializeMenuEventHandlers();
 };

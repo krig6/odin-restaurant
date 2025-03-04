@@ -1,16 +1,16 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
+import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+
 import { createSocialMediaSection } from './socialMediaSection.js';
 
 export const initializeEmailFormSection = () => {
-  const contentElement = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content');
 
-  if (!contentElement) {
-    throw new Error('Element with id \'main-content\' not found.');
-  }
+  if (!mainContentElement) return;
 
   const emailFormContainer = createEmailFormContainer();
-  contentElement.appendChild(emailFormContainer);
+  mainContentElement.appendChild(emailFormContainer);
 };
 
 const createEmailFormContainer = () => {
@@ -27,7 +27,6 @@ const createEmailInfoSection = () => {
   const infoSectionContainer = createCustomElement('div', {
     classes: 'email-info-section'
   });
-
 
   const socialMediaIcons = createSocialMediaSection('email');
   const socialMediaIconContainer = createCustomElement('div', {

@@ -1,18 +1,16 @@
 import '../../styles/mainNavigation.css';
 
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
 
 import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
 
 export const initializeMainNavigation = () => {
-  const headerElement = document.getElementById('site-header');
+  const headerElement = isElementPresent('site-header');
 
-  if (!headerElement) {
-    console.error('Element with id \'site-header\' not found');
-    return;
-  }
+  if (!headerElement) return;
 
   const navigationMenu = createNavigationMenu();
   headerElement.appendChild(navigationMenu);

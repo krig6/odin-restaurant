@@ -3,10 +3,14 @@ import {
   createImageElement
 } from '../domUtils/elementUtils.js';
 
+import { isElementPresent } from '../domUtils/mainContentUtils.js';
+
 export const renderMenuItems = (items) => {
   clearMenuWrapper();
 
-  const content = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content');
+  if (!mainContentElement) return;
+
   const menuWrapper = createCustomElement('section', {
     classes: 'category-products'
   });
@@ -51,7 +55,7 @@ export const renderMenuItems = (items) => {
   });
 
   menuWrapper.appendChild(grid);
-  content.appendChild(menuWrapper);
+  mainContentElement.appendChild(menuWrapper);
 };
 
 const clearMenuWrapper = () => {

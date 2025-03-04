@@ -1,5 +1,7 @@
 import '../../styles/featuredLinksComponent.css';
 
+import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+
 import {
   createCustomElement,
   createImageElement
@@ -48,12 +50,9 @@ const FEATURED_LINKS = [
 ];
 
 export const initializeFeaturedLinks = () => {
-  const contentElement = document.getElementById('main-content');
+  const mainContentElement = isElementPresent('main-content');
 
-  if (!contentElement) {
-    console.error('Element with id \'main-content\' not found');
-    return;
-  }
+  if (!mainContentElement) return;
 
   const featuredLinksSection = createCustomElement('section', { classes: 'featured-links-container' });
 
@@ -61,7 +60,7 @@ export const initializeFeaturedLinks = () => {
   FEATURED_LINKS.forEach(link => fragment.appendChild(createFeaturedLinkCard(link)));
   featuredLinksSection.appendChild(fragment);
 
-  contentElement.appendChild(featuredLinksSection);
+  mainContentElement.appendChild(featuredLinksSection);
   initializeNavEventHandlers();
 };
 

@@ -1,3 +1,5 @@
+import { isElementPresent } from '../domUtils/mainContentUtils.js';
+
 import { initializeItems } from './menuLoader.js';
 
 export const initializeMenuEventHandlers = () => {
@@ -26,10 +28,8 @@ const renderSelectedCategory = (category) => {
 };
 
 const handleCurrentTab = (category, shouldSet = false) => {
-  const menuHeader = document.getElementById('category-name');
-  if (!menuHeader) {
-    throw new Error('Element with id \'category-name\' not found.');
-  }
+  const menuHeader = isElementPresent('category-name');
+  if (!menuHeader) return;
 
   const previousTab = menuHeader.getAttribute('data-action');
 

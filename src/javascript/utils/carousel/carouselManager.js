@@ -1,8 +1,10 @@
 import { createCustomElement } from '../domUtils/elementUtils.js';
 
+import { checkElementById } from '../domUtils/mainContentUtils.js';
+
 export const deleteCarousel = () => {
   if (isCarouselPresent()) {
-    const carouselElement = document.getElementById('hero-carousel');
+    const carouselElement = checkElementById('hero-carousel');
 
     if (carouselElement) {
       carouselElement.remove();
@@ -20,7 +22,7 @@ export const deleteCarousel = () => {
 };
 
 export const createCarousel = () => {
-  const carouselElement = document.getElementById('hero-carousel');
+  const carouselElement = checkElementById('hero-carousel');
   if (carouselElement) {
     /*eslint-disable no-console */
     console.info('Carousel already exists.');
@@ -34,8 +36,8 @@ export const createCarousel = () => {
     dataset: { carousel: '' }
   });
 
-  const contentElement = document.getElementById('main-content');
-  document.body.insertBefore(newCarouselElement, contentElement);
+  const mainContentElement = document.getElementById('main-content');
+  document.body.insertBefore(newCarouselElement, mainContentElement);
   /*eslint-disable no-console */
   console.info('Carousel created successfully.');
   /* eslint-enable no-console */
