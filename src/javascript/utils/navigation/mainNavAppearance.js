@@ -13,7 +13,7 @@ export const resetToDefaultNavColors = () => {
 };
 
 export const updateHeaderStickyState = (page) => {
-  const shouldStick = page === 'menu' || page === 'email' || page === 'about';
+  const shouldStick = page !== 'home';
   setHeaderSticky(shouldStick);
 };
 
