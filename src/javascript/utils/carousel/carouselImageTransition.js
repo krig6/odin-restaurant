@@ -1,41 +1,39 @@
-export const startImageRotation = (images, interval) => {
-  const rotatingElements = document.querySelectorAll('.rotating-images');
-  const imagesToRotate = images.slice(0, -1);
+export const startImageRotation = (imageUrls, rotationInterval) => {
+  const imageElements = document.querySelectorAll('.multiple-images');
+  const imagesToDisplay = imageUrls.slice(0, -1);
 
-  if (rotatingElements.length === 0) {
+  if (imageElements.length === 0) {
     console.error('No elements found with the class "rotating-images".');
     return;
   }
 
-  if (rotatingElements.length !== imagesToRotate.length) {
+  if (imageElements.length !== imagesToDisplay.length) {
     console.error('Mismatch between the number of rotating elements and images.');
     return;
   }
 
-  initializeImages(rotatingElements, imagesToRotate, 0);
-  transitionImages(rotatingElements, imagesToRotate, interval);
+  initializeImageElements(imageElements, imagesToDisplay, 0);
+  rotateImageElements(imageElements, imagesToDisplay, rotationInterval);
 };
 
-const initializeImages = (elements, images, currentIndex) => {
+const initializeImageElements = (elements, images, currentImageIndex) => {
   elements.forEach((element, index) => {
-    element.style.opacity = index === currentIndex ? '1' : '0';
+    element.style.opacity = index === currentImageIndex ? '1' : '0';
     element.style.backgroundImage = `url(${images[index]})`;
   });
 };
 
-const transitionImages = (elements, images, interval) => {
-  let currentIndex = 0;
-
-  const updateImageStates = () => {
-    const nextIndex = (currentIndex + 1) % images.length;
+const rotateImageElements = (elements, images, interval) => {
+  let currentImageIndex = 0;
+  const updateImageOpacity = () => {
+    const nextImageIndex = (currentImageIndex + 1) % images.length;
 
     elements.forEach((element, index) => {
-      element.style.opacity = index === nextIndex ? '1' : '0';
+      element.style.opacity = index === nextImageIndex ? '1' : '0';
       element.style.backgroundImage = `url(${images[index]})`;
     });
-
-    currentIndex = nextIndex;
+    currentImageIndex = nextImageIndex;
   };
 
-  setInterval(updateImageStates, interval);
+  setInterval(updateImageOpacity, interval);
 };

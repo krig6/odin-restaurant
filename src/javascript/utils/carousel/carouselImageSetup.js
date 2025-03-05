@@ -1,61 +1,54 @@
-import '../../../styles/carouselImageTransition.css';
+import { fetchAllImages, loadImagesIntoCache } from '../imageUtils/imageUtils.js';
 
-import { createImageElement } from '../domUtils/elementUtils.js';
+import { createCustomElement, createImageElement } from '../domUtils/elementUtils.js';
+import { getElement } from '../domUtils/mainContentUtils.js';
 
 import { startImageRotation } from './carouselImageTransition.js';
 
-import {
-  fetchAllImages,
-  loadImagesIntoCache
-} from '../imageUtils/imageUtils.js';
-
-export const setupCarouselImages = () => {
-  const carouselImagesUrls = prepareCarouselImages();
+export const populateCarouselImages = () => {
+  const carouselImagesUrls = fetchCarouselImages();
   if (carouselImagesUrls.length > 0) {
-    populateImageGallery(carouselImagesUrls);
-    populateSingleImage(carouselImagesUrls);
+    createImageGallery(carouselImagesUrls);
+    createImageGallery(carouselImagesUrls, 'single-image');
   }
 };
 
-const populateImageGallery = (images) => {
-  const imageGalleryElement = document.getElementById('image-gallery');
-
-  if (!imageGalleryElement) {
-    console.error('Element with id \'image-gallery\' not found.');
-    return;
-  }
-
-  const fragment = document.createDocumentFragment();
-  images.slice(0, -1).forEach(imageUrl => {
-    const img = createImageElement(imageUrl, {
-      classes: 'rotating-images',
-      alt: 'Food and Beverages'
-    });
-    fragment.appendChild(img);
+const createImageGallery = (images, type = 'multiple') => {
+  const targetElementId = type === 'multiple' ? 'multiple-image' : 'single-image';
+  const targetElement = getElement(targetElementId);
+  const multipleImageContainer = createCustomElement('div', {
+    classes: `${type}-image-container`
   });
 
-  imageGalleryElement.appendChild(fragment);
-  startImageRotation(images, 2000);
-};
-
-const populateSingleImage = (images) => {
-  const singleImageElement = document.getElementById('single-image');
-
-  if (!singleImageElement) {
-    console.error('Element with id \'single-image\' not found.');
-    return;
-  }
-
-  images.slice(-1).forEach(imageUrl => {
-    const img = createImageElement(imageUrl, {
-      classes: 'single-image',
-      alt: 'Barista'
-    });
-    singleImageElement.appendChild(img);
+  const singleImageContainer = createCustomElement('div', {
+    classes: `${type}-image-container`
   });
+
+  if (!targetElement) return;
+
+  const imagesToDisplay = type === 'multiple' ? images.slice(0, -1) : images.slice(-1);
+  const imageFragment = document.createDocumentFragment();
+  imagesToDisplay.forEach(imageUrl => {
+    const imageElement = createImageElement(imageUrl, {
+      classes: type === 'multiple' ? 'multiple-images' : 'single-image',
+      alt: type === 'multiple' ? 'Food and Beverages' : 'Barista',
+    });
+    imageFragment.append(imageElement);
+    if (type === 'multiple') {
+      multipleImageContainer.append(imageFragment);
+      targetElement.append(multipleImageContainer);
+    } else {
+      singleImageContainer.append(imageFragment);
+      targetElement.append(singleImageContainer);
+    }
+  });
+
+  if (type === 'multiple') {
+    startImageRotation(images, 2000);
+  }
 };
 
-const prepareCarouselImages = () => {
+const fetchCarouselImages = () => {
   const imagesContext = import.meta.webpackContext(
     '../../../assets/images/carousel-slideshow-images',
     {
@@ -72,8 +65,8 @@ const prepareCarouselImages = () => {
 
   if (!carouselImagesUrls || carouselImagesUrls.length === 0) {
     console.error('No images found for the carousel.');
+    return [];
   }
-
   loadImagesIntoCache(carouselImagesUrls);
 
   return carouselImagesUrls;

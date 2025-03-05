@@ -15,7 +15,7 @@
   transition: 500ms opacity ease-in-out;
 }
 
-.slide > img {
+.slide  img {
   display: block;
   width: 100%;
   height: 100%;
