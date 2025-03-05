@@ -1,0 +1,34 @@
+{
+  "carouselButtons": {
+    "prev": {
+      "label": "&#8249;"
+    },
+    "next": {
+      "label": "&#8250;"
+    }
+  },
+  "slides": [
+    {
+      "id": "multiple-image",
+      "className": "slide primary",
+      "currentStatus": "active",
+      "cta": {
+        "headline": "BREWS AND BAKES IN HARMONY",
+        "buttonText": "LEARN MORE",
+        "action": "menu",
+        "buttonClass": "learn-btn"
+      }
+    },
+    {
+      "id": "single-image",
+      "className": "slide secondary",
+      "currentStatus": "inactive",
+      "cta": {
+        "headline": "A TASTE OF OUR STORY",
+        "buttonText": "LEARN MORE",
+        "action": "about",
+        "buttonClass": "learn-btn"
+      }
+    }
+  ]
+}

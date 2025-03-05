@@ -1,4 +1,4 @@
-.cta-section {
+.cta-container{
   position: absolute;
   top: 60%;
   left: 50%;
@@ -11,7 +11,7 @@
   font-family: "Noto Serif", sans-serif;
 }
 
-.cta-section button {
+.learn-btn{
   font: var(--font-button);
   padding: 0.5rem;
   background-color: transparent;
@@ -27,13 +27,13 @@
   width: 210px;
 }
 
-.cta-secondary-class button {
+.secondary .learn-btn {
   color: var(--primary-color);
   background-color: var(--text-color);
   border: 3px solid var(--primary-color);
 }
 
-.cta-section button::after {
+.learn-btn::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -43,17 +43,18 @@
   background-color: var(--secondary-color);
   transition: var(--transition-normal);
 }
-.cta-section button:hover::after {
+
+.learn-btn:hover::after {
   width: 100%;
   left: 0;
   opacity: 0.4;
 }
 
-.cta-primary-class button::after {
+.primary .learn-btn::after {
   background-color: var(--text-color);
 }
 
-.cta-section p {
+.headline{
   width: 25ch;
   text-align: center;
   color: var(--text-color);
@@ -61,6 +62,6 @@
   font: var(--font-cta);
 }
 
-.cta-secondary-class p {
+.cta-about-headline {
   color: var(--primary-color);
 }

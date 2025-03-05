@@ -1,4 +1,4 @@
-import { renderHomePageContent } from '../../pages/homePage.js';
+import { setupHomePageStructure } from '../../pages/homePage.js';
 
 import { renderMenuPageContent } from '../../pages/menuPage.js';
 
@@ -60,7 +60,7 @@ const navigateToPage = (page) => {
       break;
     case 'home':
     default:
-      renderHomePageContent();
+      setupHomePageStructure();
       break;
   }
 };
