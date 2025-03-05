@@ -1,6 +1,6 @@
 import '../../styles/featuredLinksComponent.css';
 
-import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import {
   createCustomElement,
@@ -50,7 +50,7 @@ const FEATURED_LINKS = [
 ];
 
 export const initializeFeaturedLinks = () => {
-  const mainContentElement = isElementPresent('main-content');
+  const mainContentElement = getElement('main-content');
 
   if (!mainContentElement) return;
 

@@ -1,11 +1,11 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
-import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import { createSocialMediaSection } from './socialMediaSection.js';
 
 export const initializeEmailFormSection = () => {
-  const mainContentElement = isElementPresent('main-content');
+  const mainContentElement = getElement('main-content');
 
   if (!mainContentElement) return;
 

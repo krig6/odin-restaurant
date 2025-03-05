@@ -3,12 +3,12 @@ import {
   createImageElement
 } from '../domUtils/elementUtils.js';
 
-import { isElementPresent } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/mainContentUtils.js';
 
 export const renderMenuItems = (items) => {
   clearMenuWrapper();
 
-  const mainContentElement = isElementPresent('main-content');
+  const mainContentElement = getElement('main-content');
   if (!mainContentElement) return;
 
   const menuWrapper = createCustomElement('section', {

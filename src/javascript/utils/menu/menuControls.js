@@ -1,4 +1,4 @@
-import { isElementPresent } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/mainContentUtils.js';
 
 import { initializeItems } from './menuLoader.js';
 
@@ -28,7 +28,7 @@ const renderSelectedCategory = (category) => {
 };
 
 const handleCurrentTab = (category, shouldSet = false) => {
-  const menuHeader = isElementPresent('category-name');
+  const menuHeader = getElement('category-name');
   if (!menuHeader) return;
 
   const previousTab = menuHeader.getAttribute('data-action');

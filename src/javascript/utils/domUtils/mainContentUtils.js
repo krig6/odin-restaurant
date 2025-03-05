@@ -13,19 +13,24 @@ export const clearMainContent = (elementID = 'main-content') => {
   console.log(`Element with id '${elementID}' has been cleared.`);
 };
 
-export const isElementPresent = (elementID) => {
+export const getElement = (elementID) => {
   const mainContentElement = checkElementById(elementID);
+
   if (!mainContentElement) {
-    const errorMessageElement = createCustomElement('div', {
-      classes: 'missing-content',
-      text: `Uh-oh, our page is a little 'half-baked'. Don't worry, we're fixing this!'`
-    });
-    document.body.appendChild(errorMessageElement);
+    document.body.appendChild(createErrorMessage());
     return null;
   }
-
   return mainContentElement;
 };
+
+const createErrorMessage = () => {
+  const errorMessageElement = createCustomElement('div', {
+    classes: 'missing-content',
+    text: `Uh-oh, our page is a little 'half-baked'. Don't worry, we're fixing this!'`
+  });
+
+  return errorMessageElement;
+}
 
 export const checkElementById = (elementID) => {
   return document.getElementById(elementID);

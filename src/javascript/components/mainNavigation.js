@@ -1,14 +1,14 @@
 import '../../styles/mainNavigation.css';
 
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
-import { isElementPresent } from '../utils/domUtils/mainContentUtils.js';
+import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
 const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
 
 export const initializeMainNavigation = () => {
-  const headerElement = isElementPresent('site-header');
+  const headerElement = getElement('site-header');
 
   if (!headerElement) return;
 

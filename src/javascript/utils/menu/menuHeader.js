@@ -2,12 +2,12 @@ import { initializeMenuEventHandlers } from '../menu/menuControls.js';
 
 import { createCustomElement } from '../domUtils/elementUtils.js';
 
-import { isElementPresent } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/mainContentUtils.js';
 
 const CATEGORY_LINKS = ['cup', 'crust', 'churn', 'snack'];
 
 export const setupMenuHeader = () => {
-  const mainContentElement = isElementPresent('main-content')
+  const mainContentElement = getElement('main-content')
   const menuHeader = createCustomElement('div', {
     id: 'category-name',
     classes: 'category-name',
