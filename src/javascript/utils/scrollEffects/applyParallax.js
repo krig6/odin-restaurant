@@ -5,7 +5,7 @@ export const applyParallax = async () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const imageElements = document.querySelectorAll('.about-section-image');
-  const mainImage = document.querySelector('.about-main-image');
+  const mainImage = document.querySelector('.hero-image');
   const mainImageContainer = mainImage?.parentElement;
 
   if (!mainImageContainer) {

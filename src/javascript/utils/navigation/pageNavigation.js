@@ -2,7 +2,7 @@ import { setupHomePageStructure } from '../../pages/homePage.js';
 
 import { renderMenuPageContent } from '../../pages/menuPage.js';
 
-import { renderAboutPageContent } from '../../pages/aboutPage.js';
+import { setupAboutPageStructure } from '../../pages/aboutPage.js';
 
 import { renderEmailPageContent } from '../../pages/emailPage.js';
 
@@ -56,7 +56,7 @@ const navigateToPage = (page) => {
       renderEmailPageContent();
       break;
     case 'about':
-      renderAboutPageContent();
+      setupAboutPageStructure();
       break;
     case 'home':
     default:

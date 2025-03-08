@@ -1,24 +1,33 @@
-[
-  {
-    "id": "story",
-    "heading": "Where Flavor Meets Comfort",
-    "image": "coffee-and-light.jpg",
-    "content": [
-      {
-        "intro": "At Cup and Crust, we believe every cup of coffee, bite of pastry, and scoop of ice cream tells a unique story. Our mission is to offer a warm, inviting space where friends and family can enjoy life’s simple pleasures. From the first sip of freshly brewed coffee to the comfort of a warm pastry or the joy of a creamy scoop of ice cream, we aim to make every visit memorable.",
-        "details": "Our passion for handcrafted delights shines through in everything we serve. With carefully selected ingredients and a commitment to quality, we create a welcoming environment where you can relax, connect, and savor life’s little joys, one delicious treat at a time."
-      }
-    ]
+{
+  "aboutSection": [
+    {
+      "id": "story",
+      "title": "Where Flavor Meets Comfort",
+      "image": "coffee-and-light.jpg",
+      "description": [
+        {
+          "intro": "At Cup and Crust, we believe every cup of coffee, bite of pastry, and scoop of ice cream tells a unique story. Our mission is to offer a warm, inviting space where friends and family can enjoy life’s simple pleasures. From the first sip of freshly brewed coffee to the comfort of a warm pastry or the joy of a creamy scoop of ice cream, we aim to make every visit memorable.",
+          "details": "Our passion for handcrafted delights shines through in everything we serve. With carefully selected ingredients and a commitment to quality, we create a welcoming environment where you can relax, connect, and savor life’s little joys, one delicious treat at a time."
+        }
+      ]
+    },
+    {
+      "id": "craftmanship",
+      "title": "Crafted Fresh, Served Perfect",
+      "image": "coffee-and-bread.jpg",
+      "description": [
+        {
+          "intro": "What began as a simple affection for coffee has grown into a profound passion for crafting and serving a diverse array of handcrafted delicacies. At Cup and Crust, we take great pride in curating a menu that reflects our commitment to quality and artistry.",
+          "details": "Our offerings encompass a wide range of meticulously prepared brews, delectable bakes, and exquisite churns, each made fresh daily with the finest ingredients. We carefully source premium ingredients to ensure that each bite and sip you experience is a true celebration of flavor and craftsmanship."
+        }
+      ]
+    }
+  ],
+  "banner": {
+    "bannerText": "Brewing More Than Coffee, Creating Connections"
   },
-  {
-    "id": "craftmanship",
-    "heading": "Crafted Fresh, Served Perfect",
-    "image": "coffee-and-bread.jpg",
-    "content": [
-      {
-        "intro": "What began as a simple affection for coffee has grown into a profound passion for crafting and serving a diverse array of handcrafted delicacies. At Cup and Crust, we take great pride in curating a menu that reflects our commitment to quality and artistry.",
-        "details": "Our offerings encompass a wide range of meticulously prepared brews, delectable bakes, and exquisite churns, each made fresh daily with the finest ingredients. We carefully source premium ingredients to ensure that each bite and sip you experience is a true celebration of flavor and craftsmanship."
-      }
-    ]
+  "brandStory": {
+    "brandStoryTitle": "A Brew Steeped in Tradition",
+    "brandStoryText": "Long ago, a humble baker discovered the secret to the perfect balance—where the crisp of a golden crust met the warmth of a rich, comforting brew. They believed that every great conversation, every moment of reflection, and every shared laugh deserved something handcrafted with care. Over time, their passion became a tradition, passed down through generations, until it found its home here at Cup and Crust. Today, we carry on that legacy, serving flavors that tell a story of warmth, craft, and connection—one sip, one bite at a time."
   }
-]
+}

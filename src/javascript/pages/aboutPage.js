@@ -1,27 +1,27 @@
-import '../../styles/aboutComponent.css';
+import { clearMainContent } from '../utils/domUtils/mainContentUtils.js';
 
 import {
-  renderMainAboutImage,
-  populateAboutSections,
-  renderMessageSection,
-  createBanner
+  createHeroImageSection,
+  buildAboutSection,
+  createBrandStory,
+  createIntroBanner
 } from '../components/aboutComponent.js';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
 
-import { clearMainContent } from '../utils/domUtils/mainContentUtils.js';
+import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
 import { applyParallax } from '../utils/scrollEffects/applyParallax.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import '../../styles/aboutComponent.css';
 
-export const renderAboutPageContent = () => {
+export const setupAboutPageStructure = () => {
   deleteCarousel();
   clearMainContent();
-  createBanner();
-  renderMainAboutImage();
-  populateAboutSections();
-  renderMessageSection();
+  createIntroBanner();
+  createHeroImageSection();
+  buildAboutSection();
+  createBrandStory();
   applyParallax();
   initializeNavEventHandlers();
 };
