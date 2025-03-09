@@ -1,4 +1,4 @@
-.email-form-container {
+.email-section-container {
   margin-bottom: 9rem;
   margin-top: 5rem;
   display: grid;
@@ -6,7 +6,7 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.email-form {
+.contact-form{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
@@ -14,24 +14,25 @@
   max-width: 100%;
   padding: 2rem;
   color: var(--accent-color-dark);
+  margin: 5rem 5rem;
   font: var(--font-title);
 }
 
-.email-form > .field-container:nth-child(1) {
+.contact-form> .form-field:nth-child(1) {
   grid-column-start: 1;
 }
 
-.email-form > .field-container:nth-child(1),
-.email-form > .field-container:nth-child(2) {
+.contact-form> .form-field:nth-child(1),
+.contact-form> .form-field:nth-child(2) {
   grid-column: span 3;
 }
 
-.email-form > .field-container:nth-child(3),
-.email-form > .field-container:nth-child(4) {
+.contact-form> .form-field:nth-child(3),
+.contact-form> .form-field:nth-child(4) {
   grid-column: span 6;
 }
 
-.email-form > .field-container:nth-child(5) {
+.submit-button-container {
   grid-column:span 6;
   display: flex;
   justify-content:center;
@@ -91,11 +92,11 @@
   margin-bottom: 0.5rem;
 }
 
-.email-form {
+.contact-form{
   margin: 5rem 5rem;
 }
 
-.email-info-section {
+.info-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,12 +108,12 @@
   border-radius:5rem;
 }
 
-.email-message-title {
+.info-heading{
   font: var(--font-heading);
   letter-spacing: 0.2rem;
 }
 
-.email-description {
+.info-text{
   font: var(--font-title);
   width: 60ch;
   text-align: center;

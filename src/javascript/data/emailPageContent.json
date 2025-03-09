@@ -1,0 +1,46 @@
+  {
+    "infoBlock": {
+      "infoHeading": "Questions? Let's get it brewing!",
+      "infoText": "Need to get in touch with us? Reach out to us and let’s stir things up—whether it’s coffee, cakes, or something else brewing in your mind!"
+    },
+    "formFields": [
+      {
+        "labelText": "First name *",
+        "id": "first-name",
+        "type": "input",
+        "className": "input-first-name input",
+        "placeholder": "Cupford",
+        "required": true
+      },
+      {
+        "labelText": "Last name",
+        "id": "last-name",
+        "type": "input",
+        "className": "input-last-name input",
+        "placeholder": "Crustington",
+        "required": false
+      },
+      {
+        "labelText": "Email *",
+        "id": "email-address",
+        "type": "input",
+        "className": "input-email input",
+        "placeholder": "contact@cupandcrust.com",
+        "required": true
+      },
+      {
+        "labelText": "What can we help you with?",
+        "id": "inquiry-input",
+        "type": "textarea",
+        "className": "inquiry-input input",
+        "placeholder": "Share your thoughts, from the first sip to the last bite!",
+        "required": true
+      }
+    ],
+    "submitButton": {
+      "buttonText": "Submit",
+      "id": "submit-button",
+      "type": "submit",
+      "className": "inquiry-submit"
+    }
+  }

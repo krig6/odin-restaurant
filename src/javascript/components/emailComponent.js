@@ -2,102 +2,122 @@ import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
 import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
+import emailPageData from '../data/emailPageContent.json';
+
 import { createSocialMediaSection } from './socialMediaSection.js';
 
-export const initializeEmailFormSection = () => {
+export const buildEmailSection = () => {
   const mainContentElement = getElement('main-content');
-
   if (!mainContentElement) return;
 
-  const emailFormContainer = createEmailFormContainer();
-  mainContentElement.appendChild(emailFormContainer);
+  const emailSection = createCustomElement('div', {
+    classes: 'email-section-container'
+  });
+
+  const infoBlock = createInfoBlock();
+  const formBlock = createFormBlock();
+
+  emailSection.append(infoBlock, formBlock);
+  mainContentElement.append(emailSection);
 };
 
-const createEmailFormContainer = () => {
-  const container = createCustomElement('div', { classes: 'email-form-container' });
-  const infoSection = createEmailInfoSection();
-  const formSection = createEmailFormSection();
+const createInfoBlock = () => {
+  const infoContainer = createCustomElement('div', {
+    classes: 'info-section'
+  });
 
-  container.append(infoSection, formSection);
+  const infoHeading = createCustomElement('h2', {
+    classes: 'info-heading',
+    text: emailPageData['infoBlock'].infoHeading
+  });
 
-  return container;
+  const infoText = createCustomElement('p', {
+    classes: 'info-text',
+    text: emailPageData['infoBlock'].infoText
+  });
+
+  const socialIconsWrapper = createSocialMediaSection('email');
+
+  infoContainer.append(infoHeading, infoText, socialIconsWrapper);
+  return infoContainer;
 };
 
-const createEmailInfoSection = () => {
-  const infoSectionContainer = createCustomElement('div', {
-    classes: 'email-info-section'
+const createFormBlock = () => {
+  const form = createCustomElement('form', {
+    classes: 'contact-form',
+    id: 'contact-form'
+
   });
 
-  const socialMediaIcons = createSocialMediaSection('email');
-  const socialMediaIconContainer = createCustomElement('div', {
-    classes: 'email-social-media-icons'
-  });
+  form.method = 'post';
+  form.action = '#';
 
-  const titleElement = createCustomElement('h2', {
-    classes: 'email-message-title',
-    text: 'Questions? Lets get it brewing!'
-  });
+  const formFields = getFormFields().map(createInputField).filter(Boolean);
+  const submitButton = createSubmitButton();
 
-  const descriptionElement = createCustomElement('p', {
-    classes: 'email-description',
-    text: 'Need to get in touch with us? Reach out to us and let’s stir things up—whether it’s coffee, cakes, or something else brewing in your mind!'
-  });
-
-  socialMediaIconContainer.appendChild(socialMediaIcons);
-  infoSectionContainer.append(titleElement, descriptionElement, socialMediaIconContainer);
-
-  return infoSectionContainer;
+  formFields.forEach(field => form.append(field));
+  form.append(submitButton);
+  return form;
 };
 
-const createEmailFormSection = () => {
-  const formContainer = createCustomElement('form', {
-    classes: 'email-form',
-    id: 'email-form',
-  });
-
-  formContainer.method = 'post';
-  formContainer.action = '#';
-
-  const formFields = [
-    { label: 'First name *', id: 'first-name', type: 'input', class: 'input-first-name input', placeholder: 'Cupford', required: true },
-    { label: 'Last name', id: 'last-name', type: 'input', class: 'input-last-name input', placeholder: 'Crustington' },
-    { label: 'Email *', id: 'email-address', type: 'input', class: 'input-email input', placeholder: 'contact@cupandcrust.com', required: true },
-    { label: 'What can we help you with?', id: 'inquiry-input', class: 'inquiry-input input', placeholder: 'Share your thoughts, from the first sip to the last bite!', required: true },
-    { label: 'Submit', id: 'submit-button', type: 'submit', class: 'inquiry-submit' },
-  ];
-
-  formFields.forEach(field => {
-    const { label, id, type, class: classes, placeholder, required } = field;
-
-    let inputElement;
-
-    if (type === 'input') {
-      inputElement = createCustomElement('input', { classes, id, type: type, placeholder, required });
-    } else if (type === 'submit') {
-      inputElement = createCustomElement('button', { classes, id, type: type, text: label });
-    } else {
-      inputElement = createCustomElement('textarea', { classes, id, placeholder, required });
-    }
-    const fieldContainer = createFieldContainer(label !== 'Submit' ? label : null, id, inputElement);
-    formContainer.appendChild(fieldContainer);
-  });
-  return formContainer;
+const getFormFields = () => {
+  return emailPageData['formFields'].filter(({ labelText, id, type, className, placeholder }) =>
+    labelText && id && type && className && placeholder
+  );
 };
 
-const createFieldContainer = (labelText, labelFor, inputElement) => {
-  const fieldContainer = createCustomElement('div', {
-    classes: 'field-container'
+const createInputField = ({ labelText, id, type, className, placeholder, required }) => {
+  const inputFieldWrapper = createCustomElement('div', {
+    classes: 'form-field'
   });
 
-  if (labelText) {
-    const labelElement = createCustomElement('label', {
-      classes: 'input-label',
-      htmlFor: labelFor,
-      text: labelText
+  const label = createCustomElement('label', {
+    classes: 'input-label',
+    htmlFor: id,
+    text: labelText
+  });
+
+  let inputElement;
+
+  if (type === 'input') {
+    inputElement = createCustomElement(type, {
+      id,
+      classes: className,
+      placeholder,
+      required,
+      type
     });
-    fieldContainer.appendChild(labelElement);
+  } else {
+    inputElement = createCustomElement(type, {
+      id,
+      classes: className,
+      placeholder,
+      required,
+      type
+    });
   }
-  fieldContainer.appendChild(inputElement);
-  return fieldContainer;
+
+  inputFieldWrapper.append(label, inputElement);
+  return inputFieldWrapper;
 };
 
+
+const createSubmitButton = () => {
+  const buttonWrapper = createCustomElement('div', {
+    classes: 'submit-button-container'
+  });
+
+  const submitButton = createCustomElement('button', {
+    id: emailPageData['submitButton'].id,
+    classes: emailPageData['submitButton'].className,
+    type: emailPageData['submitButton'].type,
+    text: emailPageData['submitButton'].buttonText
+  });
+
+  submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+
+  buttonWrapper.append(submitButton);
+  return buttonWrapper;
+};

@@ -4,7 +4,7 @@ import { renderMenuPageContent } from '../../pages/menuPage.js';
 
 import { setupAboutPageStructure } from '../../pages/aboutPage.js';
 
-import { renderEmailPageContent } from '../../pages/emailPage.js';
+import { setupEmailPageStructure } from '../../pages/emailPage.js';
 
 import { smoothScrollToTop } from '../scrollEffects/smoothScrollToTop.js';
 
@@ -53,7 +53,7 @@ const navigateToPage = (page) => {
       renderMenuPageContent();
       break;
     case 'email':
-      renderEmailPageContent();
+      setupEmailPageStructure();
       break;
     case 'about':
       setupAboutPageStructure();
