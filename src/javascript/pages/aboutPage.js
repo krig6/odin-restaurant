@@ -8,6 +8,7 @@ import {
 } from '../components/aboutComponent.js';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
+import { toggleMainNavColors } from '../utils/navigation/mainNavAppearance.js';
 
 import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
@@ -18,6 +19,7 @@ import '../../styles/aboutComponent.css';
 export const setupAboutPageStructure = () => {
   deleteCarousel();
   clearMainContent();
+  toggleMainNavColors();
   createIntroBanner();
   createHeroImageSection();
   buildAboutSection();
