@@ -2,13 +2,18 @@ import carouselConfig from '../data/carouselConfig.json';
 
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 import { createCarousel } from '../utils/carousel/carouselManager.js';
+import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 export const buildCarouselStructure = () => {
+  const mainContentElement = getElement('main-content')
+  if (!mainContentElement) return;
+
   const carousel = createCarousel();
   const carouselButtonsContainer = createCarouselButtons();
   const slidesContainer = createSlidesContainer();
 
   carousel.append(carouselButtonsContainer, slidesContainer);
+  mainContentElement.append(carousel);
 };
 
 const createCarouselButtons = () => {
