@@ -1,5 +1,3 @@
-import '../../styles/featuredLinksComponent.css';
-
 import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import {
@@ -7,12 +5,9 @@ import {
   createImageElement
 } from '../utils/domUtils/elementUtils.js';
 
-import {
-  fetchAllImages,
-  loadImagesIntoCache
-} from '../utils/imageUtils/imageUtils.js';
+import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import featuredLinkData from '../data/featuredLinksData.json';
 
 const featuredImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/featured-links-images', {
@@ -21,60 +16,36 @@ const featuredImages = fetchAllImages(
   })
 );
 
-const featuredImagesURL = Object.values(featuredImages);
-
-loadImagesIntoCache(featuredImagesURL);
-
-const FEATURED_LINKS = [
-  {
-    imageSrc: featuredImages['contact-us-image.png'],
-    heading: 'MESSAGE US',
-    description: 'Questions or feedback? We\'d love to hear from you! Reach out to share your thoughts or say hello.',
-    altText: 'Envelope',
-    targetPage: 'email'
-  },
-  {
-    imageSrc: featuredImages['menu-image.png'],
-    heading: 'DELIGHTS',
-    description: 'Explore our selection of freshly brewed coffees, delicious pastries, and savory snacks. Whether you\'re here for a quick pick-me-up or a leisurely break, we have something to delight every palate.',
-    altText: 'Coffee',
-    targetPage: 'menu'
-  },
-  {
-    imageSrc: featuredImages['about-us-image.png'],
-    heading: 'OUR STORY',
-    description: 'Welcome to our cozy coffee corner. With a passion for quality brews and community, we invite you to discover the heart behind every cup.',
-    altText: 'Book',
-    targetPage: 'about'
-  }
-];
-
-export const initializeFeaturedLinks = () => {
+export const buildFeaturedLinks = () => {
   const mainContentElement = getElement('main-content');
-
   if (!mainContentElement) return;
 
-  const featuredLinksSection = createCustomElement('section', { classes: 'featured-links-container' });
+  const featuredLinksSection = createCustomElement('section', { classes: 'featured-links-section' });
 
-  const fragment = document.createDocumentFragment();
-  FEATURED_LINKS.forEach(link => fragment.appendChild(createFeaturedLinkCard(link)));
-  featuredLinksSection.appendChild(fragment);
+  const featuredLinkCards = getValidFeaturedSections().map(createFeaturedLinkCard).filter(Boolean);
 
-  mainContentElement.appendChild(featuredLinksSection);
-  initializeNavEventHandlers();
-};
+  featuredLinkCards.forEach(section => featuredLinksSection.append(section));
+  mainContentElement.append(featuredLinksSection);
+}
 
-const createFeaturedLinkCard = ({ imageSrc, heading, description, altText, targetPage }) => {
-  const card = createCustomElement('figure', { classes: 'featured-link-card' });
-  card.dataset.action = targetPage;
+const getValidFeaturedSections = () => {
+  return featuredLinkData["featuredLinks"].filter(({ title, summary, image, iconAlt, link }) =>
+    title && summary && image && iconAlt && link);
+}
 
-  const image = createImageElement(imageSrc, { classes: 'featured-link-image', alt: altText });
+const createFeaturedLinkCard = ({ title, summary, image, iconAlt, link }) => {
+  const card = createCustomElement('article', { classes: 'featured-link-card' });
+  card.dataset.action = link;
 
-  const title = createCustomElement('figcaption', { classes: 'featured-link-title', text: heading });
+  const imageSource = featuredImages[image]
 
-  const descriptionParagraph = createCustomElement('p', { classes: 'featured-link-description', text: description });
+  const img = createImageElement(imageSource, { classes: 'featured-link-image', alt: iconAlt });
 
-  card.append(image, title, descriptionParagraph);
+  const heading = createCustomElement('h3', { classes: 'featured-link-title', text: title });
 
+  const description = createCustomElement('p', { classes: 'featured-link-summary', text: summary });
+
+  card.append(img, heading, description);
   return card;
 };
+

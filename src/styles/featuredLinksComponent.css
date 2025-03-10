@@ -1,4 +1,4 @@
-.featured-links-container {
+.featured-links-section {
   display: grid;
   grid-template-columns: 34% 32% 34%;
   height: 550px;
@@ -6,19 +6,19 @@
   color: var(--text-color);
 }
 
-.featured-links-container .featured-link-card:nth-child(1) {
+.featured-links-section .featured-link-card:nth-child(1) {
   background-color: var(--background-color);
 }
 
-.featured-links-container .featured-link-card:nth-child(2) {
+.featured-links-sections .featured-link-card:nth-child(2) {
   background-color: var(--accent-color-light);
 }
 
-.featured-links-container .featured-link-card:nth-child(3) {
+.featured-links-section .featured-link-card:nth-child(3) {
   background-color: var(--primary-color);
 }
 
-.featured-links-container .featured-link-card:nth-child(1) {
+.featured-links-section .featured-link-card:nth-child(1) {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -29,7 +29,7 @@
   padding: 3rem 5rem 3rem 15rem;
 }
 
-.featured-links-container .featured-link-card:nth-child(2) {
+.featured-links-section .featured-link-card:nth-child(2) {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -40,7 +40,7 @@
   padding: 3rem 7rem;
 }
 
-.featured-links-container .featured-link-card:nth-child(3) {
+.featured-links-section .featured-link-card:nth-child(3) {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -51,7 +51,7 @@
   padding: 3rem 15rem 3rem 5rem;
 }
 
-.featured-links-container figcaption {
+.featured-link-title {
   background-color: transparent;
   cursor: pointer;
   position: relative;
@@ -60,7 +60,7 @@
   font: var(--font-title);
 }
 
-.featured-links-container figcaption::after {
+.featured-links-section figcaption::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -71,16 +71,16 @@
   transition: var(--transition-normal);
 }
 
-.featured-links-container .featured-link-card:hover figcaption::after {
+.featured-links- .featured-link-card:hover figcaption::after {
   width: 95%;
   left: 0;
 }
 
-.featured-links-container .featured-link-card:hover {
+.featured-links-section .featured-link-card:hover {
   background-color: var(--secondary-color);
 }
 
-.featured-link-description {
+.featured-link-summary{
   font: var(--font-body);
   letter-spacing: 0.15rem;
   line-height: 1.5rem;

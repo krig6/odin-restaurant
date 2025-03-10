@@ -1,0 +1,25 @@
+{
+  "featuredLinks": [
+    {
+      "title": "MESSAGE US",
+      "summary": "Questions or feedback? We'd love to hear from you! Reach out to share your thoughts or say hello.",
+      "image": "contact-us-image.png",
+      "iconAlt": "Envelope",
+      "link": "email"
+    },
+    {
+      "title": "DELIGHTS",
+      "summary": "Explore our selection of freshly brewed coffees, delicious pastries, and savory snacks. Whether you're here for a quick pick-me-up or a leisurely break, we have something to delight every palate.",
+      "image": "menu-image.png",
+      "iconAlt": "Coffee",
+      "link": "menu"
+    },
+    {
+      "title": "OUR STORY",
+      "summary": "Welcome to our cozy coffee corner. With a passion for quality brews and community, we invite you to discover the heart behind every cup.",
+      "image": "about-us-image.png",
+      "iconAlt": "Book",
+      "link": "about"
+    }
+  ]
+}
