@@ -1,0 +1,41 @@
+{
+  "brand": {
+    "name": "CUP AND CRUST",
+    "slogan": "Brews and Bakes in Harmony",
+    "className": "brand-name",
+    "sloganClassName": "brand-slogan"
+  },
+  "quickLinks": {
+    "listHeading": "EXPLORE",
+    "links": [
+      {
+        "heading": "Home",
+        "link": "#home",
+        "className": "quick-link"
+      },
+      {
+        "heading": "Menu",
+        "link": "#menu",
+        "className": "quick-link"
+      },
+      {
+        "heading": "Email",
+        "link": "#email",
+        "className": "quick-link"
+      },
+      {
+        "heading": "About",
+        "link": "#about",
+        "className": "quick-link"
+      }
+    ]
+  },
+  "copyright": {
+    "text": "© {year} Cup and Crust | Designed and built by ej",
+    "textClassName": "copyright-text",
+    "github": {
+      "link": "https://github.com/krig6",
+      "iconClass": "bx bxl-github"
+    }
+  }
+}

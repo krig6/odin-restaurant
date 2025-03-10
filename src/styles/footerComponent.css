@@ -3,20 +3,20 @@
   color: var(--primary-color);
   text-align: center;
   padding: 1rem;
-  position: relative;
 }
 
-.footer a {
+.quick-link {
   cursor: pointer;
 }
 
-.footer-content-container {
+.footer-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 1rem;
+  position:relative;
 }
 
-.footer-content-container::before {
+.footer-wrapper::after{
   display: flex;
   justify-content: center;
   justify-self: center;
@@ -24,64 +24,66 @@
   position: absolute;
   width: 85%;
   height: 1px;
-  bottom: 65px;
+  bottom: 55px;
   background-color: var(--primary-color);
 }
 
-.footer-content-container h3 {
+.footer-nav-heading, .brand-name {
   font: var(--font-subheading);
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: 0.3rem;
 }
 
-.footer ul {
+.footer-nav-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .footer .bx {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-.footer-about-section p,
-.footer a {
+.brand-slogan, .quick-link
+  {
   letter-spacing: 0.2rem;
   font: var(--font-title);
   font-weight: 300;
 }
 
-.footer-about-section p {
-  width: 35ch;
-  justify-self: center;
+.copyright-info {
+  grid-column-start: 1;
+  grid-column: span 3;
 }
 
-.copyright-element {
-  flex-direction: row;
-  font: var(--font-small);
-  letter-spacing: 0.1rem;
-  justify-self: center;
-}
-
-.copyright-element p {
+.copyright-text {
   display: flex;
+  margin-top: 3rem;
+  justify-content:center;
+  letter-spacing: 0.1rem;
+  font: var(--font-small);
   gap: 0.5rem;
   align-items: center;
-  margin-top: 3rem;
 }
 
-.copyright-element .bx {
+.copyright-info .bx {
   font: var(--font-heading);
   cursor: pointer;
   color: var(--primary-color);
 }
 
-.quick-link-nav ul li a:hover {
+.quick-link:hover {
   text-decoration: underline;
 }
 
 .social-media-icons-container a:hover,
-.quick-link-nav ul li a:hover {
+.footer-nav ul li a:hover {
   color: var(--secondary-color);
+}
+
+.footer .social-icon-list {
+  display: flex;
+  flex-direction:column;
+  gap: 0.5rem;
 }

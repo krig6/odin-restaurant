@@ -1,112 +1,112 @@
-import '../../styles/footerComponent.css';
-
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
 import { createSocialMediaSection } from './socialMediaSection.js';
 
-export const initializeFooterComponent = () => {
+import footerData from '../data/footerData.json';
 
+export const buildFooterStructure = () => {
   const footerElement = document.getElementById('site-footer');
-
   if (!footerElement) {
     console.error('Element with id \'site-footer\' not found');
     return;
-  }
+  };
 
-  const footerSection = createFooterSection();
-  const footerItem = createCopyrightElement();
-  footerElement.append(footerSection, footerItem);
-};
-
-const createFooterSection = () => {
-  const footerContentContainer = createCustomElement('div', {
-    classes: 'footer-content-container'
+  const footerContainer = createCustomElement('div', {
+    classes: 'footer-wrapper'
   });
 
-  const contentFragment = document.createDocumentFragment();
-  contentFragment.append(createAboutSection(), createQuickLinksSection(), createSocialMediaSection('footer'));
-  footerContentContainer.appendChild(contentFragment);
+  const brandInfoSection = createBrandInfo();
+  const quickLinkSection = createQuickNavLinksSection();
+  const socialIconsWrapper = createSocialMediaSection('footer');
+  const copyrightSection = createCopyrightElement();
 
-  return footerContentContainer;
+  footerContainer.append(brandInfoSection, quickLinkSection, socialIconsWrapper, copyrightSection);
+  footerElement.append(footerContainer);
 };
 
-const createAboutSection = () => {
-  const aboutSection = createCustomElement('div', {
-    classes: 'footer-about-section'
+const getValidQuickLinks = () => {
+  return footerData.quickLinks.links.filter(({ heading, link, className }) => heading && link && className
+  );
+};
+
+const createBrandInfo = () => {
+  const brandInfoContainer = createCustomElement('div', {
+    classes: 'brand-info-container'
   });
 
   const brandNameElement = createCustomElement('h3', {
-    text: 'CUP AND CRUST'
+    classes: footerData["brand"].className,
+    text: footerData["brand"].name
   });
+
   const brandSloganElement = createCustomElement('p', {
-    text: 'Brews and Bakes in Harmony'
+    classes: footerData["brand"].sloganClassName,
+    text: footerData["brand"].slogan
   });
 
-  aboutSection.append(brandNameElement, brandSloganElement);
-
-  return aboutSection;
+  brandInfoContainer.append(brandNameElement, brandSloganElement);
+  return brandInfoContainer;
 };
 
-const createQuickLinksSection = () => {
-  const QUICK_LINKS = ['Home', 'Menu', 'Email', 'About'];
-
-  const quickLinskNav = createCustomElement('nav', {
-    classes: 'quick-link-nav'
+const createQuickNavLinksSection = () => {
+  const quickNavLinkContainer = createCustomElement('nav', {
+    classes: 'footer-nav'
   });
+
   const quickLinksHeading = createCustomElement('h3', {
-    text: 'EXPLORE'
+    classes: 'footer-nav-heading',
+    text: footerData["quickLinks"].listHeading
   });
+
   const quickLinksList = createCustomElement('ul', {
-    classes: 'quick-links-list'
+    classes: 'footer-nav-list'
   });
 
-  QUICK_LINKS.forEach(link => {
-    const quickLinkItem = createQuickLinkItem(link);
-    quickLinksList.appendChild(quickLinkItem);
-    quickLinskNav.append(quickLinksHeading, quickLinksList);
-  });
+  const quickLinkItems = getValidQuickLinks().map(createQuickLinkItem).filter(Boolean);
+  quickLinkItems.forEach(items => quickLinksList.append(items));
 
-  return quickLinskNav;
+  quickNavLinkContainer.append(quickLinksHeading, quickLinksList);
+  return quickNavLinkContainer;
 };
 
-const createQuickLinkItem = (linkText) => {
+const createQuickLinkItem = ({ heading, link, className }) => {
   const listItemElement = createCustomElement('li', {
-    classes: 'quick-link-item'
+    classes: 'footer-nav-item'
   });
 
   const linkElement = createCustomElement('a', {
-    classes: 'quick-link',
-    text: linkText,
-    href: `#${linkText.toLowerCase()}`,
-    dataset: { action: linkText.toLowerCase() }
+    classes: className,
+    text: heading,
+    href: link,
+    dataset: { action: heading.toLowerCase() }
   });
 
   listItemElement.appendChild(linkElement);
-
   return listItemElement;
 };
 
 const createCopyrightElement = () => {
+  const footerItemContainer = createCustomElement('div', {
+    classes: 'copyright-info'
+  });
+
   const currentYear = new Date().getFullYear();
 
   const githubLink = createCustomElement('a', {
     dataset: {
-      href: 'https://github.com/krig6',
+      href: footerData.copyright.github.link,
       target: '_blank',
       rel: 'noopener noreferrer'
     }
   });
 
   const githubIcon = createCustomElement('i', {
-    classes: 'bx bxl-github'
-  });
-
-  const footerItemContainer = createCustomElement('div', {
-    classes: 'copyright-element'
+    classes: footerData.copyright.github.iconClass
   });
 
   const copyrightText = createCustomElement('p', {
-    text: `© ${currentYear} Cup and Crust | Design and built by ej`
+    text: footerData["copyright"].text.replace("{year}", currentYear),
+    classes: footerData["copyright"].textClassName
   });
 
   githubLink.appendChild(githubIcon);
