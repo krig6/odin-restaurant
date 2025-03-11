@@ -3,11 +3,11 @@ import {
   menuData
 } from '../menu/menuData.js';
 
-import { renderMenuItems } from '../menu/menuRenderer.js';
+import { buildMenuGrid } from './menuGridBuilder.js';
 
 import { setActiveLink } from '../navigation/pageNavigation.js';
 
-export const initializeItems = (category) => {
+export const loadMenuItems = (category) => {
   if (!menuData[category]) {
     console.error(`Category '${category}' not found in data.`);
     return;
@@ -21,6 +21,6 @@ export const initializeItems = (category) => {
     };
   });
 
-  setActiveLink(category, '#category-name .menu-btn');
-  renderMenuItems(categoryData);
+  setActiveLink(category, '#menu-header .category-link');
+  buildMenuGrid(categoryData);
 };

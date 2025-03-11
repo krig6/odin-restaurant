@@ -1,41 +1,43 @@
 import { getElement } from '../domUtils/mainContentUtils.js';
 
-import { initializeItems } from './menuLoader.js';
+import { loadMenuItems } from './menuLoader.js';
 
 export const initializeMenuEventHandlers = () => {
-  const categoryButtons = document.querySelectorAll('.menu-btn');
+  const menuButtons = document.querySelectorAll('.category-link');
 
-  categoryButtons.forEach(button => {
+  menuButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const category = button.getAttribute('data-action');
-      renderSelectedCategory(category);
+      const selectedCategory = button.getAttribute('data-action');
+      handleCategorySelection(selectedCategory);
     });
   });
+
 };
 
-const renderSelectedCategory = (category) => {
-  if (handleCurrentTab(category)) {
-    /* eslint-disable no-console */
+const handleCategorySelection = (selectedCategory) => {
+  if (isCategoryActive(selectedCategory)) {
     console.info('Menu items are already loaded for this category.');
-    /* eslint-enable no-console */
     return;
   }
 
-  if (['cup', 'crust', 'churn', 'snack'].includes(category)) {
-    handleCurrentTab(category, true);
-    initializeItems(category);
+  const validCategories = ['cup', 'crust', 'churn', 'snack'];
+
+  if (validCategories.includes(selectedCategory)) {
+    setActiveCategory(selectedCategory);
+    loadMenuItems(selectedCategory);
   }
 };
 
-const handleCurrentTab = (category, shouldSet = false) => {
-  const menuHeader = getElement('category-name');
-  if (!menuHeader) return;
+const isCategoryActive = (category) => {
+  const categoryHeader = getElement('menu-header');
+  if (!categoryHeader) return false;
 
-  const previousTab = menuHeader.getAttribute('data-action');
+  return categoryHeader.getAttribute('data-action') === category;
+}
 
-  if (shouldSet) {
-    menuHeader.setAttribute('data-action', category);
+const setActiveCategory = (category) => {
+  const categoryHeader = getElement('menu-header');
+  if (categoryHeader) {
+    categoryHeader.setAttribute('data-action', category)
   }
-
-  return previousTab === category;
 };

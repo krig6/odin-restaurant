@@ -1,10 +1,9 @@
+// TODO: saka na lang to iadd kapag nafix na din ung menuPage.js and na update na to setupMenuPageStructure
+
 import { setupHomePageStructure } from '../../pages/homePage.js';
-
-import { renderMenuPageContent } from '../../pages/menuPage.js';
-
-import { setupAboutPageStructure } from '../../pages/aboutPage.js';
-
+import { buildMenuPageStructure } from '../../pages/menuPage.js';
 import { setupEmailPageStructure } from '../../pages/emailPage.js';
+import { setupAboutPageStructure } from '../../pages/aboutPage.js';
 
 import { smoothScrollToTop } from '../scrollEffects/smoothScrollToTop.js';
 
@@ -23,7 +22,7 @@ export const handlePageNavigation = (page) => {
 
   smoothScrollToTop();
   navigateToPage(page);
-  resetToDefaultNavColors();
+  resetToDefaultNavColors(page);
   updateHeaderStickyState(page);
   setPageHash(page);
   setActiveLink(page, '#site-header .nav-link');
@@ -50,7 +49,7 @@ const isCurrentPage = (page) => {
 const navigateToPage = (page) => {
   switch (page) {
     case 'menu':
-      renderMenuPageContent();
+      buildMenuPageStructure();
       break;
     case 'email':
       setupEmailPageStructure();

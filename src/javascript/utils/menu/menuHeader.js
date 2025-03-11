@@ -1,37 +1,38 @@
-import { initializeMenuEventHandlers } from '../menu/menuControls.js';
-
 import { createCustomElement } from '../domUtils/elementUtils.js';
-
 import { getElement } from '../domUtils/mainContentUtils.js';
 
-const CATEGORY_LINKS = ['cup', 'crust', 'churn', 'snack'];
+import { initializeMenuEventHandlers } from '../menu/menuControls.js';
 
-export const setupMenuHeader = () => {
-  const mainContentElement = getElement('main-content')
+const MENU_CATEGORIES = ['cup', 'crust', 'churn', 'snack'];
+
+export const buildMenuHeader = () => {
+  const mainContentElement = getElement('main-content');
+
   const menuHeader = createCustomElement('div', {
-    id: 'category-name',
-    classes: 'category-name',
+    id: 'menu-header',
+    classes: 'menu-header',
     dataset: { action: 'cup' }
   });
-  const nav = createCustomElement('nav', { classes: 'category-links' });
-  const ul = createCustomElement('ul', { classes: 'category' });
 
-  CATEGORY_LINKS.forEach(item => ul.appendChild(createCategoryButtons(item)));
-  nav.appendChild(ul);
-  menuHeader.appendChild(nav);
-  mainContentElement.appendChild(menuHeader);
+  const categoryNav = createCustomElement('nav', { classes: 'category' });
+  const categoryList = createCustomElement('ul', { classes: 'category-list' });
 
+  MENU_CATEGORIES.map(createCategoryItem).forEach(categoryItem => categoryList.append(categoryItem));
+
+  categoryNav.append(categoryList);
+  menuHeader.append(categoryNav);
+  mainContentElement.append(menuHeader);
   initializeMenuEventHandlers();
 };
 
-const createCategoryButtons = (btnClass) => {
-  const li = createCustomElement('li');
-  const button = createCustomElement('button', {
-    classes: 'menu-btn',
-    dataset: { action: btnClass }
+const createCategoryItem = (category) => {
+  const listItem = createCustomElement('li');
+  const categoryLink = createCustomElement('a', {
+    classes: 'category-link',
+    dataset: { action: category }
   });
-  button.textContent = btnClass.charAt(0).toUpperCase() + btnClass.slice(1);
-  li.appendChild(button);
+  categoryLink.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+  listItem.appendChild(categoryLink);
 
-  return li;
+  return listItem;
 };
