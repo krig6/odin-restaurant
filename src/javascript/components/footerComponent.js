@@ -1,6 +1,6 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
-import { createSocialMediaSection } from './socialMediaSection.js';
+import { buildSocialMediaSection } from './socialMediaSection.js';
 
 import footerData from '../data/footerData.json';
 
@@ -17,7 +17,7 @@ export const buildFooterStructure = () => {
 
   const brandInfoSection = createBrandInfo();
   const quickLinkSection = createQuickNavLinksSection();
-  const socialIconsWrapper = createSocialMediaSection('footer');
+  const socialIconsWrapper = buildSocialMediaSection('footer');
   const copyrightSection = createCopyrightElement();
 
   footerContainer.append(brandInfoSection, quickLinkSection, socialIconsWrapper, copyrightSection);

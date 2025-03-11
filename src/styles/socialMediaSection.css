@@ -1,0 +1,28 @@
+.footer .social-icon-list {
+  display: flex;
+  flex-direction:column;
+  gap: 0.5rem;
+}
+
+.email-social-media-list .social-icon-list{
+  margin-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  font-size: 2rem;
+}
+
+.social-icon-list .bx:hover {
+  transform: scale(1.3);
+}
+
+.social-icon-list .bx {
+  cursor:pointer;
+  transition: var(--transition-normal) ease-in-out;
+}
+
+.social-heading{
+  font: var(--font-subheading);
+  justify-self: center;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+}

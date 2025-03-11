@@ -121,26 +121,3 @@
   line-height: 2rem;
 }
 
-.email-social-media-list .social-icon-list{
-  margin-top: 2rem;
-  display: flex;
-  gap: 3rem;
-  font-size: 2rem;
-}
-
-.email-social-media-list .bx:hover {
-  color: var(--accent-color-dark);
-  transform: scale(1.3);
-}
-
-.social-icon-list .bx {
-  cursor:pointer;
-  transition: var(--transition-normal) ease-in-out;
-}
-
-.social-heading{
-  font: var(--font-subheading);
-  justify-self: center;
-  letter-spacing: 0.5rem;
-  margin-bottom: 1rem;
-}

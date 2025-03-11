@@ -4,7 +4,7 @@ import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import emailPageData from '../data/emailPageContent.json';
 
-import { createSocialMediaSection } from './socialMediaSection.js';
+import { buildSocialMediaSection } from './socialMediaSection.js';
 
 export const buildEmailSection = () => {
   const mainContentElement = getElement('main-content');
@@ -36,7 +36,7 @@ const createInfoBlock = () => {
     text: emailPageData['infoBlock'].infoText
   });
 
-  const socialIconsWrapper = createSocialMediaSection('email');
+  const socialIconsWrapper = buildSocialMediaSection('email');
 
   infoContainer.append(infoHeading, infoText, socialIconsWrapper);
   return infoContainer;

@@ -77,13 +77,3 @@
   text-decoration: underline;
 }
 
-.social-media-icons-container a:hover,
-.footer-nav ul li a:hover {
-  color: var(--secondary-color);
-}
-
-.footer .social-icon-list {
-  display: flex;
-  flex-direction:column;
-  gap: 0.5rem;
-}

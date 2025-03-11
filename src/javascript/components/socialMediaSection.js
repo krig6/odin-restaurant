@@ -1,6 +1,11 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 
-export const createSocialMediaSection = (page = '') => {
+import '../../styles/socialMediaSection.css';
+
+
+const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
+
+export const buildSocialMediaSection = (page = '') => {
   const socialMediaSection = createCustomElement('div', {
     classes: `${page ? `${page}-social-media-list` : ''}`
   });
@@ -18,21 +23,19 @@ export const createSocialMediaSection = (page = '') => {
     classes: 'social-icon-list'
   });
 
-  const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
-
-  const socialMediaFragment = document.createDocumentFragment();
-  SOCIAL_MEDIA_ICONS.forEach(iconClass => socialMediaFragment.appendChild(createSocialMediaItem(iconClass)));
-  socialMediaList.appendChild(socialMediaFragment);
+  const socialMediaIcons = SOCIAL_MEDIA_ICONS.map(createSocialMediaIcons);
+  socialMediaIcons.forEach(icon => socialMediaList.append(icon));
   socialMediaIconsContainer.appendChild(socialMediaList);
   socialMediaSection.append(socialMediaHeading, socialMediaIconsContainer);
 
   return socialMediaSection;
 };
 
-const createSocialMediaItem = (iconClass) => {
+const createSocialMediaIcons = (iconClass) => {
   const listItemElement = createCustomElement('li', {
     classes: 'social-media-item'
   });
+
   const linkElement = createCustomElement('a');
   const iconElement = createCustomElement('i', {
     classes: `bx ${iconClass} `
