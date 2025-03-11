@@ -1,58 +1,49 @@
-import '../../styles/mainNavigation.css';
-
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
 
-const NAV_ITEMS = ['home', 'menu', 'email', 'about'];
+const NAV_LINKS = ['home', 'menu', 'email', 'about'];
 
-export const initializeMainNavigation = () => {
+export const buildMainNavigation = () => {
   const headerElement = getElement('site-header');
 
   if (!headerElement) return;
 
-  const navigationMenu = createNavigationMenu();
-  headerElement.appendChild(navigationMenu);
+  const navigation = createNavigation();
+  headerElement.appendChild(navigation);
 
   initializeNavEventHandlers();
 };
 
-const createNavigationMenu = () => {
-  const navElement = createCustomElement('nav', {
+const createNavigation = () => {
+  const nav = createCustomElement('nav', {
     classes: 'main-navigation'
   });
 
-  const ulElement = createCustomElement('ul', {
+  const navList = createCustomElement('ul', {
     classes: 'nav-list'
   });
 
-  const fragment = document.createDocumentFragment();
+  const navItems = NAV_LINKS.map(createNavItem);
+  navItems.forEach(item => navList.append(item));
+  nav.append(navList);
 
-  NAV_ITEMS.forEach(item => {
-    const navItemElement = createNavigationItem(item);
-    fragment.appendChild(navItemElement);
-  });
-
-  ulElement.appendChild(fragment);
-  navElement.appendChild(ulElement);
-
-  return navElement;
+  return nav;
 };
 
-const createNavigationItem = (item) => {
-  const listItemElement = createCustomElement('li', {
+const createNavItem = (linkText) => {
+  const listItem = createCustomElement('li', {
     classes: 'nav-item'
   });
 
-  const linkElement = createCustomElement('a', {
+  const link = createCustomElement('a', {
     classes: 'nav-link',
-    text: item.toUpperCase(),
-    href: `#${item}`,
-    dataset: { action: item }
+    text: linkText.toUpperCase(),
+    href: `#${linkText}`,
+    dataset: { action: linkText }
   });
+  listItem.appendChild(link);
 
-  listItemElement.appendChild(linkElement);
-
-  return listItemElement;
+  return listItem;
 };
