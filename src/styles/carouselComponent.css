@@ -1,11 +1,15 @@
 .carousel {
-  height: 815px;
+  height:920px;
   width: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.single-image {
+  transform:scale(1.2);
 }
 
 .slide {

@@ -1,5 +1,5 @@
 .hero-image-section{
-  height: 815px;
+  height:920px;
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
   padding-block: 1.2rem;
   width: 100%;
   position:absolute;
-  top:27%;
+  top:35%;
   z-index: 999;
 }
 
