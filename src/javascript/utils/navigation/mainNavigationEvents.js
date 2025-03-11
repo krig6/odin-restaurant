@@ -1,6 +1,6 @@
 import { handlePageNavigation } from './pageNavigation.js';
 
-export const initializeNavEventHandlers = () => {
+export const initializeNavEventListeners = () => {
   const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
   const featuredNavlinks = document.querySelectorAll('.featured-link-card');
   const quickNavLinks = document.querySelectorAll('#site-footer .quick-link');

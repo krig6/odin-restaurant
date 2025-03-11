@@ -5,8 +5,8 @@ import { buildCarouselStructure } from '../components/carouselComponent.js';
 import { buildFeaturedLinks } from '../components/featuredLinksComponent.js';
 
 import { populateCarouselImages } from '../utils/carousel/carouselImageSetup.js';
-import { initializeCarouselEventHandlers, initializeLearnMoreButtonHandlers } from '../utils/carousel/carouselControls.js';
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeCarouselEventListeners, initializeLearnMoreButtonHandlers } from '../utils/carousel/carouselControls.js';
+import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
 
 import '../../styles/carouselComponent.css';
 import '../../styles/carouselImageTransition.css'
@@ -19,9 +19,9 @@ export const setupHomePageStructure = () => {
   if (isCarouselPresent()) return;
 
   buildCarouselStructure();
-  initializeCarouselEventHandlers();
+  initializeCarouselEventListeners();
   initializeLearnMoreButtonHandlers();
   populateCarouselImages();
   buildFeaturedLinks();
-  initializeNavEventHandlers();
+  initializeNavEventListeners();
 };

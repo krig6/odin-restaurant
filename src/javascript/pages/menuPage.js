@@ -1,7 +1,7 @@
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
 import { clearMainContent } from '../utils/domUtils/mainContentUtils.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
 
 import { loadMenuItems } from '../utils/menu/menuLoader.js';
 import { buildMenuHeader } from '../utils/menu/menuHeader.js';
@@ -13,6 +13,6 @@ export const buildMenuPageStructure = () => {
   clearMainContent();
   buildMenuHeader();
   loadMenuItems('cup');
-  initializeNavEventHandlers();
+  initializeNavEventListeners();
 };
 

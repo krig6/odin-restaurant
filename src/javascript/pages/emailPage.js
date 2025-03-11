@@ -7,7 +7,7 @@ import { buildEmailSection } from '../components/emailComponent.js';
 
 import { initializeFormValidation } from '../utils/formValidation/validateFields.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
 
 import '../../styles/emailComponent.css';
 
@@ -16,5 +16,5 @@ export const setupEmailPageStructure = () => {
   clearMainContent();
   buildEmailSection();
   initializeFormValidation();
-  initializeNavEventHandlers();
+  initializeNavEventListeners();
 };

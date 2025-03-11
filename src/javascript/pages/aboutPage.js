@@ -10,7 +10,7 @@ import {
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
 import { toggleMainNavColors } from '../utils/navigation/mainNavAppearance.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
 
 import { applyParallax } from '../utils/scrollEffects/applyParallax.js';
 
@@ -25,5 +25,5 @@ export const setupAboutPageStructure = () => {
   buildAboutSection();
   createBrandStory();
   applyParallax();
-  initializeNavEventHandlers();
+  initializeNavEventListeners();
 };

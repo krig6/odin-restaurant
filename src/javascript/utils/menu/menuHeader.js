@@ -1,7 +1,7 @@
 import { createCustomElement } from '../domUtils/elementUtils.js';
 import { getElement } from '../domUtils/mainContentUtils.js';
 
-import { initializeMenuEventHandlers } from '../menu/menuControls.js';
+import { initializeMenuEventListeners } from '../menu/menuControls.js';
 
 const MENU_CATEGORIES = ['cup', 'crust', 'churn', 'snack'];
 
@@ -22,7 +22,7 @@ export const buildMenuHeader = () => {
   categoryNav.append(categoryList);
   menuHeader.append(categoryNav);
   mainContentElement.append(menuHeader);
-  initializeMenuEventHandlers();
+  initializeMenuEventListeners();
 };
 
 const createCategoryItem = (category) => {

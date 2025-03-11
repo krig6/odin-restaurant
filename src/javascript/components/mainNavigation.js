@@ -1,7 +1,7 @@
 import { createCustomElement } from '../utils/domUtils/elementUtils.js';
 import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
-import { initializeNavEventHandlers } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
 
 const NAV_LINKS = ['home', 'menu', 'email', 'about'];
 
@@ -13,7 +13,7 @@ export const buildMainNavigation = () => {
   const navigation = createNavigation();
   headerElement.appendChild(navigation);
 
-  initializeNavEventHandlers();
+  initializeNavEventListeners();
 };
 
 const createNavigation = () => {

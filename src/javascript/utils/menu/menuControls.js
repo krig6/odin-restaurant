@@ -2,7 +2,7 @@ import { getElement } from '../domUtils/mainContentUtils.js';
 
 import { loadMenuItems } from './menuLoader.js';
 
-export const initializeMenuEventHandlers = () => {
+export const initializeMenuEventListeners = () => {
   const menuButtons = document.querySelectorAll('.category-link');
 
   menuButtons.forEach(button => {

@@ -2,7 +2,7 @@ import { toggleMainNavColors } from '../navigation/mainNavAppearance.js';
 
 import { handlePageNavigation } from '../navigation/pageNavigation.js';
 
-export const initializeCarouselEventHandlers = () => {
+export const initializeCarouselEventListeners = () => {
   const carouselButtons = document.querySelectorAll('[data-carousel-btn]');
 
   carouselButtons.forEach(button => {
