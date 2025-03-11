@@ -1,64 +1,64 @@
 [
   {
     "category": "crust",
-    "src": "brownies-crust.png",
-    "alt": "Brownies",
+    "image": "brownies-crust.png",
+    "imageAlt": "Brownies",
     "description": "Rich, fudgy brownies with a moist center and a hint of chocolate.",
     "price": "₱180.00"
   },
   {
     "category": "crust",
-    "src": "cinnamon-crust.png",
-    "alt": "Cinnamon Roll",
+    "image": "cinnamon-crust.png",
+    "imageAlt": "Cinnamon Roll",
     "description": "Soft and gooey cinnamon rolls with a swirl of cinnamon and sugar.",
     "price": "₱190.00"
   },
   {
     "category": "crust",
-    "src": "cookies-crust.png",
-    "alt": "Cookies",
+    "image": "cookies-crust.png",
+    "imageAlt": "Cookies",
     "description": "Classic cookies with a chewy center and crispy edges, perfect for any time.",
     "price": "₱160.00"
   },
   {
     "category": "crust",
-    "src": "cupcake-crust.png",
-    "alt": "Cupcake",
+    "image": "cupcake-crust.png",
+    "imageAlt": "Cupcake",
     "description": "Deliciously soft cupcakes topped with a rich frosting and sprinkles.",
     "price": "₱200.00"
   },
   {
     "category": "crust",
-    "src": "doughnut-crust.png",
-    "alt": "Doughnut",
+    "image": "doughnut-crust.png",
+    "imageAlt": "Doughnut",
     "description": "Fluffy doughnuts with a sweet glaze and a hint of vanilla.",
     "price": "₱210.00"
   },
   {
     "category": "crust",
-    "src": "lemonpie-crust.png",
-    "alt": "Lemon Pie",
+    "image": "lemonpie-crust.png",
+    "imageAlt": "Lemon Pie",
     "description": "Tangy lemon filling with a buttery crust, topped with whipped cream.",
     "price": "₱220.00"
   },
   {
     "category": "crust",
-    "src": "macaroons-crust.png",
-    "alt": "Macaroons",
+    "image": "macaroons-crust.png",
+    "imageAlt": "Macaroons",
     "description": "Crispy and sweet macaroons with a chewy coconut center.",
     "price": "₱190.00"
   },
   {
     "category": "crust",
-    "src": "pancake-crust.png",
-    "alt": "Pancake",
+    "image": "pancake-crust.png",
+    "imageAlt": "Pancake",
     "description": "Fluffy pancakes stacked high, served with syrup and butter.",
     "price": "₱200.00"
   },
   {
     "category": "crust",
-    "src": "scone-crust.png",
-    "alt": "Scone",
+    "image": "scone-crust.png",
+    "imageAlt": "Scone",
     "description": "Tender scones with a crumbly texture, perfect with coffee.",
     "price": "₱170.00"
   }

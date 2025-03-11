@@ -1,78 +1,78 @@
 [
   {
     "category": "snack",
-    "src": "cheeseburger-snack.png",
-    "alt": "Cheeseburger",
+    "image": "cheeseburger-snack.png",
+    "imageAlt": "Cheeseburger",
     "description": "Juicy cheeseburger with melted cheese, beef patty, lettuce, and tomato.",
     "price": "₱250.00"
   },
   {
     "category": "snack",
-    "src": "chicken-snack.png",
-    "alt": "Chicken Wrap",
+    "image": "chicken-snack.png",
+    "imageAlt": "Chicken Wrap",
     "description": "Tender chicken in a soft tortilla with veggies and sauce.",
     "price": "₱200.00"
   },
   {
     "category": "snack",
-    "src": "empanada-snack.png",
-    "alt": "Empanada",
+    "image": "empanada-snack.png",
+    "imageAlt": "Empanada",
     "description": "Flaky pastry filled with a spiced meat mixture or savory vegetables.",
     "price": "₱200.00"
   },
   {
     "category": "snack",
-    "src": "falafel-snack.png",
-    "alt": "Falafel",
+    "image": "falafel-snack.png",
+    "imageAlt": "Falafel",
     "description": "Crispy, flavorful chickpea patties, perfect for dipping",
     "price": "₱180.00"
   },
   {
     "category": "snack",
-    "src": "fries-snack.png",
-    "alt": "Fries",
+    "image": "fries-snack.png",
+    "imageAlt": "Fries",
     "description": "Golden, crispy fries served hot and seasoned to perfection.",
     "price": "₱150.00"
   },
   {
     "category": "snack",
-    "src": "hamsandwich-snack.png",
-    "alt": "Ham Sandwich",
+    "image": "hamsandwich-snack.png",
+    "imageAlt": "Ham Sandwich",
     "description": "Tasty sandwich with ham, cheese, and fresh veggies.",
     "price": "₱120.00"
   },
   {
     "category": "snack",
-    "src": "hotdog-snack.png",
-    "alt": "Hotdog Sandwich",
+    "image": "hotdog-snack.png",
+    "imageAlt": "Hotdog Sandwich",
     "description": "Grilled hotdog in a soft bun with mustard and ketchup.",
     "price": "₱180.00"
   },
   {
     "category": "snack",
-    "src": "nachos-snack.png",
-    "alt": "Nachos",
+    "image": "nachos-snack.png",
+    "imageAlt": "Nachos",
     "description": "Crispy tortilla chips with melted cheese, jalapeños, and sour cream.",
     "price": "₱230.00"
   },
   {
     "category": "snack",
-    "src": "onionrings-snack.png",
-    "alt": "Onion Rings",
+    "image": "onionrings-snack.png",
+    "imageAlt": "Onion Rings",
     "description": "Crispy onion rings with a golden batter, perfect as a side or a snack.",
     "price": "₱190.00"
   },
   {
     "category": "crust",
-    "src": "pizza-snack.png",
-    "alt": "Pizza",
+    "image": "pizza-snack.png",
+    "imageAlt": "Pizza",
     "description": "Crispy pizza with a variety of toppings and melted cheese.",
     "price": "₱250.00"
   },
   {
     "category": "snack",
-    "src": "shawarma-snack.png",
-    "alt": "Shawarma",
+    "image": "shawarma-snack.png",
+    "imageAlt": "Shawarma",
     "description": "Spiced meat, fresh veggies, and creamy sauce wrapped in a savory shawarma.",
     "price": "₱180.00"
   }

@@ -14,10 +14,10 @@ export const loadMenuItems = (category) => {
   }
 
   const categoryData = menuData[category].map(product => {
-    const imageName = product.src;
+    const imageName = product.image;
     return {
       ...product,
-      src: menuImages[category][imageName] || ''
+      image: menuImages[category][imageName] || ''
     };
   });
 

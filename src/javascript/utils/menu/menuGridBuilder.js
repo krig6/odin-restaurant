@@ -31,13 +31,14 @@ const createProductCard = (item) => {
   const article = createCustomElement('article', {
     classes: 'product-card'
   });
-  const img = createImageElement(item.src, {
+
+  const img = createImageElement(item.image, {
     classes: 'product-image',
-    alt: item.alt
+    alt: item.imageAlt
   });
 
   const productName = createCustomElement('span', {
-    text: item.alt,
+    text: item.imageAlt,
     classes: 'product-name'
   });
 
