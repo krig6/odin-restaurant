@@ -1,6 +1,6 @@
 .email-section-container {
   margin-bottom: 9rem;
-  margin-top: 5rem;
+  margin-top: 12rem;
   display: grid;
   margin-inline: 5rem;
   grid-template-columns: repeat(2, 1fr);

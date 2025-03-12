@@ -1,25 +1,22 @@
+import { getElement } from '../domUtils/mainContentUtils.js';
+
 export const toggleMainNavColors = () => {
-  const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
-  headerNavLinks.forEach(link => {
-    link.classList.toggle('change-color');
-  });
+  const header = getElement('site-header');
+  header.classList.toggle('change-color');
 };
 
 export const resetToDefaultNavColors = (page) => {
-  const headerNavLinks = document.querySelectorAll('#site-header .nav-link');
-  const hasChangeColor = Array.from(headerNavLinks).some(link => link.classList.contains('change-color')
-  );
+  const header = getElement('site-header');
+  const hasChangeColor = header.classList.contains('change-color');
 
   if (page !== 'about') {
-    headerNavLinks.forEach(link => {
-      link.classList.remove('change-color');
-    });
-  } else {
+    header.classList.remove('change-color');
+  }
+  else {
     if (!hasChangeColor) {
       toggleMainNavColors();
     }
   }
-
 };
 
 export const updateHeaderStickyState = (page) => {
