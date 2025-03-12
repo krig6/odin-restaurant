@@ -1,3 +1,4 @@
+ /*TODO: done fixed color not showing in 2nd card*/
 .featured-links-section {
   display: grid;
   grid-template-columns: 34% 32% 34%;
@@ -10,7 +11,7 @@
   background-color: var(--background-color);
 }
 
-.featured-links-sections .featured-link-card:nth-child(2) {
+.featured-links-section .featured-link-card:nth-child(2) {
   background-color: var(--accent-color-light);
 }
 
