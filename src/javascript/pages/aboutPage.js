@@ -4,7 +4,7 @@ import {
   createHeroImageSection,
   buildAboutSection,
   createBrandStory,
-  createIntroBanner
+  applyHeroText
 } from '../components/aboutComponent.js';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
@@ -20,7 +20,7 @@ export const setupAboutPageStructure = () => {
   deleteCarousel();
   clearMainContent();
   toggleMainNavColors();
-  createIntroBanner();
+  applyHeroText();
   createHeroImageSection();
   buildAboutSection();
   createBrandStory();

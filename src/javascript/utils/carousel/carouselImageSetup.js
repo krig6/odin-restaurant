@@ -31,7 +31,7 @@ const createImageGallery = (images, type = 'multiple') => {
   imagesToDisplay.forEach(imageUrl => {
     const imageElement = createImageElement(imageUrl, {
       classes: type === 'multiple' ? 'multiple-images' : 'single-image',
-      alt: type === 'multiple' ? 'Food and Beverages' : 'Barista',
+      alt: type === 'multiple' ? 'Food and Beverages' : 'Outdoor Coffee',
     });
     imageFragment.append(imageElement);
     if (type === 'multiple') {

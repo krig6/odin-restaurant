@@ -23,8 +23,8 @@
       ]
     }
   ],
-  "banner": {
-    "bannerText": "Brewing More Than Coffee, Creating Connections"
+  "overlay": {
+    "overlayText": "Serving Coffee Crafting Memories"
   },
   "brandStory": {
     "brandStoryTitle": "A Brew Steeped in Tradition",

@@ -5,7 +5,7 @@ import {
 
 import aboutSectionData from '../data/aboutPageContent.json';
 
-import aboutPageMainImage from '../../assets/images/carousel-slideshow-images/secondary-image.jpg';
+import baristaImage from '../../assets/images/about-page-images/barista-image.jpg';
 
 import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
 
@@ -18,21 +18,21 @@ const fetchSegmentImages = fetchAllImages(
   })
 );
 
-export const createIntroBanner = () => {
+export const applyHeroText = () => {
   const mainContentElement = getElement('main-content');
   if (!mainContentElement) return;
 
-  const bannerContainer = createCustomElement('div', {
-    classes: 'banner-container'
+  const overlayContainer = createCustomElement('div', {
+    classes: 'overlay-container'
   });
 
-  const bannerText = createCustomElement('p', {
-    classes: 'banner-text',
-    text: aboutSectionData["banner"].bannerText
+  const overlayText = createCustomElement('p', {
+    classes: 'overlay-text',
+    text: aboutSectionData["overlay"].overlayText
   });
 
-  bannerContainer.appendChild(bannerText);
-  mainContentElement.appendChild(bannerContainer);
+  overlayContainer.appendChild(overlayText);
+  mainContentElement.appendChild(overlayContainer);
 };
 
 export const createHeroImageSection = () => {
@@ -43,7 +43,7 @@ export const createHeroImageSection = () => {
     classes: 'hero-image-section'
   });
 
-  const heroImage = createImageElement(aboutPageMainImage, {
+  const heroImage = createImageElement(baristaImage, {
     classes: 'hero-image'
   });
 
@@ -56,7 +56,7 @@ export const buildAboutSection = () => {
   if (!mainContentElement) return;
 
   const aboutSectionWrapper = createCustomElement('div', {
-    classes: 'about-sections-wrapper'
+    classes: 'about-sectoverlayTextions-wrapper'
   });
 
   const validAboutSections = getValidAboutSection().map(createAboutSection).filter(Boolean);

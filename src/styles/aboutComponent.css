@@ -3,7 +3,7 @@
   overflow: hidden;
 }
 
-.banner-container{
+.overlay-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,10 +16,10 @@
   z-index: 999;
 }
 
-.banner-text{
+.overlay-text{
   color: var(--primary-color);
   font: var(--font-cta);
-  width:40ch;
+  width:25ch;
   line-height: 7rem;
   display: flex;
   align-items: center;
