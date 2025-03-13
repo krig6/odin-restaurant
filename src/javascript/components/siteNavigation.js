@@ -56,18 +56,18 @@ const createBrandLogo = () => {
   });
 
   const logoLink = createCustomElement('a', {
-    html: svgData["svgIcons"].logo,
+    html: svgData['svgIcons'].logo,
     classes: 'logo-link',
     dataset: {
       href: 'https://github.com/krig6/odin-restaurant',
       target: '_blank',
       rel: 'noopener noreferrer'
     }
-  })
+  });
 
   logoWrapper.append(logoLink);
   return logoWrapper;
-}
+};
 
 const createNavigationUtilities = () => {
   const utilitiesWrapper = createCustomElement('div', {
@@ -76,20 +76,20 @@ const createNavigationUtilities = () => {
 
   const helpIcon = createCustomElement('span', {
     classes: 'utility-icon help-icon',
-    html: svgData["svgIcons"].helpIcon
+    html: svgData['svgIcons'].helpIcon
   });
 
   const languageIcon = createCustomElement('span', {
     classes: 'utility-icon language-icon',
-    html: svgData["svgIcons"].languageIcon
+    html: svgData['svgIcons'].languageIcon
   });
 
   const profileIcon = createCustomElement('span', {
     classes: 'utility-icon profile-icon',
-    html: svgData["svgIcons"].profileIcon
+    html: svgData['svgIcons'].profileIcon
   });
 
   utilitiesWrapper.append(helpIcon, languageIcon, profileIcon);
   return utilitiesWrapper;
-}
+};
 

@@ -27,7 +27,6 @@ export default [
         }
       ],
       "no-restricted-imports": ["error", "underscore"],
-      "no-console": ["warn", { "allow": ["warn", "error"] }],
       "eqeqeq": "error",
       "comma-dangle": ["error", "never"],
       "consistent-return": "error",
@@ -35,10 +34,6 @@ export default [
       "linebreak-style": ["error", "unix"],
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
-      "padding-line-between-statements": [
-        "error",
-        { "blankLine": "always", "prev": "import", "next": "*" }
-      ],
       "eol-last": ["error", "always"]
     }
   }

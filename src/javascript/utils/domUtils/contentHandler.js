@@ -1,4 +1,4 @@
-import { createCustomElement } from "./elementFactory.js";
+import { createCustomElement } from './elementFactory.js';
 
 export const clearMainContent = (elementID = 'main-content') => {
   const mainContentElement = checkElementById(elementID);
@@ -26,11 +26,11 @@ export const getElement = (elementID) => {
 const createErrorMessage = () => {
   const errorMessageElement = createCustomElement('div', {
     classes: 'missing-content',
-    text: `Uh-oh, our page is a little 'half-baked'. Don't worry, we're fixing this!'`
+    text: 'Uh-oh, our page is a little \'half-baked\'. Don\'t worry, we\'re fixing this!\''
   });
 
   return errorMessageElement;
-}
+};
 
 export const checkElementById = (elementID) => {
   return document.getElementById(elementID);

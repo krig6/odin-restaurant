@@ -32,12 +32,12 @@ const isCategoryActive = (category) => {
   if (!categoryHeader) return false;
 
   return categoryHeader.getAttribute('data-action') === category;
-}
+};
 
 const setActiveCategory = (category) => {
   const categoryHeader = getElement('menu-header');
   if (categoryHeader) {
-    categoryHeader.setAttribute('data-action', category)
+    categoryHeader.setAttribute('data-action', category);
   }
 };
 

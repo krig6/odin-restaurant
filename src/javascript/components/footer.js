@@ -35,13 +35,13 @@ const createBrandInfo = () => {
   });
 
   const brandNameElement = createCustomElement('h3', {
-    classes: footerData["brand"].className,
-    text: footerData["brand"].name
+    classes: footerData['brand'].className,
+    text: footerData['brand'].name
   });
 
   const brandSloganElement = createCustomElement('p', {
-    classes: footerData["brand"].sloganClassName,
-    text: footerData["brand"].slogan
+    classes: footerData['brand'].sloganClassName,
+    text: footerData['brand'].slogan
   });
 
   brandInfoContainer.append(brandNameElement, brandSloganElement);
@@ -55,7 +55,7 @@ const createQuickNavLinksSection = () => {
 
   const quickLinksHeading = createCustomElement('h3', {
     classes: 'footer-nav-heading',
-    text: footerData["quickLinks"].listHeading
+    text: footerData['quickLinks'].listHeading
   });
 
   const quickLinksList = createCustomElement('ul', {
@@ -105,8 +105,8 @@ const createCopyrightElement = () => {
   });
 
   const copyrightText = createCustomElement('p', {
-    text: footerData["copyright"].text.replace("{year}", currentYear),
-    classes: footerData["copyright"].textClassName
+    text: footerData['copyright'].text.replace('{year}', currentYear),
+    classes: footerData['copyright'].textClassName
   });
 
   githubLink.appendChild(githubIcon);

@@ -21,7 +21,7 @@ export const createCarousel = () => {
   const carouselElement = checkElementById('hero-carousel');
   if (carouselElement) {
     console.info('Carousel already exists.');
-    return;
+    return null;
   }
 
   const newCarouselElement = createCustomElement('section', {

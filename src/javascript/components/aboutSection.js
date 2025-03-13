@@ -26,7 +26,7 @@ export const applyHeroText = () => {
 
   const overlayText = createCustomElement('p', {
     classes: 'overlay-text',
-    text: aboutSectionData["overlay"].overlayText
+    text: aboutSectionData['overlay'].overlayText
   });
 
   overlayContainer.appendChild(overlayText);
@@ -61,13 +61,13 @@ export const buildAboutSection = () => {
 
   validAboutSections.forEach(section => aboutSectionWrapper.append(section));
   mainContentElement.append(aboutSectionWrapper);
-}
+};
 
 const getValidAboutSection = () => {
-  return aboutSectionData["aboutSection"].filter(({ id, title, description, image }) =>
+  return aboutSectionData['aboutSection'].filter(({ id, title, description, image }) =>
     id && title && description && image
   );
-}
+};
 
 const createAboutSection = ({ id, title, description, image }) => {
   const aboutSection = createCustomElement('div', {
@@ -79,7 +79,7 @@ const createAboutSection = ({ id, title, description, image }) => {
 
   aboutSection.append(aboutTextSection, aboutImageSection);
   return aboutSection;
-}
+};
 
 const createAboutTextSection = (id, title, description) => {
   const textContainer = createCustomElement('div', {
@@ -96,11 +96,11 @@ const createAboutTextSection = (id, title, description) => {
   description?.forEach(paragraph => {
     Object.values(paragraph).forEach(text => {
       textContainer.appendChild(createCustomElement('p', { text }));
-    })
-  })
+    });
+  });
 
   return textContainer;
-}
+};
 
 const createAboutImageSection = (id, image) => {
   const imageContainer = createCustomElement('div', {
@@ -115,7 +115,7 @@ const createAboutImageSection = (id, image) => {
 
   imageContainer.append(imageElement);
   return imageContainer;
-}
+};
 
 export const createBrandStory = () => {
   const mainContentElement = getElement('main-content');
@@ -127,12 +127,12 @@ export const createBrandStory = () => {
 
   const brandStoryTitle = createCustomElement('h6', {
     classes: 'brand-story-title',
-    text: aboutSectionData["brandStory"].brandStoryTitle
+    text: aboutSectionData['brandStory'].brandStoryTitle
   });
 
   const brandStoryText = createCustomElement('p', {
     classes: 'brand-story-text',
-    text: aboutSectionData["brandStory"].brandStoryText
+    text: aboutSectionData['brandStory'].brandStoryText
   });
 
   brandStoryContainer.append(brandStoryTitle, brandStoryText);

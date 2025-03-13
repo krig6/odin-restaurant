@@ -24,18 +24,18 @@ export const buildFeaturedLinks = () => {
 
   featuredLinkCards.forEach(section => featuredLinksSection.append(section));
   mainContentElement.append(featuredLinksSection);
-}
+};
 
 const getValidFeaturedSections = () => {
-  return featuredLinkData["featuredLinks"].filter(({ title, summary, image, imageAlt, link }) =>
+  return featuredLinkData['featuredLinks'].filter(({ title, summary, image, imageAlt, link }) =>
     title && summary && image && imageAlt && link);
-}
+};
 
 const createFeaturedLinkCard = ({ title, summary, image, imageAlt, link }) => {
   const card = createCustomElement('article', { classes: 'featured-link-card' });
   card.dataset.action = link;
 
-  const imageSource = featuredImages[image]
+  const imageSource = featuredImages[image];
 
   const img = createImageElement(imageSource, { classes: 'featured-link-image', alt: imageAlt });
 

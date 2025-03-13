@@ -6,7 +6,7 @@ import { getElement } from '../utils/domUtils/contentHandler.js';
 import { createCarousel } from '../utils/carousel/carouselManager.js';
 
 export const buildCarouselStructure = () => {
-  const mainContentElement = getElement('main-content')
+  const mainContentElement = getElement('main-content');
   if (!mainContentElement) return;
 
   const carousel = createCarousel();
@@ -49,7 +49,7 @@ const createSlidesContainer = () => {
 
     slideElement.append(createCtaSection(cta));
     return slideElement;
-  })
+  });
 
   slidesContainer.append(...slideElements);
   return slidesContainer;

@@ -21,7 +21,7 @@ export const buildMenuGrid = (items) => {
 
   const productItems = items.map(createProductCard);
 
-  productItems.forEach(item => productGrid.append(item))
+  productItems.forEach(item => productGrid.append(item));
 
   categorySelection.appendChild(productGrid);
   mainContentElement.appendChild(categorySelection);
@@ -54,7 +54,7 @@ const createProductCard = (item) => {
 
   article.append(img, productName, desc, price);
   return article;
-}
+};
 
 const removeExistingMenuGrid = () => {
   const menu = document.querySelector('.category-products');

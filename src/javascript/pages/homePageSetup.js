@@ -9,7 +9,7 @@ import { initializeCarouselEventListeners, initializeLearnMoreButtonHandlers } f
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
 import '../../styles/carousel.css';
-import '../../styles/carouselImageAnimation.css'
+import '../../styles/carouselImageAnimation.css';
 import '../../styles/ctaSection.css';
 import '../../styles/featuredLinks.css';
 
