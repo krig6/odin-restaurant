@@ -8,13 +8,13 @@ import { smoothScrollToTop } from '../scrollEffects/smoothScrollToTop.js';
 import {
   resetToDefaultNavColors,
   updateHeaderStickyState
-} from './NavAppearance.js';
+} from './navAppearance.js';
 
 export const handlePageNavigation = (page) => {
   if (isCurrentPage(page)) {
     console.info(`Already on the ${page} page, no need to reload.`);
     return;
-  };
+  }
 
   smoothScrollToTop();
   navigateToPage(page);
@@ -27,7 +27,7 @@ export const handlePageNavigation = (page) => {
 
 export const setActiveLink = (page, linkSelector) => {
   const links = document.querySelectorAll(linkSelector);
-  links.forEach(link => {
+  links.forEach((link) => {
     link.classList.toggle('active', link.getAttribute('data-action') === page);
   });
 };
@@ -67,4 +67,3 @@ export const initializePage = () => {
   setActiveLink(initialPage, '#site-footer .quick-link');
   updateHeaderStickyState(initialPage);
 };
-

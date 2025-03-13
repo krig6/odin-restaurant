@@ -17,7 +17,9 @@ export const buildMenuHeader = () => {
   const categoryNav = createCustomElement('nav', { classes: 'category' });
   const categoryList = createCustomElement('ul', { classes: 'category-list' });
 
-  MENU_CATEGORIES.map(createCategoryItem).forEach(categoryItem => categoryList.append(categoryItem));
+  MENU_CATEGORIES.map(createCategoryItem).forEach((categoryItem) =>
+    categoryList.append(categoryItem)
+  );
 
   categoryNav.append(categoryList);
   menuHeader.append(categoryNav);
@@ -31,7 +33,8 @@ const createCategoryItem = (category) => {
     classes: 'category-link',
     dataset: { action: category }
   });
-  categoryLink.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+  categoryLink.textContent =
+    category.charAt(0).toUpperCase() + category.slice(1);
   listItem.appendChild(categoryLink);
 
   return listItem;

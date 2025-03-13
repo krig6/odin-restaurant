@@ -1,19 +1,23 @@
-import { toggleMainNavColors } from '../navigation/NavAppearance.js';
+import { toggleMainNavColors } from '../navigation/navAppearance.js';
 
 import { handlePageNavigation } from '../navigation/pageNavigation.js';
 
 export const initializeCarouselEventListeners = () => {
   const carouselButtons = document.querySelectorAll('[data-carousel-btn]');
 
-  carouselButtons.forEach(button => {
+  carouselButtons.forEach((button) => {
     button.addEventListener('click', () => {
       toggleCarouselButtonColors();
       removeCarouselButtonFocus();
       toggleMainNavColors();
       const offset = button.dataset.carouselBtn === 'next' ? 1 : -1;
-      const slides = button.closest('[data-carousel]').querySelector('[data-slides]');
+      const slides = button
+        .closest('[data-carousel]')
+        .querySelector('[data-slides]');
 
-      const activeSlide = slides.querySelector('[data-current-status="active"]');
+      const activeSlide = slides.querySelector(
+        '[data-current-status="active"]'
+      );
       let newIndex = [...slides.children].indexOf(activeSlide) + offset;
 
       if (newIndex < 0) newIndex = slides.children.length - 1;
@@ -26,15 +30,19 @@ export const initializeCarouselEventListeners = () => {
 };
 
 const toggleCarouselButtonColors = () => {
-  const carouselButtons = document.querySelectorAll('#hero-carousel .carousel-btn');
-  carouselButtons.forEach(button => {
+  const carouselButtons = document.querySelectorAll(
+    '#hero-carousel .carousel-btn'
+  );
+  carouselButtons.forEach((button) => {
     button.classList.toggle('change-color');
   });
 };
 
 const removeCarouselButtonFocus = () => {
-  const carouselButtons = document.querySelectorAll('#hero-carousel .carousel-btn');
-  carouselButtons.forEach(button => {
+  const carouselButtons = document.querySelectorAll(
+    '#hero-carousel .carousel-btn'
+  );
+  carouselButtons.forEach((button) => {
     button.blur();
   });
 };
@@ -42,7 +50,7 @@ const removeCarouselButtonFocus = () => {
 export const initializeLearnMoreButtonHandlers = () => {
   const learnButtons = document.querySelectorAll('[data-learn-btn]');
 
-  learnButtons.forEach(button => {
+  learnButtons.forEach((button) => {
     button.addEventListener('click', handleLearnMoreClick);
   });
 };

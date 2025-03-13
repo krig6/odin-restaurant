@@ -27,7 +27,8 @@ export const initializeFormValidation = () => {
 };
 
 const validateField = (field, options) => {
-  const { validationPattern, formatValue, errorMessage, successMessage } = options;
+  const { validationPattern, formatValue, errorMessage, successMessage } =
+    options;
   let value = field.value;
 
   if (formatValue) {
@@ -54,4 +55,3 @@ const setFieldValidity = (field, isValid, message) => {
   }
   field.reportValidity();
 };
-

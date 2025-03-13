@@ -11,8 +11,7 @@ export const resetToDefaultNavColors = (page) => {
 
   if (page !== 'about') {
     header.classList.remove('change-color');
-  }
-  else {
+  } else {
     if (!hasChangeColor) {
       toggleMainNavColors();
     }
@@ -28,4 +27,3 @@ const setHeaderSticky = (shouldBeSticky) => {
   const headerElement = document.getElementById('site-header');
   headerElement.classList.toggle('sticky', shouldBeSticky);
 };
-

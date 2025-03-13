@@ -2,7 +2,12 @@ import { createCustomElement } from '../utils/domUtils/elementFactory.js';
 
 import '../../styles/socialMediaSection.css';
 
-const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
+const SOCIAL_MEDIA_ICONS = [
+  'bxl-github',
+  'bxl-twitter',
+  'bxl-instagram-alt',
+  'bxl-linkedin-square'
+];
 
 export const buildSocialMediaSection = (page = '') => {
   const socialMediaSection = createCustomElement('div', {
@@ -24,7 +29,7 @@ export const buildSocialMediaSection = (page = '') => {
 
   const socialMediaIcons = SOCIAL_MEDIA_ICONS.map(createSocialMediaIcons);
 
-  socialMediaIcons.forEach(icon => socialMediaList.append(icon));
+  socialMediaIcons.forEach((icon) => socialMediaList.append(icon));
   socialMediaIconsContainer.appendChild(socialMediaList);
   socialMediaSection.append(socialMediaHeading, socialMediaIconsContainer);
   return socialMediaSection;
@@ -45,4 +50,3 @@ const createSocialMediaIcons = (iconClass) => {
   listItemElement.appendChild(linkElement);
   return listItemElement;
 };
-

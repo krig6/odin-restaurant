@@ -26,7 +26,7 @@ export const getElement = (elementID) => {
 const createErrorMessage = () => {
   const errorMessageElement = createCustomElement('div', {
     classes: 'missing-content',
-    text: 'Uh-oh, our page is a little \'half-baked\'. Don\'t worry, we\'re fixing this!\''
+    text: 'Uh-oh, our page is a little half-baked. Do not worry, we are fixing this!'
   });
 
   return errorMessageElement;

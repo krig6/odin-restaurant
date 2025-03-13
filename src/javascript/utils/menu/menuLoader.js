@@ -1,7 +1,4 @@
-import {
-  menuImages,
-  menuData
-} from './menuAssets.js';
+import { menuImages, menuData } from './menuAssets.js';
 
 import { buildMenuGrid } from './menuGrid.js';
 
@@ -13,7 +10,7 @@ export const loadMenuItems = (category) => {
     return;
   }
 
-  const categoryData = menuData[category].map(product => {
+  const categoryData = menuData[category].map((product) => {
     const imageName = product.image;
     return {
       ...product,

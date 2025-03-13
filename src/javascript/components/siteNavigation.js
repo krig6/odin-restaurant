@@ -28,7 +28,7 @@ const createNavigation = () => {
   });
 
   const navItems = NAV_LINKS.map(createNavItem);
-  navItems.forEach(item => navList.append(item));
+  navItems.forEach((item) => navList.append(item));
   nav.append(navList);
 
   return nav;
@@ -92,4 +92,3 @@ const createNavigationUtilities = () => {
   utilitiesWrapper.append(helpIcon, languageIcon, profileIcon);
   return utilitiesWrapper;
 };
-

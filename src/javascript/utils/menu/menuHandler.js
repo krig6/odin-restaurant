@@ -5,7 +5,7 @@ import { loadMenuItems } from './menuLoader.js';
 export const initializeMenuEventListeners = () => {
   const menuButtons = document.querySelectorAll('.category-link');
 
-  menuButtons.forEach(button => {
+  menuButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const selectedCategory = button.getAttribute('data-action');
       handleCategorySelection(selectedCategory);
@@ -40,4 +40,3 @@ const setActiveCategory = (category) => {
     categoryHeader.setAttribute('data-action', category);
   }
 };
-

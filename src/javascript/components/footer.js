@@ -7,9 +7,9 @@ import footerData from '../data/footerData.json';
 export const buildFooterStructure = () => {
   const footerElement = document.getElementById('site-footer');
   if (!footerElement) {
-    console.error('Element with id \'site-footer\' not found');
+    console.error('Element with id "site-footer" not found');
     return;
-  };
+  }
 
   const footerContainer = createCustomElement('div', {
     classes: 'footer-wrapper'
@@ -20,12 +20,18 @@ export const buildFooterStructure = () => {
   const socialIconsWrapper = buildSocialMediaSection('footer');
   const copyrightSection = createCopyrightElement();
 
-  footerContainer.append(brandInfoSection, quickLinkSection, socialIconsWrapper, copyrightSection);
+  footerContainer.append(
+    brandInfoSection,
+    quickLinkSection,
+    socialIconsWrapper,
+    copyrightSection
+  );
   footerElement.append(footerContainer);
 };
 
 const getValidQuickLinks = () => {
-  return footerData.quickLinks.links.filter(({ heading, link, className }) => heading && link && className
+  return footerData.quickLinks.links.filter(
+    ({ heading, link, className }) => heading && link && className
   );
 };
 
@@ -62,8 +68,10 @@ const createQuickNavLinksSection = () => {
     classes: 'footer-nav-list'
   });
 
-  const quickLinkItems = getValidQuickLinks().map(createQuickLinkItem).filter(Boolean);
-  quickLinkItems.forEach(items => quickLinksList.append(items));
+  const quickLinkItems = getValidQuickLinks()
+    .map(createQuickLinkItem)
+    .filter(Boolean);
+  quickLinkItems.forEach((items) => quickLinksList.append(items));
 
   quickNavLinkContainer.append(quickLinksHeading, quickLinksList);
   return quickNavLinkContainer;
@@ -114,4 +122,3 @@ const createCopyrightElement = () => {
   footerItemContainer.appendChild(copyrightText);
   return footerItemContainer;
 };
-

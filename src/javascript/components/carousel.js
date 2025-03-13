@@ -40,16 +40,18 @@ const createSlidesContainer = () => {
     dataset: { slides: '' }
   });
 
-  const slideElements = carouselData.slides.map(({ id, className, currentStatus, cta }) => {
-    const slideElement = createCustomElement('div', {
-      id,
-      classes: className,
-      dataset: { currentStatus }
-    });
+  const slideElements = carouselData.slides.map(
+    ({ id, className, currentStatus, cta }) => {
+      const slideElement = createCustomElement('div', {
+        id,
+        classes: className,
+        dataset: { currentStatus }
+      });
 
-    slideElement.append(createCtaSection(cta));
-    return slideElement;
-  });
+      slideElement.append(createCtaSection(cta));
+      return slideElement;
+    }
+  );
 
   slidesContainer.append(...slideElements);
   return slidesContainer;
@@ -77,4 +79,3 @@ const createCtaSection = ({ headline, buttonText, action, buttonClass }) => {
   containerElement.append(headlineElement, buttonElement);
   return containerElement;
 };
-

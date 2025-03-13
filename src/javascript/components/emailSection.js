@@ -45,7 +45,6 @@ const createFormBlock = () => {
   const form = createCustomElement('form', {
     classes: 'contact-form',
     id: 'contact-form'
-
   });
 
   form.method = 'post';
@@ -54,18 +53,26 @@ const createFormBlock = () => {
   const formFields = getFormFields().map(createInputField).filter(Boolean);
   const submitButton = createSubmitButton();
 
-  formFields.forEach(field => form.append(field));
+  formFields.forEach((field) => form.append(field));
   form.append(submitButton);
   return form;
 };
 
 const getFormFields = () => {
-  return emailFormData['formFields'].filter(({ labelText, id, type, className, placeholder }) =>
-    labelText && id && type && className && placeholder
+  return emailFormData['formFields'].filter(
+    ({ labelText, id, type, className, placeholder }) =>
+      labelText && id && type && className && placeholder
   );
 };
 
-const createInputField = ({ labelText, id, type, className, placeholder, required }) => {
+const createInputField = ({
+  labelText,
+  id,
+  type,
+  className,
+  placeholder,
+  required
+}) => {
   const inputFieldWrapper = createCustomElement('div', {
     classes: 'form-field'
   });
@@ -119,4 +126,3 @@ const createSubmitButton = () => {
   buttonWrapper.append(submitButton);
   return buttonWrapper;
 };
-

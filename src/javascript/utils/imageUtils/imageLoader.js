@@ -26,4 +26,3 @@ export function loadImagesIntoCache(imageURLs) {
     img.onerror = (e) => console.error(`Failed to load image: ${url}`, e);
   });
 }
-

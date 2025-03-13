@@ -5,7 +5,10 @@ import { buildCarouselStructure } from '../components/carousel.js';
 import { buildFeaturedLinks } from '../components/featuredLinks.js';
 
 import { populateCarouselImages } from '../utils/carousel/carouselImageLoader.js';
-import { initializeCarouselEventListeners, initializeLearnMoreButtonHandlers } from '../utils/carousel/carouselNavigation.js';
+import {
+  initializeCarouselEventListeners,
+  initializeLearnMoreButtonHandlers
+} from '../utils/carousel/carouselNavigation.js';
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
 import '../../styles/carousel.css';

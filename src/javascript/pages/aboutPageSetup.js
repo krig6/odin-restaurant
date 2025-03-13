@@ -8,7 +8,7 @@ import {
 } from '../components/aboutSection.js';
 
 import { deleteCarousel } from '../utils/carousel/carouselManager.js';
-import { toggleMainNavColors } from '../utils/navigation/NavAppearance.js';
+import { toggleMainNavColors } from '../utils/navigation/navAppearance.js';
 
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 

@@ -1,6 +1,12 @@
-import { fetchAllImages, loadImagesIntoCache } from '../imageUtils/imageLoader.js';
+import {
+  fetchAllImages,
+  loadImagesIntoCache
+} from '../imageUtils/imageLoader.js';
 
-import { createCustomElement, createImageElement } from '../domUtils/elementFactory.js';
+import {
+  createCustomElement,
+  createImageElement
+} from '../domUtils/elementFactory.js';
 import { getElement } from '../domUtils/contentHandler.js';
 
 import { startImageAnimation } from './carouselImageAnimator.js';
@@ -14,7 +20,8 @@ export const populateCarouselImages = () => {
 };
 
 const createImageGallery = (images, type = 'multiple') => {
-  const targetElementId = type === 'multiple' ? 'multiple-image' : 'single-image';
+  const targetElementId =
+    type === 'multiple' ? 'multiple-image' : 'single-image';
   const targetElement = getElement(targetElementId);
   const multipleImageContainer = createCustomElement('div', {
     classes: `${type}-image-container`
@@ -26,9 +33,10 @@ const createImageGallery = (images, type = 'multiple') => {
 
   if (!targetElement) return;
 
-  const imagesToDisplay = type === 'multiple' ? images.slice(0, -1) : images.slice(-1);
+  const imagesToDisplay =
+    type === 'multiple' ? images.slice(0, -1) : images.slice(-1);
   const imageFragment = document.createDocumentFragment();
-  imagesToDisplay.forEach(imageUrl => {
+  imagesToDisplay.forEach((imageUrl) => {
     const imageElement = createImageElement(imageUrl, {
       classes: type === 'multiple' ? 'multiple-images' : 'single-image',
       alt: type === 'multiple' ? 'Food and Beverages' : 'Outdoor Coffee'

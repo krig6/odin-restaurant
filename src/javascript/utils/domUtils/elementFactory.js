@@ -1,4 +1,17 @@
-export const createCustomElement = (tag, { id = '', classes = '', text = '', html = '', htmlFor = '', type = '', required = false, placeholder = '', dataset = {} } = {}) => {
+export const createCustomElement = (
+  tag,
+  {
+    id = '',
+    classes = '',
+    text = '',
+    html = '',
+    htmlFor = '',
+    type = '',
+    required = false,
+    placeholder = '',
+    dataset = {}
+  } = {}
+) => {
   const element = document.createElement(tag);
   if (id) element.id = id;
   if (classes) element.className = classes;

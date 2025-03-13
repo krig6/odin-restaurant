@@ -8,7 +8,9 @@ export const startImageAnimation = (imageUrls, rotationInterval) => {
   }
 
   if (imageElements.length !== imagesToDisplay.length) {
-    console.error('Mismatch between the number of rotating elements and images.');
+    console.error(
+      'Mismatch between the number of rotating elements and images.'
+    );
     return;
   }
 

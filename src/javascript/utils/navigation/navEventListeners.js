@@ -6,23 +6,22 @@ export const initializeNavEventListeners = () => {
   const quickNavLinks = document.querySelectorAll('#site-footer .quick-link');
 
   if (headerNavLinks) {
-    headerNavLinks.forEach(link => {
+    headerNavLinks.forEach((link) => {
       link.addEventListener('click', handleNavLinkClick);
     });
   }
 
   if (featuredNavlinks) {
-    featuredNavlinks.forEach(link => {
+    featuredNavlinks.forEach((link) => {
       link.addEventListener('click', handleNavLinkClick);
     });
   }
 
   if (quickNavLinks) {
-    quickNavLinks.forEach(link => {
+    quickNavLinks.forEach((link) => {
       link.addEventListener('click', handleNavLinkClick);
     });
   }
-
 };
 
 const handleNavLinkClick = (event) => {
@@ -31,4 +30,3 @@ const handleNavLinkClick = (event) => {
   handlePageNavigation(targetPage);
   history.pushState(null, null, `#${targetPage}`);
 };
-

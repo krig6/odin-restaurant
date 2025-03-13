@@ -57,15 +57,17 @@ export const buildAboutSection = () => {
     classes: 'about-sectoverlayTextions-wrapper'
   });
 
-  const validAboutSections = getValidAboutSection().map(createAboutSection).filter(Boolean);
+  const validAboutSections = getValidAboutSection()
+    .map(createAboutSection)
+    .filter(Boolean);
 
-  validAboutSections.forEach(section => aboutSectionWrapper.append(section));
+  validAboutSections.forEach((section) => aboutSectionWrapper.append(section));
   mainContentElement.append(aboutSectionWrapper);
 };
 
 const getValidAboutSection = () => {
-  return aboutSectionData['aboutSection'].filter(({ id, title, description, image }) =>
-    id && title && description && image
+  return aboutSectionData['aboutSection'].filter(
+    ({ id, title, description, image }) => id && title && description && image
   );
 };
 
@@ -93,8 +95,8 @@ const createAboutTextSection = (id, title, description) => {
 
   textContainer.appendChild(textTitle);
 
-  description?.forEach(paragraph => {
-    Object.values(paragraph).forEach(text => {
+  description?.forEach((paragraph) => {
+    Object.values(paragraph).forEach((text) => {
       textContainer.appendChild(createCustomElement('p', { text }));
     });
   });
@@ -138,4 +140,3 @@ export const createBrandStory = () => {
   brandStoryContainer.append(brandStoryTitle, brandStoryText);
   mainContentElement.appendChild(brandStoryContainer);
 };
-
