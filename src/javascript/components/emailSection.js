@@ -1,8 +1,7 @@
-import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+import { createCustomElement } from '../utils/domUtils/elementFactory.js';
+import { getElement } from '../utils/domUtils/contentHandler.js';
 
-import { getElement } from '../utils/domUtils/mainContentUtils.js';
-
-import emailPageData from '../data/emailPageContent.json';
+import emailFormData from '../data/emailForm.json';
 
 import { buildSocialMediaSection } from './socialMediaSection.js';
 
@@ -28,12 +27,12 @@ const createInfoBlock = () => {
 
   const infoHeading = createCustomElement('h2', {
     classes: 'info-heading',
-    text: emailPageData['infoBlock'].infoHeading
+    text: emailFormData['infoBlock'].infoHeading
   });
 
   const infoText = createCustomElement('p', {
     classes: 'info-text',
-    text: emailPageData['infoBlock'].infoText
+    text: emailFormData['infoBlock'].infoText
   });
 
   const socialIconsWrapper = buildSocialMediaSection('email');
@@ -61,7 +60,7 @@ const createFormBlock = () => {
 };
 
 const getFormFields = () => {
-  return emailPageData['formFields'].filter(({ labelText, id, type, className, placeholder }) =>
+  return emailFormData['formFields'].filter(({ labelText, id, type, className, placeholder }) =>
     labelText && id && type && className && placeholder
   );
 };
@@ -101,17 +100,16 @@ const createInputField = ({ labelText, id, type, className, placeholder, require
   return inputFieldWrapper;
 };
 
-
 const createSubmitButton = () => {
   const buttonWrapper = createCustomElement('div', {
     classes: 'submit-button-container'
   });
 
   const submitButton = createCustomElement('button', {
-    id: emailPageData['submitButton'].id,
-    classes: emailPageData['submitButton'].className,
-    type: emailPageData['submitButton'].type,
-    text: emailPageData['submitButton'].buttonText
+    id: emailFormData['submitButton'].id,
+    classes: emailFormData['submitButton'].className,
+    type: emailFormData['submitButton'].type,
+    text: emailFormData['submitButton'].buttonText
   });
 
   submitButton.addEventListener('click', (event) => {
@@ -121,3 +119,4 @@ const createSubmitButton = () => {
   buttonWrapper.append(submitButton);
   return buttonWrapper;
 };
+

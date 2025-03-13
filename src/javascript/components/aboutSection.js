@@ -1,15 +1,13 @@
 import {
   createCustomElement,
   createImageElement
-} from '../utils/domUtils/elementUtils.js';
+} from '../utils/domUtils/elementFactory.js';
+import { getElement } from '../utils/domUtils/contentHandler.js';
+import { fetchAllImages } from '../utils/imageUtils/imageLoader.js';
 
 import aboutSectionData from '../data/aboutPageContent.json';
 
 import baristaImage from '../../assets/images/about-page-images/barista-image.jpg';
-
-import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
-
-import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 const fetchSegmentImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/about-page-images/', {
@@ -80,7 +78,6 @@ const createAboutSection = ({ id, title, description, image }) => {
   const aboutImageSection = createAboutImageSection(id, image);
 
   aboutSection.append(aboutTextSection, aboutImageSection);
-
   return aboutSection;
 }
 
@@ -117,7 +114,6 @@ const createAboutImageSection = (id, image) => {
   });
 
   imageContainer.append(imageElement);
-
   return imageContainer;
 }
 
@@ -142,3 +138,4 @@ export const createBrandStory = () => {
   brandStoryContainer.append(brandStoryTitle, brandStoryText);
   mainContentElement.appendChild(brandStoryContainer);
 };
+

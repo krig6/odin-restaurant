@@ -1,9 +1,9 @@
-import { fetchAllImages } from '../imageUtils/imageUtils.js';
+import { fetchAllImages } from '../imageUtils/imageLoader.js';
 
-import cupData from '../../data/cupItems.json';
-import crustData from '../../data/crustItems.json';
-import churnData from '../../data/churnItems.json';
-import snackData from '../../data/snackItems.json';
+import cupData from '../../data/cupMenu.json';
+import crustData from '../../data/crustMenu.json';
+import churnData from '../../data/churnMenu.json';
+import snackData from '../../data/snackMenu.json';
 
 export const menuImages = {
   cup: fetchAllImages(import.meta.webpackContext('../../../assets/images/cup', {
@@ -33,3 +33,4 @@ export const menuData = {
   crust: crustData,
   snack: snackData
 };
+

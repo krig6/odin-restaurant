@@ -1,4 +1,4 @@
-import { getElement } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/contentHandler.js';
 
 import { loadMenuItems } from './menuLoader.js';
 
@@ -11,7 +11,6 @@ export const initializeMenuEventListeners = () => {
       handleCategorySelection(selectedCategory);
     });
   });
-
 };
 
 const handleCategorySelection = (selectedCategory) => {
@@ -41,3 +40,4 @@ const setActiveCategory = (category) => {
     categoryHeader.setAttribute('data-action', category)
   }
 };
+

@@ -1,9 +1,9 @@
-import { fetchAllImages, loadImagesIntoCache } from '../imageUtils/imageUtils.js';
+import { fetchAllImages, loadImagesIntoCache } from '../imageUtils/imageLoader.js';
 
-import { createCustomElement, createImageElement } from '../domUtils/elementUtils.js';
-import { getElement } from '../domUtils/mainContentUtils.js';
+import { createCustomElement, createImageElement } from '../domUtils/elementFactory.js';
+import { getElement } from '../domUtils/contentHandler.js';
 
-import { startImageRotation } from './carouselImageTransition.js';
+import { startImageAnimation } from './carouselImageAnimator.js';
 
 export const populateCarouselImages = () => {
   const carouselImagesUrls = fetchCarouselImages();
@@ -44,7 +44,7 @@ const createImageGallery = (images, type = 'multiple') => {
   });
 
   if (type === 'multiple') {
-    startImageRotation(images, 2000);
+    startImageAnimation(images, 2000);
   }
 };
 

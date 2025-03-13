@@ -1,4 +1,4 @@
-export const startImageRotation = (imageUrls, rotationInterval) => {
+export const startImageAnimation = (imageUrls, rotationInterval) => {
   const imageElements = document.querySelectorAll('.multiple-images');
   const imagesToDisplay = imageUrls.slice(0, -1);
 

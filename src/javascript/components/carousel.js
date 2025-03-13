@@ -1,8 +1,9 @@
-import carouselConfig from '../data/carouselConfig.json';
+import carouselData from '../data/carouselContent.json';
 
-import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+import { createCustomElement } from '../utils/domUtils/elementFactory.js';
+import { getElement } from '../utils/domUtils/contentHandler.js';
+
 import { createCarousel } from '../utils/carousel/carouselManager.js';
-import { getElement } from '../utils/domUtils/mainContentUtils.js';
 
 export const buildCarouselStructure = () => {
   const mainContentElement = getElement('main-content')
@@ -21,7 +22,7 @@ const createCarouselButtons = () => {
     classes: 'carousel-buttons-container'
   });
 
-  Object.entries(carouselConfig.carouselButtons).forEach(([type, { label }]) => {
+  Object.entries(carouselData.carouselButtons).forEach(([type, { label }]) => {
     const buttonElement = createCustomElement('button', {
       classes: `carousel-btn ${type}`,
       html: label,
@@ -39,18 +40,18 @@ const createSlidesContainer = () => {
     dataset: { slides: '' }
   });
 
-  const slideElements = carouselConfig.slides.map(({ id, className, currentStatus, cta }) => {
+  const slideElements = carouselData.slides.map(({ id, className, currentStatus, cta }) => {
     const slideElement = createCustomElement('div', {
       id,
       classes: className,
       dataset: { currentStatus }
     });
-    slideElement.append(createCtaSection(cta));
 
+    slideElement.append(createCtaSection(cta));
     return slideElement;
   })
-  slidesContainer.append(...slideElements);
 
+  slidesContainer.append(...slideElements);
   return slidesContainer;
 };
 
@@ -72,8 +73,8 @@ const createCtaSection = ({ headline, buttonText, action, buttonClass }) => {
       learnBtn: ''
     }
   });
-  containerElement.append(headlineElement, buttonElement);
 
+  containerElement.append(headlineElement, buttonElement);
   return containerElement;
 };
 

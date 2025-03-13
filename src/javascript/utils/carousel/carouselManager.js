@@ -1,6 +1,6 @@
-import { createCustomElement } from '../domUtils/elementUtils.js';
+import { createCustomElement } from '../domUtils/elementFactory.js';
 
-import { getElement, checkElementById } from '../domUtils/mainContentUtils.js';
+import { getElement, checkElementById } from '../domUtils/contentHandler.js';
 
 export const deleteCarousel = () => {
   if (isCarouselPresent()) {

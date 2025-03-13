@@ -1,4 +1,4 @@
-import { toggleMainNavColors } from '../navigation/mainNavAppearance.js';
+import { toggleMainNavColors } from '../navigation/NavAppearance.js';
 
 import { handlePageNavigation } from '../navigation/pageNavigation.js';
 

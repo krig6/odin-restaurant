@@ -1,7 +1,7 @@
-import { createCustomElement } from '../utils/domUtils/elementUtils.js';
-import { getElement } from '../utils/domUtils/mainContentUtils.js';
+import { createCustomElement } from '../utils/domUtils/elementFactory.js';
+import { getElement } from '../utils/domUtils/contentHandler.js';
 
-import { initializeNavEventListeners } from '../utils/navigation/mainNavigationEvents.js';
+import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
 import svgData from '../data/svgPaths.json';
 
@@ -92,3 +92,4 @@ const createNavigationUtilities = () => {
   utilitiesWrapper.append(helpIcon, languageIcon, profileIcon);
   return utilitiesWrapper;
 }
+

@@ -1,4 +1,4 @@
-import { createCustomElement } from "./elementUtils.js";
+import { createCustomElement } from "./elementFactory.js";
 
 export const clearMainContent = (elementID = 'main-content') => {
   const mainContentElement = checkElementById(elementID);

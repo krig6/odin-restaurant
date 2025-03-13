@@ -1,7 +1,6 @@
-import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+import { createCustomElement } from '../utils/domUtils/elementFactory.js';
 
 import '../../styles/socialMediaSection.css';
-
 
 const SOCIAL_MEDIA_ICONS = ['bxl-github', 'bxl-twitter', 'bxl-instagram-alt', 'bxl-linkedin-square'];
 
@@ -24,10 +23,10 @@ export const buildSocialMediaSection = (page = '') => {
   });
 
   const socialMediaIcons = SOCIAL_MEDIA_ICONS.map(createSocialMediaIcons);
+
   socialMediaIcons.forEach(icon => socialMediaList.append(icon));
   socialMediaIconsContainer.appendChild(socialMediaList);
   socialMediaSection.append(socialMediaHeading, socialMediaIconsContainer);
-
   return socialMediaSection;
 };
 
@@ -37,12 +36,13 @@ const createSocialMediaIcons = (iconClass) => {
   });
 
   const linkElement = createCustomElement('a');
+
   const iconElement = createCustomElement('i', {
     classes: `bx ${iconClass} `
   });
 
   linkElement.appendChild(iconElement);
   listItemElement.appendChild(linkElement);
-
   return listItemElement;
 };
+

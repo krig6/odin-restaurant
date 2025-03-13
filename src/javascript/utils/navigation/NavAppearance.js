@@ -1,4 +1,4 @@
-import { getElement } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/contentHandler.js';
 
 export const toggleMainNavColors = () => {
   const header = getElement('site-header');
@@ -28,3 +28,4 @@ const setHeaderSticky = (shouldBeSticky) => {
   const headerElement = document.getElementById('site-header');
   headerElement.classList.toggle('sticky', shouldBeSticky);
 };
+

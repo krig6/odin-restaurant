@@ -54,3 +54,4 @@ const setFieldValidity = (field, isValid, message) => {
   }
   field.reportValidity();
 };
+

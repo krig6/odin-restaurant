@@ -1,13 +1,11 @@
-import { getElement } from '../utils/domUtils/mainContentUtils.js';
-
 import {
   createCustomElement,
   createImageElement
-} from '../utils/domUtils/elementUtils.js';
+} from '../utils/domUtils/elementFactory.js';
+import { getElement } from '../utils/domUtils/contentHandler.js';
+import { fetchAllImages } from '../utils/imageUtils/imageLoader.js';
 
-import { fetchAllImages } from '../utils/imageUtils/imageUtils.js';
-
-import featuredLinkData from '../data/featuredLinksData.json';
+import featuredLinkData from '../data/featuredLinks.json';
 
 const featuredImages = fetchAllImages(
   import.meta.webpackContext('../../assets/images/featured-links-images', {

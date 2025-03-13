@@ -1,22 +1,18 @@
-// TODO: saka na lang to iadd kapag nafix na din ung menuPage.js and na update na to setupMenuPageStructure
-
-import { setupHomePageStructure } from '../../pages/homePage.js';
-import { buildMenuPageStructure } from '../../pages/menuPage.js';
-import { setupEmailPageStructure } from '../../pages/emailPage.js';
-import { setupAboutPageStructure } from '../../pages/aboutPage.js';
+import { setupHomePageStructure } from '../../pages/homePageSetup.js';
+import { buildMenuPageStructure } from '../../pages/menuPageSetup.js';
+import { setupEmailPageStructure } from '../../pages/emailPageSetup.js';
+import { setupAboutPageStructure } from '../../pages/aboutPageSetup.js';
 
 import { smoothScrollToTop } from '../scrollEffects/smoothScrollToTop.js';
 
 import {
   resetToDefaultNavColors,
   updateHeaderStickyState
-} from './mainNavAppearance.js';
+} from './NavAppearance.js';
 
 export const handlePageNavigation = (page) => {
   if (isCurrentPage(page)) {
-    /* eslint-disable no-console */
     console.info(`Already on the ${page} page, no need to reload.`);
-    /* eslint-enable no-console */
     return;
   };
 
@@ -71,3 +67,4 @@ export const initializePage = () => {
   setActiveLink(initialPage, '#site-footer .quick-link');
   updateHeaderStickyState(initialPage);
 };
+

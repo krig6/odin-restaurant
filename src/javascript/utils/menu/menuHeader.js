@@ -1,7 +1,7 @@
-import { createCustomElement } from '../domUtils/elementUtils.js';
-import { getElement } from '../domUtils/mainContentUtils.js';
+import { createCustomElement } from '../domUtils/elementFactory.js';
+import { getElement } from '../domUtils/contentHandler.js';
 
-import { initializeMenuEventListeners } from '../menu/menuControls.js';
+import { initializeMenuEventListeners } from './menuHandler.js';
 
 const MENU_CATEGORIES = ['cup', 'crust', 'churn', 'snack'];
 

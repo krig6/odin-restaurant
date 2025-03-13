@@ -1,4 +1,4 @@
-import { createCustomElement } from '../utils/domUtils/elementUtils.js';
+import { createCustomElement } from '../utils/domUtils/elementFactory.js';
 
 import { buildSocialMediaSection } from './socialMediaSection.js';
 
@@ -86,11 +86,11 @@ const createQuickLinkItem = ({ heading, link, className }) => {
 };
 
 const createCopyrightElement = () => {
+  const currentYear = new Date().getFullYear();
+
   const footerItemContainer = createCustomElement('div', {
     classes: 'copyright-info'
   });
-
-  const currentYear = new Date().getFullYear();
 
   const githubLink = createCustomElement('a', {
     dataset: {
@@ -112,6 +112,6 @@ const createCopyrightElement = () => {
   githubLink.appendChild(githubIcon);
   copyrightText.appendChild(githubLink);
   footerItemContainer.appendChild(copyrightText);
-
   return footerItemContainer;
 };
+

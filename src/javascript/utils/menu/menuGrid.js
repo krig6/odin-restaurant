@@ -1,9 +1,9 @@
 import {
   createCustomElement,
   createImageElement
-} from '../domUtils/elementUtils.js';
+} from '../domUtils/elementFactory.js';
 
-import { getElement } from '../domUtils/mainContentUtils.js';
+import { getElement } from '../domUtils/contentHandler.js';
 
 export const buildMenuGrid = (items) => {
   removeExistingMenuGrid();

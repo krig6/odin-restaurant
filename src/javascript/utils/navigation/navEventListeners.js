@@ -31,3 +31,4 @@ const handleNavLinkClick = (event) => {
   handlePageNavigation(targetPage);
   history.pushState(null, null, `#${targetPage}`);
 };
+

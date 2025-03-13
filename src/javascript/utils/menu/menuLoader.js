@@ -1,9 +1,9 @@
 import {
   menuImages,
   menuData
-} from '../menu/menuData.js';
+} from './menuAssets.js';
 
-import { buildMenuGrid } from './menuGridBuilder.js';
+import { buildMenuGrid } from './menuGrid.js';
 
 import { setActiveLink } from '../navigation/pageNavigation.js';
 
