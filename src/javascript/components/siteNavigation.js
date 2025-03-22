@@ -3,7 +3,7 @@ import { getElement } from '../utils/domUtils/contentHandler.js';
 
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
-import svgData from '../data/svgPaths.json';
+import svgData from '../data/svgLogoPath.json';
 
 const NAV_LINKS = ['home', 'menu', 'email', 'about'];
 
@@ -13,8 +13,7 @@ export const buildMainNavigation = () => {
 
   const navigation = createNavigation();
   const brandLogo = createBrandLogo();
-  const navUtilities = createNavigationUtilities();
-  headerElement.append(brandLogo, navigation, navUtilities);
+  headerElement.append(brandLogo, navigation);
   initializeNavEventListeners();
 };
 
@@ -56,7 +55,7 @@ const createBrandLogo = () => {
   });
 
   const logoLink = createCustomElement('a', {
-    html: svgData['svgIcons'].logo,
+    html: svgData['svgLogo'].logo,
     classes: 'logo-link',
     dataset: {
       href: 'https://github.com/krig6/odin-restaurant',
@@ -67,28 +66,4 @@ const createBrandLogo = () => {
 
   logoWrapper.append(logoLink);
   return logoWrapper;
-};
-
-const createNavigationUtilities = () => {
-  const utilitiesWrapper = createCustomElement('div', {
-    classes: 'utility-wrapper'
-  });
-
-  const helpIcon = createCustomElement('span', {
-    classes: 'utility-icon help-icon',
-    html: svgData['svgIcons'].helpIcon
-  });
-
-  const languageIcon = createCustomElement('span', {
-    classes: 'utility-icon language-icon',
-    html: svgData['svgIcons'].languageIcon
-  });
-
-  const profileIcon = createCustomElement('span', {
-    classes: 'utility-icon profile-icon',
-    html: svgData['svgIcons'].profileIcon
-  });
-
-  utilitiesWrapper.append(helpIcon, languageIcon, profileIcon);
-  return utilitiesWrapper;
 };
