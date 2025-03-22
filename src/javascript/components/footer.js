@@ -23,10 +23,9 @@ export const buildFooterStructure = () => {
   footerContainer.append(
     brandInfoSection,
     quickLinkSection,
-    socialIconsWrapper,
-    copyrightSection
+    socialIconsWrapper
   );
-  footerElement.append(footerContainer);
+  footerElement.append(footerContainer, copyrightSection);
 };
 
 const getValidQuickLinks = () => {

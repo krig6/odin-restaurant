@@ -54,7 +54,7 @@ export const buildAboutSection = () => {
   if (!mainContentElement) return;
 
   const aboutSectionWrapper = createCustomElement('div', {
-    classes: 'about-sectoverlayTextions-wrapper'
+    classes: 'about-sections-wrapper'
   });
 
   const validAboutSections = getValidAboutSection()
@@ -97,7 +97,9 @@ const createAboutTextSection = (id, title, description) => {
 
   description?.forEach((paragraph) => {
     Object.values(paragraph).forEach((text) => {
-      textContainer.appendChild(createCustomElement('p', { text }));
+      textContainer.appendChild(
+        createCustomElement('p', { text, classes: 'about-text-description' })
+      );
     });
   });
 
@@ -106,7 +108,7 @@ const createAboutTextSection = (id, title, description) => {
 
 const createAboutImageSection = (id, image) => {
   const imageContainer = createCustomElement('div', {
-    classes: 'about-image-content'
+    classes: 'about-image-container'
   });
 
   const fetchImage = fetchSegmentImages[image];
