@@ -35,20 +35,36 @@ const createImageGallery = (images, type = 'multiple') => {
 
   const imagesToDisplay =
     type === 'multiple' ? images.slice(0, -1) : images.slice(-1);
-  const imageFragment = document.createDocumentFragment();
+  // const imageFragment = document.createDocumentFragment();
   imagesToDisplay.forEach((imageUrl) => {
-    const imageElement = createImageElement(imageUrl, {
-      classes: type === 'multiple' ? 'multiple-images' : 'single-image',
-      alt: type === 'multiple' ? 'Food and Beverages' : 'Outdoor Coffee'
-    });
-    imageFragment.append(imageElement);
     if (type === 'multiple') {
-      multipleImageContainer.append(imageFragment);
+      const imageElement = createImageElement(imageUrl, {
+        classes: 'multiple-images',
+        alt: 'Food and Beverages'
+      });
+      multipleImageContainer.append(imageElement);
       targetElement.append(multipleImageContainer);
     } else {
-      singleImageContainer.append(imageFragment);
+      const imageElement = createImageElement(imageUrl, {
+        classes: 'single-image',
+        alt: 'Outdoor Coffee'
+      });
+      singleImageContainer.append(imageElement);
       targetElement.append(singleImageContainer);
     }
+
+    // const imageElement = createImageElement(imageUrl, {
+    //   classes: type === 'multiple' ? 'multiple-images' : 'single-image',
+    //   alt: type === 'multiple' ? 'Food and Beverages' : 'Outdoor Coffee'
+    // });
+    // imageFragment.append(imageElement);
+    // if (type === 'multiple') {
+    //   multipleImageContainer.append(imageFragment);
+    //   targetElement.append(multipleImageContainer);
+    // } else {
+    //   singleImageContainer.append(imageFragment);
+    //   targetElement.append(singleImageContainer);
+    // }
   });
 
   if (type === 'multiple') {
