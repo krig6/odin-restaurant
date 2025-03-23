@@ -3,8 +3,6 @@ import { getElement } from '../utils/domUtils/contentHandler.js';
 
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
-import svgData from '../data/svgLogoPath.json';
-
 const NAV_LINKS = ['home', 'menu', 'email', 'about'];
 
 export const buildMainNavigation = () => {
@@ -12,8 +10,7 @@ export const buildMainNavigation = () => {
   if (!headerElement) return;
 
   const navigation = createNavigation();
-  const brandLogo = createBrandLogo();
-  headerElement.append(brandLogo, navigation);
+  headerElement.append(navigation);
   initializeNavEventListeners();
 };
 
@@ -47,23 +44,4 @@ const createNavItem = (linkText) => {
 
   listItem.appendChild(link);
   return listItem;
-};
-
-const createBrandLogo = () => {
-  const logoWrapper = createCustomElement('div', {
-    classes: 'logo-wrapper'
-  });
-
-  const logoLink = createCustomElement('a', {
-    html: svgData['svgLogo'].logo,
-    classes: 'logo-link',
-    dataset: {
-      href: 'https://github.com/krig6/odin-restaurant',
-      target: '_blank',
-      rel: 'noopener noreferrer'
-    }
-  });
-
-  logoWrapper.append(logoLink);
-  return logoWrapper;
 };
