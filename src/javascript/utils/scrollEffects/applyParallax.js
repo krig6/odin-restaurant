@@ -28,8 +28,61 @@ export const applyParallax = async () => {
     }
   });
 
-  // Only apply parallax effect for other images on larger screens
-  mm.add('(min-width: 481px)', () => {
+  mm.add('(max-width:600px)', () => {
+    imageElements.forEach((image) => {
+      const imageContainer = image.parentElement;
+      if (!imageContainer) throw new Error('No parent container found.');
+
+      imageContainer.style.overflow = 'hidden';
+      imageContainer.style.position = 'relative';
+
+      gsap.set(image, { scale: 1.3, y: '-26%' });
+
+      gsap.to(image, {
+        y: '30%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: imageContainer,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  });
+
+  mm.add('(min-width: 601px) and (max-width: 768px)', () => {
+    imageElements.forEach((image) => {
+      const imageContainer = image.parentElement;
+      if (!imageContainer) throw new Error('No parent container found.');
+
+      imageContainer.style.overflow = 'hidden';
+      imageContainer.style.position = 'relative';
+
+      gsap.set(image, { scale: 1.25, y: '-30%' });
+
+      gsap.to(image, {
+        y: '30%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: imageContainer,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  });
+
+  mm.add('(min-width: 769px)', () => {
     imageElements.forEach((image) => {
       const imageContainer = image.parentElement;
       if (!imageContainer) throw new Error('No parent container found.');
