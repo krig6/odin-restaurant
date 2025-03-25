@@ -7,14 +7,8 @@
 
 .footer .bx {
   color: var(--primary-color);
-  cursor: pointer;
   font: var(--font-footer-icons);
   transition: var(--transition-normal) ease-in-out;
-}
-
-/* Social media icons hover effects */
-.social-icon-list .bx:hover {
-  transform: scale(1.3);
 }
 
 /* Email section social media icons styling */
@@ -22,6 +16,16 @@
   display: flex;
   gap: 2rem;
   font: var(--font-email-icons);
+}
+
+.email-social-media .bx {
+  color: var(--accent-color-dark);
+  transition: var(--transition-normal) ease-in-out;
+}
+
+/* Social media icons hover effects */
+.social-icon-list .bx:hover {
+  transform: scale(1.3);
 }
 
 /* Social heading overall styling */

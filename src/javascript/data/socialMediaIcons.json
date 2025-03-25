@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "bxl-github",
+    "target": "https://github.com/krig6"
+  },
+  {
+    "icon": "bxl-twitter",
+    "target": "https://x.com/"
+  },
+  {
+    "icon": "bxl-instagram-alt",
+    "target": "https://www.instagram.com/"
+  },
+  {
+    "icon": "bxl-linkedin-square",
+    "target": "https://www.linkedin.com/"
+  }
+]

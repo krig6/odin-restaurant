@@ -2,12 +2,7 @@ import { createCustomElement } from '../utils/domUtils/elementFactory.js';
 
 import '../../styles/socialMediaSection.css';
 
-const SOCIAL_MEDIA_ICONS = [
-  'bxl-github',
-  'bxl-twitter',
-  'bxl-instagram-alt',
-  'bxl-linkedin-square'
-];
+import socialMediaIcons from '../data/socialMediaIcons.json';
 
 export const buildSocialMediaSection = (page = '') => {
   const socialMediaSection = createCustomElement('div', {
@@ -27,26 +22,38 @@ export const buildSocialMediaSection = (page = '') => {
     classes: 'social-icon-list'
   });
 
-  const socialMediaIcons = SOCIAL_MEDIA_ICONS.map(createSocialMediaIcons);
+  const validSocialMediaIcons = getValidSocialMediaIcons()
+    .map(createSocialMediaIcons)
+    .filter(Boolean);
 
-  socialMediaIcons.forEach((icon) => socialMediaList.append(icon));
+  validSocialMediaIcons.forEach((icon) => socialMediaList.append(icon));
   socialMediaIconsContainer.appendChild(socialMediaList);
   socialMediaSection.append(socialMediaHeading, socialMediaIconsContainer);
   return socialMediaSection;
 };
 
-const createSocialMediaIcons = (iconClass) => {
+const createSocialMediaIcons = ({ icon, target }) => {
   const listItemElement = createCustomElement('li', {
     classes: 'social-media-item'
   });
 
-  const linkElement = createCustomElement('a');
+  const linkElement = createCustomElement('a', {
+    dataset: {
+      href: target,
+      target: '_blank',
+      rel: 'noopener noreferrer'
+    }
+  });
 
   const iconElement = createCustomElement('i', {
-    classes: `bx ${iconClass} `
+    classes: `bx ${icon}`
   });
 
   linkElement.appendChild(iconElement);
   listItemElement.appendChild(linkElement);
   return listItemElement;
+};
+
+const getValidSocialMediaIcons = () => {
+  return socialMediaIcons.filter(({ icon, target }) => icon && target);
 };
