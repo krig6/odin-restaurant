@@ -1,5 +1,5 @@
 import { setupHomePageStructure } from '../../pages/homePageSetup.js';
-import { buildMenuPageStructure } from '../../pages/menuPageSetup.js';
+import { setupMenuPageStructure } from '../../pages/menuPageSetup.js';
 import { setupEmailPageStructure } from '../../pages/emailPageSetup.js';
 import { setupAboutPageStructure } from '../../pages/aboutPageSetup.js';
 
@@ -45,7 +45,7 @@ const isCurrentPage = (page) => {
 const navigateToPage = (page) => {
   switch (page) {
     case 'menu':
-      buildMenuPageStructure();
+      setupMenuPageStructure();
       break;
     case 'email':
       setupEmailPageStructure();

@@ -15,6 +15,7 @@ import { initializeNavEventListeners } from '../utils/navigation/navEventListene
 import { applyParallax } from '../utils/scrollEffects/applyParallax.js';
 
 import '../../styles/aboutSection.css';
+import { removeTheme } from '../utils/background/backgroundUtils.js';
 
 export const setupAboutPageStructure = () => {
   deleteCarousel();
@@ -22,6 +23,7 @@ export const setupAboutPageStructure = () => {
   toggleMainNavColors();
   applyHeroText();
   createHeroImageSection();
+  removeTheme('email-theme');
   buildAboutSection();
   createBrandStory();
   applyParallax();

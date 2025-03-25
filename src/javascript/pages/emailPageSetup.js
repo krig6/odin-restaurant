@@ -9,10 +9,12 @@ import { initializeFormValidation } from '../utils/formValidation/formValidation
 import { initializeNavEventListeners } from '../utils/navigation/navEventListeners.js';
 
 import '../../styles/emailSection.css';
+import { applyTheme } from '../utils/background/backgroundUtils.js';
 
 export const setupEmailPageStructure = () => {
   deleteCarousel();
   clearMainContent();
+  applyTheme('email-theme');
   buildEmailSection();
   initializeFormValidation();
   initializeNavEventListeners();

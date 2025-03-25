@@ -15,6 +15,7 @@ import '../../styles/carousel.css';
 import '../../styles/carouselImageAnimation.css';
 import '../../styles/ctaSection.css';
 import '../../styles/featuredLinks.css';
+import { removeTheme } from '../utils/background/backgroundUtils.js';
 
 export const setupHomePageStructure = () => {
   clearMainContent();
@@ -25,6 +26,7 @@ export const setupHomePageStructure = () => {
   initializeCarouselEventListeners();
   initializeLearnMoreButtonHandlers();
   populateCarouselImages();
+  removeTheme('email-theme');
   buildFeaturedLinks();
   initializeNavEventListeners();
 };
