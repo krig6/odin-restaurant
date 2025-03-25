@@ -1,32 +1,30 @@
-.cta-container{
+/* CTA (Call to Action ) container */
+.cta-container {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -55%);
   z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 2rem;
-  font-family: "Noto Serif", sans-serif;
 }
 
-.learn-btn{
+/* Learn more button - Primary style */
+.learn-btn {
+  position: relative;
   font: var(--font-button);
   padding: 0.5rem;
-  background-color: transparent;
+  background-color: var(--primary-color);
   color: var(--text-color);
   border: 3px solid var(--text-color);
   border-radius: 0.3rem;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
   transition: var(--transition-slow);
-  background-color: var(--primary-color);
-  letter-spacing: 0.4rem;
-  width: 210px;
 }
 
+/* Secondary button */
 .secondary .learn-btn {
   color: var(--primary-color);
   background-color: var(--text-color);
@@ -34,7 +32,7 @@
 }
 
 .learn-btn::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -44,24 +42,56 @@
   transition: var(--transition-normal);
 }
 
+/* Primary button - custom hover effect */
+.primary .learn-btn::after {
+  background-color: var(--text-color);
+}
+
 .learn-btn:hover::after {
   width: 100%;
   left: 0;
   opacity: 0.4;
 }
 
-.primary .learn-btn::after {
-  background-color: var(--text-color);
-}
-
-.headline{
-  width: 25ch;
-  text-align: center;
+/* CTA headline variation */
+.headline {
   color: var(--text-color);
-  letter-spacing: 0.5rem;
   font: var(--font-cta);
+  letter-spacing: 0.5rem;
+  text-align: center;
 }
 
 .cta-about-headline {
   color: var(--primary-color);
+}
+
+/* === RESPONSIVE STYLES ==== */
+
+/* Adjust headline width for smaller screens */
+@media (min-width: 480px) {
+  .headline {
+    width: 27ch;
+  }
+
+  .cta-about-headline {
+    width: 20ch;
+  }
+}
+
+/* Adjuist headline witdh for larger screens */
+@media (min-width: 1440px) {
+  .headline {
+    width: 23ch;
+  }
+
+  .cta-about-headline {
+    width: 15ch;
+  }
+}
+
+/* Adjust CTA container position for medium screens */
+@media (min-width: 769px) {
+  .cta-container {
+    top: 57%;
+  }
 }

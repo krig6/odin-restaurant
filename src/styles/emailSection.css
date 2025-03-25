@@ -1,72 +1,76 @@
+/* Email section container */
 .email-section-container {
-  margin-bottom: 9rem;
-  margin-top: 12rem;
   display: grid;
-  margin-inline: 5rem;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 10rem 0 5rem 0;
 }
 
-.contact-form{
+/* Email theme */
+.email-theme {
+  background-color: var(--primary-color);
+}
+
+/* Contact form */
+.contact-form {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
-  max-height: 100%;
-  max-width: 100%;
-  padding: 2rem;
+  margin: 5rem;
   color: var(--accent-color-dark);
-  margin: 5rem 5rem;
   font: var(--font-title);
 }
 
-.contact-form> .form-field:nth-child(1) {
-  grid-column-start: 1;
-}
-
-.contact-form> .form-field:nth-child(1),
-.contact-form> .form-field:nth-child(2) {
+/* Form fields layout */
+.contact-form > .form-field:nth-child(1),
+.contact-form > .form-field:nth-child(2) {
   grid-column: span 3;
 }
 
-.contact-form> .form-field:nth-child(3),
-.contact-form> .form-field:nth-child(4) {
+.contact-form > .form-field:nth-child(3),
+.contact-form > .form-field:nth-child(4) {
   grid-column: span 6;
 }
 
-.submit-button-container {
-  grid-column:span 6;
-  display: flex;
-  justify-content:center;
-}
-
+/* Input fields */
 .input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 0.2rem;
   background-color: var(--accent-color-light);
-  box-shadow: inset 1px 1px 1px var(--accent-color-dark);
   color: var(--accent-color-dark);
   font: var(--font-small);
+  box-shadow: inset 1px 1px 1px var(--accent-color-dark);
 }
 
 .inquiry-input {
   height: 150px;
 }
 
+/* Submit button */
+.submit-button-container {
+  grid-column: span 6;
+  display: flex;
+  justify-content: center;
+}
+
 .inquiry-submit {
   font: var(--font-button);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
   background-color: transparent;
   color: var(--accent-color-dark);
   border: 2px solid var(--accent-color-dark);
-  border-radius: 0.3rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
   cursor: pointer;
   position: relative;
   letter-spacing: 0.2rem;
 }
 
+/* Submit button hover effect */
 .inquiry-submit::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -83,41 +87,105 @@
 }
 
 .inquiry-submit::after {
-  background-color:var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
+/* Input label */
 .input-label {
-  font-weight: bold;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-.contact-form{
-  margin: 5rem 5rem;
-}
-
+/* Info section */
 .info-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 3rem;
-  max-width: 100%;
   color: var(--accent-color-dark);
-  background-color:var(--secondary-color);
-  border-radius:5rem;
-}
-
-.info-heading{
-  font: var(--font-heading);
-  letter-spacing: 0.2rem;
-}
-
-.info-text{
-  font: var(--font-title);
-  width: 60ch;
+  padding-top: 5rem;
   text-align: center;
-  letter-spacing: 0.15rem;
+}
+
+/* Info heading */
+.info-heading {
+  font: var(--font-heading);
+  letter-spacing: 0.1rem;
+}
+
+/* Info text */
+.info-text {
+  width: 65ch;
+  font: var(--font-small);
+  letter-spacing: 0.1rem;
   line-height: 2rem;
 }
 
+/* === RESPONSIVE STYLES === */
+
+/* Small screens and medium screens */
+@media (max-width: 768px) {
+  .email-section-container {
+    display: flex;
+    flex-direction: column;
+    margin: 7rem 0 2rem 0;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .info-heading {
+    margin-top: 1rem;
+  }
+
+  .info-text {
+    width: 50ch;
+  }
+
+  .contact-form {
+    width: 95%;
+    margin: 0;
+  }
+
+  .inquiry-input {
+    resize: none;
+  }
+}
+
+/* Medium and large screen */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .email-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 7rem 0 2rem 0;
+  }
+
+  .info-section {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .info-text {
+    width: 70ch;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1201px) and (max-width: 1800px) {
+  .info-text {
+    width: 40ch;
+  }
+
+  .contact-form {
+    margin-inline: 1rem;
+  }
+}

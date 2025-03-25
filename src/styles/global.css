@@ -1,3 +1,4 @@
+/* === GLOBAL RESET === */
 *,
 *::before,
 *::after {
@@ -10,7 +11,10 @@
   list-style-type: none;
 }
 
+/* === ROOT VARIABLES === */
+
 :root {
+  /* === COLOR PALETTE === */
   --primary-color: #f4decb;
   --secondary-color: #ebc49b;
   --background-color: #f3e6d7;
@@ -18,20 +22,57 @@
   --accent-color-dark: #925004;
   --text-color: #494444;
 
-  --font-nav: 800 2rem "Noto Serif", sans-serif; /* navigation text */
-  --font-cta: 900 4rem "Noto Serif", sans-serif; /* call-to-action text */
-  --font-button: 800 1rem "Noto Serif", sans-serif; /* button text */
-  --font-title: 500 1rem "Noto Serif", sans-serif; /* section titles and form labels */
-  --font-body: 400 0.75rem "Noto Serif", sans-serif; /* body text and paragraphs */
-  --font-heading: 700 1.5rem "Noto Serif", sans-serif; /* larger section headings */
-  --font-subheading: 600 1.125rem "Noto Serif", sans-serif; /* subheadings and item names */
-  --font-small: 400 0.9rem "Noto Serif", sans-serif; /* small text like descriptions and pricing */
+  /* === FONT STYLES === */
+  --font-nav: 400 1.5rem 'Noto Serif', sans-serif; /* navigation */
+  --font-cta: 900 4rem 'Noto Serif', sans-serif; /* call-to-action */
+  --font-carousel-btn: 400 6rem 'Noto Serif', sans-serif; /* carousel button */
+  --font-button: 800 1rem 'Noto Serif', sans-serif; /* buttons */
+  --font-title:
+    700 1.1rem 'Noto Serif', sans-serif; /* section titles, labels */
+  --font-heading: 700 1.5rem 'Noto Serif', sans-serif; /* headings */
+  --font-small: 300 1rem 'Noto Serif', sans-serif; /* descriptions, pricing */
+  --font-footer-icons:
+    400 1.3rem 'Noto Serif', sans-serif; /* footer section social media icons */
+  --font-email-icons:
+    400 1.5rem 'Noto Serif', sans-serif; /* email page social media icons*/
 
+  /* === TRANSITION STYLES === */
   --transition-fast: 0.1s;
   --transition-normal: 0.4s;
   --transition-slow: 1s;
 }
 
-html {
+/* === RESPONSIVE FONT ADJUSTMENTS === */
+
+/* Small Screens */
+@media (max-width: 600px) {
+  :root {
+    --font-nav: 400 1rem 'Noto Serif', sans-serif;
+    --font-cta: 900 1.5rem 'Noto Serif', sans-serif;
+    --font-button: 800 0.875rem 'Noto Serif', sans-serif;
+    --font-heading: 700 1.2rem 'Noto Serif', sans-serif;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 768px) {
+  :root {
+    --font-nav: 400 1.2rem 'Noto Serif', sans-serif;
+    --font-cta: 900 1.5rem 'Noto Serif', sans-serif;
+    --font-button: 800 0.875rem 'Noto Serif', sans-serif;
+    --font-heading: 700 1.2rem 'Noto Serif', sans-serif;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 769px) and (max-width: 1440px) {
+  :root {
+    --font-cta: 900 2.5rem 'Noto Serif', sans-serif;
+    --font-carousel-btn: 400 4rem 'Noto Serif', sans-serif;
+  }
+}
+
+/* === BASE STYLE === */
+body {
   background-color: var(--background-color);
 }

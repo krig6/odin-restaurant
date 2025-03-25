@@ -1,28 +1,57 @@
+/* Footer section social media icons styling */
 .footer .social-icon-list {
   display: flex;
-  flex-direction:column;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.email-social-media-list .social-icon-list{
-  margin-top: 2rem;
-  display: flex;
-  gap: 3rem;
-  font-size: 2rem;
+.footer .bx {
+  color: var(--primary-color);
+  cursor: pointer;
+  font: var(--font-footer-icons);
+  transition: var(--transition-normal) ease-in-out;
 }
 
+/* Social media icons hover effects */
 .social-icon-list .bx:hover {
   transform: scale(1.3);
 }
 
-.social-icon-list .bx {
-  cursor:pointer;
-  transition: var(--transition-normal) ease-in-out;
+/* Email section social media icons styling */
+.email-social-media .social-icon-list {
+  display: flex;
+  gap: 2rem;
+  font: var(--font-email-icons);
 }
 
-.social-heading{
-  font: var(--font-subheading);
-  justify-self: center;
-  letter-spacing: 0.5rem;
-  margin-bottom: 1rem;
+/* Social heading overall styling */
+.social-heading {
+  font: var(--font-title);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+/* === RESPONSIVE STYLES === */
+
+/* Medium Screens */
+@media (max-width: 768px) {
+  .footer .social-icon-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .social-heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .footer .social-icon-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }

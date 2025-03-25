@@ -1,27 +1,23 @@
+/* Main navigation styling */
 .header {
-  background-color: transparent;
   position: absolute;
-  width: 100%;
+  top: 4%;
   z-index: 999;
-  display: flex;
-  align-items:center;
-  justify-content:flex-end;
+  width: 100%;
   color: var(--text-color);
-  top: 4rem;
-  padding-inline: 3rem;
-  gap: 28rem;
 }
 
+/* Navigation styling, hover effect, and active state*/
 .nav-list {
+  position: absolute;
+  left: 50%;
   display: flex;
-  justify-content: center;
-  gap: 5rem;
+  gap: 10rem;
+  transform: translateX(-50%);
 }
 
 .nav-link {
-  background-color: transparent;
   font: var(--font-nav);
-  transition: var(--transition-slow);
   cursor: pointer;
   position: relative;
   padding: 0.5rem;
@@ -29,7 +25,7 @@
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0%;
   left: 50%;
@@ -45,6 +41,13 @@
   left: 0;
 }
 
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+  background-color: var(--text-color);
+}
+
+/* Updates navigation color based on page and carousel image */
 .header.change-color .nav-link:hover::after {
   background-color: var(--primary-color);
   width: 100%;
@@ -55,42 +58,35 @@
   color: var(--primary-color);
 }
 
-.nav-link.active::after {
-  width:100%;
-  left: 0;
-  background-color: var(--text-color);
-}
-
 .header.change-color .nav-link.active::after {
   width: 100%;
   left: 0;
   background-color: var(--primary-color);
 }
 
-.utility-wrapper {
-  display: flex;
-  gap:2rem;
-  cursor: pointer;
+/* === RESPONSIVE STYLES === */
+
+/* Small Screens */
+@media (max-width: 600px) {
+  .nav-list {
+    gap: 2rem;
+  }
 }
 
-.utility-icon {
-  height: 24px;
-  width: 24px;
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 768px) {
+  .nav-link {
+    padding: 0;
+  }
+
+  .nav-list {
+    gap: 3rem;
+  }
 }
 
-.logo-wrapper{
-  position: absolute;
-  left:20%;
-  top:-70%;
+/* Large Screens */
+@media (min-width: 769px) and (max-width: 1204px) {
+  .nav-list {
+    gap: 5rem;
+  }
 }
-
-.logo-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo-link svg {
-  transform: scale(1.3);
-}
-

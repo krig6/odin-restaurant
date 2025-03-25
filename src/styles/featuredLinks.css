@@ -1,93 +1,179 @@
- /*TODO: done fixed color not showing in 2nd card*/
+/* Featured links section layout */
 .featured-links-section {
   display: grid;
   grid-template-columns: 34% 32% 34%;
-  height: 550px;
-  font-family: "Noto Serif", sans-serif;
   color: var(--text-color);
 }
 
-.featured-links-section .featured-link-card:nth-child(1) {
-  background-color: var(--background-color);
-}
-
-.featured-links-section .featured-link-card:nth-child(2) {
-  background-color: var(--accent-color-light);
-}
-
-.featured-links-section .featured-link-card:nth-child(3) {
-  background-color: var(--primary-color);
-}
-
-.featured-links-section .featured-link-card:nth-child(1) {
+/* Featured link card styling */
+.featured-link-card {
   display: flex;
   align-items: center;
-  cursor: pointer;
   flex-direction: column;
-  transition: var(--transition-normal);
+  cursor: pointer;
   gap: 2rem;
+  width: 100%;
   text-align: center;
+  transition: var(--transition-normal);
+}
+
+/* Card dedicated paddings and bg color */
+.featured-link-card:nth-child(1) {
   padding: 3rem 5rem 3rem 15rem;
 }
 
-.featured-links-section .featured-link-card:nth-child(2) {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  flex-direction: column;
-  transition: var(--transition-normal);
-  gap: 2rem;
-  text-align: center;
+.featured-link-card:nth-child(2) {
+  background-color: var(--accent-color-light);
   padding: 3rem 7rem;
 }
 
-.featured-links-section .featured-link-card:nth-child(3) {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  flex-direction: column;
-  transition: var(--transition-normal);
-  gap: 2rem;
-  text-align: center;
+.featured-link-card:nth-child(3) {
+  background-color: var(--primary-color);
   padding: 3rem 15rem 3rem 5rem;
 }
 
+/* Card title */
 .featured-link-title {
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-  align-self: center;
-  letter-spacing: 0.5rem;
   font: var(--font-title);
+  position: relative;
+  letter-spacing: 0.5rem;
 }
 
-.featured-links-section figcaption::after {
-  content: "";
+/* Card title underline effect on hover */
+.featured-link-title::after {
+  content: '';
   position: absolute;
   bottom: -10px;
   left: 50%;
-  height: 3px;
   width: 0;
+  height: 3px;
   background-color: var(--text-color);
   transition: var(--transition-normal);
 }
 
-.featured-links- .featured-link-card:hover figcaption::after {
+.featured-link-card:hover .featured-link-title::after {
   width: 95%;
   left: 0;
 }
 
-.featured-links-section .featured-link-card:hover {
+.featured-link-card:hover {
   background-color: var(--secondary-color);
 }
 
-.featured-link-summary{
-  font: var(--font-body);
+/* Card text */
+.featured-link-summary {
+  font: var(--font-small);
   letter-spacing: 0.15rem;
   line-height: 1.5rem;
   width: 45ch;
 }
 
+/* Card icon size */
 .featured-link-image {
-  height: 200px;
+  width: 200px;
+  height: auto;
+}
+
+/* === RESPONSIVE STYLES === */
+
+/* Small Screens */
+@media (max-width: 600px) {
+  .featured-links-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-link-card:nth-child(2) {
+    height: 270px;
+    padding: 1rem;
+  }
+
+  .featured-link-card:nth-child(1),
+  .featured-link-card:nth-child(3) {
+    height: 250px;
+    padding: 1rem;
+  }
+
+  .featured-link-image {
+    width: 44px;
+  }
+
+  .featured-link-title {
+    font-weight: 700;
+  }
+
+  .featured-link-summary {
+    letter-spacing: 0;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 601px) and (max-width: 768px) {
+  .featured-links-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-link-card:nth-child(2) {
+    height: 350px;
+    padding: 2rem;
+  }
+
+  .featured-link-card:nth-child(1),
+  .featured-link-card:nth-child(3) {
+    height: 310px;
+    padding: 2rem;
+  }
+
+  .featured-link-summary {
+    letter-spacing: 0.15rem;
+    width: 50ch;
+  }
+
+  .featured-link-image {
+    width: 70px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .featured-links-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featured-link-card:nth-child(2) {
+    height: 370px;
+    padding: 1.5rem;
+  }
+
+  .featured-link-card:nth-child(1),
+  .featured-link-card:nth-child(3) {
+    height: 350px;
+    padding: 1.5rem;
+  }
+
+  .featured-link-image {
+    width: 90px;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1025px) and (max-width: 1700px) {
+  .featured-link-summary {
+    width: 30ch;
+  }
+
+  .featured-link-card:nth-child(2) {
+    padding: 2rem;
+  }
+
+  .featured-link-card:nth-child(1),
+  .featured-link-card:nth-child(3) {
+    padding: 2rem;
+  }
+
+  .featured-link-image {
+    width: 120px;
+  }
 }
