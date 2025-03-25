@@ -11,7 +11,7 @@ const SOCIAL_MEDIA_ICONS = [
 
 export const buildSocialMediaSection = (page = '') => {
   const socialMediaSection = createCustomElement('div', {
-    classes: `${page ? `${page}-social-media-list` : ''}`
+    classes: `${page ? `${page}-social-media` : ''}`
   });
 
   const socialMediaHeading = createCustomElement('h3', {
