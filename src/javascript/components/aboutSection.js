@@ -4,6 +4,7 @@ import {
 } from '../utils/domUtils/elementFactory.js';
 import { getElement } from '../utils/domUtils/contentHandler.js';
 import { fetchAllImages } from '../utils/imageUtils/imageLoader.js';
+import { getValidData } from '../utils/dataUtils/filterData.js';
 
 import aboutSectionData from '../data/aboutPageContent.json';
 
@@ -57,18 +58,18 @@ export const buildAboutSection = () => {
     classes: 'about-sections-wrapper'
   });
 
-  const validAboutSections = getValidAboutSection()
+  const validAboutSections = getValidData(
+    aboutSectionData.aboutSection,
+    'id',
+    'title',
+    'description',
+    'image'
+  )
     .map(createAboutSection)
     .filter(Boolean);
 
   validAboutSections.forEach((section) => aboutSectionWrapper.append(section));
   mainContentElement.append(aboutSectionWrapper);
-};
-
-const getValidAboutSection = () => {
-  return aboutSectionData['aboutSection'].filter(
-    ({ id, title, description, image }) => id && title && description && image
-  );
 };
 
 const createAboutSection = ({ id, title, description, image }) => {

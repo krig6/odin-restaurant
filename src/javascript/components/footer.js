@@ -3,6 +3,7 @@ import { createCustomElement } from '../utils/domUtils/elementFactory.js';
 import { buildSocialMediaSection } from './socialMediaSection.js';
 
 import footerData from '../data/footerData.json';
+import { getValidData } from '../utils/dataUtils/filterData.js';
 
 export const buildFooterStructure = () => {
   const footerElement = document.getElementById('site-footer');
@@ -26,12 +27,6 @@ export const buildFooterStructure = () => {
     socialIconsWrapper
   );
   footerElement.append(footerContainer, copyrightSection);
-};
-
-const getValidQuickLinks = () => {
-  return footerData.quickLinks.links.filter(
-    ({ heading, link, className }) => heading && link && className
-  );
 };
 
 const createBrandInfo = () => {
@@ -67,7 +62,12 @@ const createQuickNavLinksSection = () => {
     classes: 'footer-nav-list'
   });
 
-  const quickLinkItems = getValidQuickLinks()
+  const quickLinkItems = getValidData(
+    footerData.quickLinks.links,
+    'heading',
+    'link',
+    'className'
+  )
     .map(createQuickLinkItem)
     .filter(Boolean);
   quickLinkItems.forEach((items) => quickLinksList.append(items));
@@ -91,7 +91,6 @@ const createQuickLinkItem = ({ heading, link, className }) => {
   listItemElement.appendChild(linkElement);
   return listItemElement;
 };
-
 const createCopyrightElement = () => {
   const currentYear = new Date().getFullYear();
 

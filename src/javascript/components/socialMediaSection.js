@@ -1,4 +1,5 @@
 import { createCustomElement } from '../utils/domUtils/elementFactory.js';
+import { getValidData } from '../utils/dataUtils/filterData.js';
 
 import '../../styles/socialMediaSection.css';
 
@@ -22,7 +23,7 @@ export const buildSocialMediaSection = (page = '') => {
     classes: 'social-icon-list'
   });
 
-  const validSocialMediaIcons = getValidSocialMediaIcons()
+  const validSocialMediaIcons = getValidData(socialMediaIcons, 'icon', 'target')
     .map(createSocialMediaIcons)
     .filter(Boolean);
 
@@ -52,8 +53,4 @@ const createSocialMediaIcons = ({ icon, target }) => {
   linkElement.appendChild(iconElement);
   listItemElement.appendChild(linkElement);
   return listItemElement;
-};
-
-const getValidSocialMediaIcons = () => {
-  return socialMediaIcons.filter(({ icon, target }) => icon && target);
 };

@@ -4,6 +4,7 @@ import {
 } from '../utils/domUtils/elementFactory.js';
 import { getElement } from '../utils/domUtils/contentHandler.js';
 import { fetchAllImages } from '../utils/imageUtils/imageLoader.js';
+import { getValidData } from '../utils/dataUtils/filterData.js';
 
 import featuredLinkData from '../data/featuredLinks.json';
 
@@ -22,19 +23,19 @@ export const buildFeaturedLinks = () => {
     classes: 'featured-links-section'
   });
 
-  const featuredLinkCards = getValidFeaturedSections()
+  const featuredLinkCards = getValidData(
+    featuredLinkData.featuredLinks,
+    'title',
+    'summary',
+    'image',
+    'imageAlt',
+    'link'
+  )
     .map(createFeaturedLinkCard)
     .filter(Boolean);
 
   featuredLinkCards.forEach((section) => featuredLinksSection.append(section));
   mainContentElement.append(featuredLinksSection);
-};
-
-const getValidFeaturedSections = () => {
-  return featuredLinkData['featuredLinks'].filter(
-    ({ title, summary, image, imageAlt, link }) =>
-      title && summary && image && imageAlt && link
-  );
 };
 
 const createFeaturedLinkCard = ({ title, summary, image, imageAlt, link }) => {
