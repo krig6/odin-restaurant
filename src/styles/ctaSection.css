@@ -67,8 +67,14 @@
 
 /* === RESPONSIVE STYLES ==== */
 
-/* Adjust headline width for smaller screens */
-@media (min-width: 480px) {
+/* Small Screens */
+@media (min-width: 375px) and (max-width: 425px) {
+  .headline {
+    width: 25ch;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 1439px) {
   .headline {
     width: 27ch;
   }

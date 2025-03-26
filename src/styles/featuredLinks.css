@@ -77,6 +77,13 @@
 /* === RESPONSIVE STYLES === */
 
 /* Small Screens */
+@media (min-width: 375px) and (max-width: 425px) {
+  .featured-link-summary {
+    letter-spacing: 0;
+    padding-inline: 0.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .featured-links-section {
     display: flex;

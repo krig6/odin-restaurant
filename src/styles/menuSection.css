@@ -106,7 +106,41 @@
 /* === RESPONSIVE STYLES === */
 
 /* Small Screens */
-@media (max-width: 600px) {
+@media (min-width: 375px) and (max-width: 425px) {
+  .menu-header {
+    margin-top: 6rem;
+  }
+
+  .product-grid {
+    gap: 0.1rem;
+  }
+
+  .category-list {
+    gap: 1rem;
+  }
+
+  .product-desc {
+    display: none;
+  }
+
+  .category-link {
+    letter-spacing: 0.1rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+  }
+
+  .product-card {
+    width: 150px;
+    margin-block: 0;
+    gap: 0.6rem;
+  }
+
+  .product-image {
+    height: auto;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 600px) {
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.5rem;

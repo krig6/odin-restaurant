@@ -123,8 +123,31 @@
 
 /* === RESPONSIVE STYLES === */
 
-/* Small screens and medium screens */
-@media (max-width: 768px) {
+/* Small Screens */
+@media (min-width: 375px) and (max-width: 425px) {
+  .email-section-container {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 0 2rem 0;
+    align-items: center;
+  }
+
+  .info-section {
+    gap: 1.5rem;
+  }
+
+  .info-text {
+    width: 35ch;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: 0;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 426px) and (max-width: 768px) {
   .email-section-container {
     display: flex;
     flex-direction: column;

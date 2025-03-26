@@ -45,7 +45,17 @@
 /* === RESPONSIVE FONT ADJUSTMENTS === */
 
 /* Small Screens */
-@media (max-width: 600px) {
+@media (min-width: 375px) and (max-width: 425px) {
+  :root {
+    --font-nav: 400 0.875rem 'Noto Serif', sans-serif;
+    --font-cta: 900 1.2rem 'Noto Serif', sans-serif;
+    --font-button: 800 0.75rem 'Noto Serif', sans-serif;
+    --font-heading: 700 1rem 'Noto Serif', sans-serif;
+    --font-small: 300 0.9rem 'Noto Serif', sans-serif;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 600px) {
   :root {
     --font-nav: 400 1rem 'Noto Serif', sans-serif;
     --font-cta: 900 1.5rem 'Noto Serif', sans-serif;

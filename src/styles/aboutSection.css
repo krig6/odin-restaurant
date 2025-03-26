@@ -103,7 +103,55 @@
 /* === RESPONSIVE STYLES === */
 
 /* Small Screens */
-@media (max-width: 600px) {
+@media (min-width: 375px) and (max-width: 425px) {
+  .overlay-text {
+    width: 10ch;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .about-image-container {
+    height: 300px;
+  }
+
+  .about-title {
+    margin-top: 0;
+    text-align: center;
+    text-underline-offset: 1rem;
+    margin-block: 0 1.5rem;
+  }
+
+  .about-section:nth-child(1) .about-text-content,
+  .about-section:nth-child(2) .about-text-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-text-description {
+    line-height: 1.5rem;
+  }
+
+  .brand-story-container {
+    padding: 2rem 1rem;
+  }
+
+  .brand-story-title {
+    text-underline-offset: 1rem;
+    margin-block: 0 1.5rem;
+  }
+
+  .brand-story-text {
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    padding-inline: 1rem;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 600px) {
   .overlay-container {
     top: 47%;
   }
@@ -180,6 +228,11 @@
 }
 
 /* Large Screens */
+.about-section:nth-child(1) .about-text-content,
+.about-section:nth-child(2) .about-text-content {
+  line-height: 1rem;
+}
+
 @media (min-width: 769px) and (max-width: 1440px) {
   .overlay-container {
     top: 47%;
