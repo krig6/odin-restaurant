@@ -15,11 +15,11 @@ export default merge(common, {
   devtool: 'source-map',
   devServer: {
     static: {
-      directory: resolve(__dirname, 'dist'),
+      directory: resolve(__dirname, 'dist')
     },
     port: 3000,
     open: true,
     compress: true,
-    hot: true,
-  },
+    hot: true
+  }
 });

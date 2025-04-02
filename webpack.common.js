@@ -26,10 +26,10 @@ export const module = {
       test: /\.(png|jpe?g|gif|svg)$/i,
       type: 'asset/resource',
       generator: {
-        filename: 'assets/images/[name][ext]',
-      },
-    },
-  ],
+        filename: 'assets/images/[name][ext]'
+      }
+    }
+  ]
 };
 export const plugins = [
   new HTMLWebpackPlugin({
@@ -37,5 +37,5 @@ export const plugins = [
     template: 'src/template.html',
     title: 'Cup and Crust',
     favicon: 'src/assets/images/favicon/cup-of-coffee.png'
-  }),
+  })
 ];
