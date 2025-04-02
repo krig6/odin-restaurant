@@ -70,11 +70,11 @@
 /* Small Screens */
 @media (min-width: 375px) and (max-width: 425px) {
   .headline {
-    width: 25ch;
+    width: 30ch;
   }
 }
 
-@media (min-width: 426px) and (max-width: 1439px) {
+@media (min-width: 426px) and (max-width: 1440px) {
   .headline {
     width: 27ch;
   }
@@ -84,20 +84,13 @@
   }
 }
 
-/* Adjuist headline witdh for larger screens */
-@media (min-width: 1440px) {
+/* Adjust headline width for larger screens */
+@media (min-width: 1441px) {
   .headline {
     width: 23ch;
   }
 
   .cta-about-headline {
     width: 15ch;
-  }
-}
-
-/* Adjust CTA container position for medium screens */
-@media (min-width: 769px) {
-  .cta-container {
-    top: 57%;
   }
 }

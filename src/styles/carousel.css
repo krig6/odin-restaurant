@@ -75,21 +75,21 @@
 /* === RESPONSIVE STYLES === */
 
 /* Hide carousel buttons on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
   .carousel-buttons-container {
     display: none;
   }
 }
 
 /* Adjust button position for different screen sizes */
-@media (min-width: 769px) and (max-width: 1440px) {
+@media (min-width: 1021px) and (max-width: 1440px) {
   .carousel-btn {
-    top: 43%;
+    top: 41%;
   }
 }
 
 @media (min-width: 1441px) {
   .carousel-btn {
-    top: 40%;
+    top: 39%;
   }
 }
