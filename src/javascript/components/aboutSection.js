@@ -94,15 +94,18 @@ const createAboutTextSection = (id, title, description) => {
     text: title
   });
 
-  textContainer.appendChild(textTitle);
+  const textParagraphs = createCustomElement('h3', {
+    classes: 'about-paragraphs'
+  });
 
   description?.forEach((paragraph) => {
     Object.values(paragraph).forEach((text) => {
-      textContainer.appendChild(
+      textParagraphs.appendChild(
         createCustomElement('p', { text, classes: 'about-text-description' })
       );
     });
   });
+  textContainer.append(textTitle, textParagraphs);
 
   return textContainer;
 };

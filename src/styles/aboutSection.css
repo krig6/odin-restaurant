@@ -48,6 +48,19 @@
   text-decoration: underline;
   text-underline-offset: 1.5rem;
   margin: 2rem 0 3rem;
+  text-align: center;
+}
+
+.about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font: var(--font-small);
+  text-align: justify;
+}
+
+.about-text-description {
+  line-height: 2rem;
 }
 
 /* About text content */
@@ -104,8 +117,12 @@
 
 /* Small Screens */
 @media (min-width: 375px) and (max-width: 425px) {
+  .overlay-container {
+    top: 44.5%;
+  }
+
   .overlay-text {
-    width: 10ch;
+    width: 40ch;
   }
 
   .about-section {
@@ -119,9 +136,12 @@
 
   .about-title {
     margin-top: 0;
-    text-align: center;
     text-underline-offset: 1rem;
     margin-block: 0 1.5rem;
+  }
+
+  .about-text-description {
+    line-height: 1.5rem;
   }
 
   .about-section:nth-child(1) .about-text-content,
@@ -129,10 +149,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
-
-  .about-text-description {
-    line-height: 1.5rem;
   }
 
   .brand-story-container {
@@ -146,14 +162,14 @@
 
   .brand-story-text {
     letter-spacing: 0;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
     padding-inline: 1rem;
   }
 }
 
 @media (min-width: 426px) and (max-width: 600px) {
   .overlay-container {
-    top: 47%;
+    top: 44%;
   }
 
   .overlay-text {
@@ -171,7 +187,6 @@
 
   .about-title {
     margin-top: 0;
-    text-align: center;
   }
 
   .about-section:nth-child(1) .about-text-content,
@@ -192,7 +207,7 @@
 }
 
 /* Medium Screens */
-@media (min-width: 601px) and (max-width: 768px) {
+@media (min-width: 601px) and (max-width: 1200px) {
   .overlay-container {
     top: 47%;
   }
@@ -219,7 +234,6 @@
 
   .about-title {
     margin-top: 0;
-    text-align: center;
   }
 
   .brand-story-container {
@@ -228,23 +242,13 @@
 }
 
 /* Large Screens */
-.about-section:nth-child(1) .about-text-content,
-.about-section:nth-child(2) .about-text-content {
-  line-height: 1rem;
-}
-
-@media (min-width: 769px) and (max-width: 1440px) {
+@media (min-width: 1201px) and (max-width: 1700px) {
   .overlay-container {
-    top: 47%;
+    top: 44%;
   }
 
   .overlay-text {
     width: 30ch;
-  }
-
-  .about-section {
-    display: flex;
-    flex-direction: column;
   }
 
   .about-image-container {
@@ -256,11 +260,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   .about-title {
     margin-top: 0.1rem;
-    text-align: center;
   }
 
   .brand-story-container {
@@ -271,11 +275,6 @@
 /* Extra Large Screens */
 @media (min-width: 1441px) and (max-width: 1700px) {
   .overlay-container {
-    top: 43%;
-  }
-
-  .about-section:nth-child(1) .about-text-content,
-  .about-section:nth-child(2) .about-text-content {
-    width: 60%;
+    top: 41%;
   }
 }
